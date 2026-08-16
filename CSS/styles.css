@@ -1,0 +1,242 @@
+ :root
+  {
+    --bg:#f6f1e7; 
+    --card:#fffdf8; 
+    --ink:#30291f; 
+    --muted:#746a5c;
+    --accent:#7b4b2a; 
+    --accent2:#b4864b; 
+    --line:#cbb99d; 
+    --soft:#efe4d2;
+  }
+  *
+  {
+    box-sizing:border-box
+  }
+  body
+  {
+    margin:0;
+    background:linear-gradient(135deg,#f8f4ec,#eee4d2);
+    color:var(--ink);
+    font-family:"Noto Sans Malayalam","Nirmala UI","Malayalam Sangam MN",system-ui,sans-serif
+  }
+  header
+  {
+    padding:34px 18px 22px;
+    text-align:center;
+    background:#4c2e1c;
+    color:#fff8ed;
+    box-shadow:0 3px 18px #0002
+  }
+  h1
+  {
+    margin:0;
+    font-size:clamp(28px,5vw,48px)
+  }
+  .subtitle
+  {
+    margin-top:7px;
+    font-family:Georgia,serif;
+    font-size:18px;
+    letter-spacing:1px
+  }
+  .toolbar
+  {
+    position:sticky;
+    top:0;
+    z-index:10;
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+    justify-content:center;
+    padding:12px;
+    background:#fffaf0ee;
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line)
+  }
+  button,input
+  {
+    font:inherit
+  }
+  button
+  {
+    border:1px solid var(--accent);
+    background:var(--accent);
+    color:white;
+    border-radius:10px;
+    padding:9px 14px;
+    cursor:pointer
+  }
+  button.secondary
+  {
+    background:white;
+    color:var(--accent)
+  }
+  input
+  {
+    min-width:230px;
+    border:1px solid var(--line);
+    border-radius:10px;
+    padding:9px 12px;
+    background:white
+  }
+  main
+  {
+    max-width:1250px;
+    margin:28px auto;
+    padding:0 16px 60px
+  }
+  .intro
+  {
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:18px;
+    padding:20px;
+    box-shadow:0 8px 24px #5b402015;
+    margin-bottom:24px
+  }
+  .intro h2
+  {
+    margin:0 0 8px;
+    color:var(--accent)
+  }
+  .grid
+  {
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(290px,1fr));
+    gap:18px
+  }
+  .card
+  {
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:16px;
+    padding:16px;
+    box-shadow:0 7px 20px #5b402012
+  }
+  .card h3
+  {
+    margin:0 0 8px;
+    color:var(--accent);
+    font-size:20px
+  }
+  .meta
+  {
+    color:var(--muted);
+    line-height:1.65;
+    font-size:14px
+  }
+  .tree
+  {
+    margin:22px 0 0;
+    padding-left:12px
+  }
+  details
+  {
+    margin:8px 0
+  }
+  summary
+  {
+    cursor:pointer;
+    list-style:none;
+    display:flex;
+    align-items:center;
+    gap:9px;
+    padding:11px 13px;
+    background:var(--soft);
+    border:1px solid var(--line);
+    border-radius:12px;
+    font-weight:700
+  }
+  summary::-webkit-details-marker
+  {
+    display:none
+  }
+  summary:before
+  {
+    content:"＋";
+    width:20px;
+    height:20px;
+    border-radius:50%;
+    display:inline-grid;
+    place-items:center;
+    background:#fff;
+    color:var(--accent);
+    font-weight:900
+  }
+  details[open]>summary:before
+  {
+    content:"−"
+  }
+  .person
+  {
+    margin:8px 0 8px 26px;
+    padding:12px 14px;
+    background:white;
+    border-left:4px solid var(--accent2);
+    border-radius:0 10px 10px 0;
+    box-shadow:0 3px 10px #00000009
+  }
+  .person strong
+  {
+    font-size:17px
+  }
+  .children
+  {
+    margin-left:18px;
+    border-left:2px solid var(--line);
+    padding-left:12px
+  }
+  .note
+  {
+    font-size:13px;
+    color:var(--muted);
+    margin-top:4px;
+    line-height:1.55
+  }
+  .badge
+  {
+    display:inline-block;
+    margin:4px 5px 0 0;
+    padding:3px 8px;
+    border-radius:999px;
+    background:#f2e8d8;
+    color:#6d4325;
+    font-size:12px
+  }
+  footer
+  {
+    text-align:center;
+    color:var(--muted);
+    padding:25px
+  }
+  .hidden
+  {
+    display:none!important
+  }
+  @media print
+  {
+    .toolbar
+    {
+      display:none
+    } 
+    body
+    {
+      background:white
+    } 
+    header
+    {
+      box-shadow:none
+    }
+    details
+    {
+      break-inside:avoid
+    } 
+    main
+    {
+      max-width:none
+    }.card
+    {
+      box-shadow:none
+    }
+  }
