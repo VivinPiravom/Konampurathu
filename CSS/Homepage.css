@@ -1,0 +1,146 @@
+  *
+  {
+    margin : 0;
+    padding: 0;
+    box-sizing:border-box;
+    transition: .3s linear;
+  }
+  @font-face 
+  {
+    font-family:"Noto Sans Malayalam","Nirmala UI","Malayalam Sangam MN",system-ui,sans-serif
+    src: url("Sans-serif.ttf");
+  }
+
+  body
+  {
+     margin:0;
+    background:linear-gradient(135deg,#f8f4ec,#eee4d2);
+    color:#30291f;
+    font-family:"Noto Sans Malayalam","Nirmala UI","Malayalam Sangam MN",system-ui,sans-serif
+  }
+  .nav
+  {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    height: 50px;
+    line-height: 70px;
+    backdrop-filter: blur(20px);
+  } 
+.header {
+    margin: auto;
+    background:#fffdf8; ;
+    border:3px solid #cbb99d;
+    display: flex;
+    align-items: baseline;
+    gap: 20px;
+    padding: 2px;
+    border-style :groove; 
+    background-image: url(OIGP.jpg);
+    background-image:-moz-linear-gradient()
+  }
+  
+.logo-img {
+  width: auto;
+  height: 200px;
+  max-width: 250px;
+  max-height: 250px;
+  object-fit: contain;
+  display: flex;
+  flex: 1; 
+}
+.banner 
+  {
+    height: 200%;
+    width: 300%;
+    max-width: 1000px;
+    max-height: 200px;
+    object-fit:fill; 
+    flex:1.5;  
+  }   
+
+  .menu
+  {
+    margin-right: auto;
+     
+  }  
+  
+  li
+  {
+    list-style: none;
+    display: inline-block;
+  }
+  li a
+  {
+    text-decoration: none;
+    margin-right: 30px;
+    color: #12223c;
+    padding: 8px;
+    font-size: 20px;
+    font-family:Georgia, 'Times New Roman', Times, serif 
+  }
+.active{
+  color: #292725;
+}
+li a:hover
+{
+  color: #ff7b00;
+  text-shadow: #fffdf8;
+}
+.margin-r
+{
+  margin-right: -40px;
+}
+.container
+{
+  position: relative;
+  height: 100vh;
+}
+h2
+{
+  position: absolute;
+  top:10%;
+  left: 4%;
+  font-size: 120px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: #12223c;
+}
+h4
+{
+  position: absolute;
+  top:31%;
+  left:2%;
+  font-size: 19px;
+  letter-spacing: 2px;
+  width: 400px;
+  text-align: center;
+  color: #12223c;
+  font-weight: 100;
+
+}
+.btn-start
+{
+position: absolute;
+top: 40%;
+left: 9%;
+width: 200px;
+height: 50px;
+border: 1px solid #12223c;
+background-color: #12223c;
+color: #dfdfdf;
+font-family: "SuperDream";
+font-size: 16px;
+letter-spacing: 2px;
+cursor: pointer;
+}
+
+.btn-start:hover
+{
+background-color: #ff7b00;
+color: #000000;
+}
+
+
