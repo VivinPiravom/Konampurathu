@@ -185,8 +185,7 @@
     border-radius:0 10px 10px 0;
     box-shadow:0 3px 10px #00000009
   }
- 
-  .person strong
+ .person strong
   {
     font-size:17px
   }
@@ -223,6 +222,82 @@
   {
     display:none!important
   }
+.nav
+  {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    height: 50px;
+    line-height: 70px;
+    backdrop-filter: blur(20px);
+  } 
+  .menu
+  {
+    margin-right: auto;
+  } 
+
+  li
+  {
+    list-style: none;
+    display: inline-block;
+  }
+  li a
+  {
+    text-decoration: none;
+    margin-right: 30px;
+    color: #12223c;
+    padding: 8px;
+    font-size: 20px;
+    font-family:cursive
+  }
+
+li a:hover
+{
+  color: #ff7b00;
+  text-decoration: underline;
+  text-decoration-color: #ff7b00;
+}
+li a:active
+{
+  color: #ff7b00;
+  text-decoration: underline;
+  text-decoration-color: #ff7b00;
+}
+
+.logo-img {
+  width: auto;
+  height: 150px;
+  max-width: 250px;
+  max-height: 250px;
+  object-fit: contain;
+  display: flex;
+  flex: 1; 
+}
+.banner 
+  {
+    height: 150px;
+    width: 150px;
+    max-width: 1000px;
+    max-height: 200px;
+    object-fit:fill; 
+    flex:1.5;  
+  }   
+  .headerhome 
+ {
+    margin: auto;
+    background:#fffdf8; ;
+    border:3px solid #cbb99d;
+    display: flex;
+    align-items: baseline;
+    gap: 15px;
+    padding: 2px;
+    border-style :groove; 
+    background-image: url(OIGP.jpg);
+    background-image:-moz-linear-gradient()
+  }
+
   @media print
   {
     .toolbar
