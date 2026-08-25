@@ -286,18 +286,16 @@ li a:active
   }   
   .headerhome 
  {
-    margin: auto;
     background:#fffdf8; ;
     border:3px solid #cbb99d;
     display: flex;
     align-items: baseline;
-    gap: 15px;
-    padding: 2px;
     border-style :groove; 
     background-image: url(OIGP.jpg);
-    background-image:-moz-linear-gradient()
+    background-image:-moz-linear-gradient();
+    box-shadow:0 3px 18px #0002
   }
-
+   
   @media print
   {
     .toolbar
