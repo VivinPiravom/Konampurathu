@@ -312,6 +312,10 @@ li a:active
     {
       box-shadow:none
     }
+     .headerhome
+    {
+      box-shadow:none
+    }
     details
     {
       break-inside:avoid
