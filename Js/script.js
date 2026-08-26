@@ -1,8 +1,14 @@
 function allDetails(){ return [...document.querySelectorAll("details")]; }
 function expandAll(){ allDetails().forEach(d=>d.open=true); }
 function collapseAll(){ allDetails().forEach(d=>d.open=false); }
-function loadPage(page)
+function loadPage(page, menuItem)
  {
+  document.querySelectorAll('.menu-item').forEach(item => {
+    item.classList.remove('active');
+ });
+
+  menuItem.classList.add('active');
+  
   fetch(page)
        .then(response => 
           {
