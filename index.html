@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="ml">
 <head>
@@ -7,21 +6,17 @@
   <title>Welcome</title>
   <link rel="stylesheet" href="CSS/family.css">
 </head>
-  <div class="headerhome">   
-    <nav>
-      <div class="menu">
-        <ul>
-          <li><a href="#" class="active" onclick="loadPage('home.html')">Home</a></li>
-          <li><a href="#" onclick="loadPage('familytree.html')">Family Tree</a></li>
-          <li><a href="#" onclick="loadPage('events.html')">Events</a></li>
-          <li><a href="#" onclick="loadPage('gallery.html')">Gallery</a> </li>
-          <li><a href="#" onclick="loadPage('contact.html')">Contact</a> </li>
-        </ul>
-      </div>
-    </nav>
-    <img src="images/familybanner.png" alt="familybanner" class="banner">
-    <img src="images/familylogo.png" alt="familylogo" class="logo-img">
-  </div>
+<div class="headerhome">   
+  <img src="images/familynew.png" alt="familybanner" class="banner">  
+  <ul class="menu">
+          <li class="menu-item active" href="#" onclick="loadPage('home.html',this)">Home</li>
+          <li class="menu-item" href="#" onclick="loadPage('familytree.html',this)">Family Tree</li>
+          <li class="menu-item" href="#" onclick="loadPage('events.html',this)">Events</li>
+          <li class="menu-item" href="#" onclick="loadPage('gallery.html',this)">Gallery</li>
+          <li class="menu-item" href="#" onclick="loadPage('contact.html',this)">Contact</li>
+  </ul>
+    <!--<img src="images/familylogo.png" alt="familylogo" class="logo-img">-->
+</div>
 <body>  
   <main>  
     <div id="content"></div>     
