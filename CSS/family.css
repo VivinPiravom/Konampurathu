@@ -16,7 +16,7 @@
   body
   {
     margin:0;
-    background:linear-gradient(135deg,#f8f4ec,#eee4d2);
+    background:linear-gradient(135deg,#f8f4ec,#e4dfd7);
     color:var(--ink);
     font-family:"Noto Sans Malayalam","Nirmala UI","Malayalam Sangam MN",system-ui,sans-serif
   }
@@ -24,8 +24,8 @@
   {
     padding:10px 18px 15px;
     text-align:center;
-    background:#4c2e1c;
-    color:#fff8ed;
+    background:linear-gradient(200deg,#fffdf8,#d4b898b7);
+    color:#4d4a45ab;
     box-shadow:0 3px 18px #0002
   }
   h1
@@ -50,7 +50,7 @@
     flex-wrap:wrap;
     justify-content:center;
     padding:10px;
-    background:#fffaf0ee;
+    background:linear-gradient(200deg,#d4b898b7, #fffaf0ee);
     backdrop-filter:blur(8px);
     border-bottom:1px solid var(--line)
   }
@@ -64,7 +64,7 @@
     background:var(--accent);
     color:white;
     border-radius:8px;
-    padding:4px 10px;
+    padding:4px 8px;
     cursor:pointer
   }
   button.secondary
@@ -112,7 +112,15 @@
     border:1px solid var(--line);
     border-radius:16px;
     padding:16px;
-    box-shadow:0 7px 20px #5b402012
+    box-shadow:0 7px 20px #5b402012;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.6s ease;
+  }
+  .card.show 
+  {
+    opacity: 1;
+    transform: translateY(0);
   }
   .card h3
   {
@@ -283,8 +291,6 @@
     width: 700px;
     object-fit:fill; 
     flex:1;
-    margin-left: 30%;
-      
   }   
   .headerhome 
  {
@@ -293,8 +299,8 @@
     border:2px solid #cbb99d;
     align-items:stretch;
     border-style :groove; 
-    /*background-image: url(OIGP.jpg);
-    background-image:radial-gradient();*/
+    /*background-image: url(familynew.png);*/
+    background-image:radial-gradient();
     box-shadow:0 3px 15px #0002;
     height: 205px;
   }
@@ -325,10 +331,6 @@
       background:white
     } 
     header
-    {
-      box-shadow:none
-    }
-     .headerhome
     {
       box-shadow:none
     }
