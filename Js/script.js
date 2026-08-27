@@ -3,33 +3,24 @@ function expandAll(){ allDetails().forEach(d=>d.open=true); }
 function collapseAll(){ allDetails().forEach(d=>d.open=false); }
 function loadPage(page, menuItem)
  {
-  document.querySelectorAll('.menu-item').forEach(item => {
-    item.classList.remove('active');
- });
-
+  document.querySelectorAll('.menu-item').forEach(item => {item.classList.remove('active');});
   menuItem.classList.add('active');
-  
   fetch(page)
        .then(response => 
           {
-         if (!response.ok) 
+         if (!response.ok)
           {
              throw new Error("Page not found");
            }
              return response.text();
           })
-        .then(data => {
-              document.getElementById("content").innerHTML = data;
-          })
-            .catch(error => {
-                document.getElementById("content").innerHTML =
-                     "<p>Unable to load this page.</p>";
-          });
-}
-document.addEventListener("DOMContentLoaded", () => {
-  loadPage("home.html");
+        .then(data => {document.getElementById("content").innerHTML = data;})
+            .catch(error => {document.getElementById("content").innerHTML ="<p>Unable to load this page.</p>";});
+ }
 
-});
+document.addEventListener("DOMContentLoaded", () => {
+  const firstMenuItem = document.querySelector('.menu-item');
+  loadPage("home.html",firstMenuItem);});
 
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
@@ -39,9 +30,7 @@ const observer = new IntersectionObserver((entries) => {
   });
 });
 
-document.querySelectorAll(".card").forEach(card => {
-  observer.observe(card);
-});
+document.querySelectorAll(".card").forEach(card => {observer.observe(card);});
 
 const search = document.getElementById("search");
 search.addEventListener("input", () => {
