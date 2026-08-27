@@ -31,6 +31,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
 });
 
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("show");
+    }
+  });
+});
+
+document.querySelectorAll(".card").forEach(card => {
+  observer.observe(card);
+});
+
 const search = document.getElementById("search");
 search.addEventListener("input", () => {
   const q = search.value.trim().toLocaleLowerCase();
