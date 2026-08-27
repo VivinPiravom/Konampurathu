@@ -14,8 +14,10 @@ function loadPage(page, menuItem)
            }
              return response.text();
           })
-        .then(data => {document.getElementById("content").innerHTML = data;})
-            .catch(error => {document.getElementById("content").innerHTML ="<p>Unable to load this page.</p>";});
+        .then(data => {document.getElementById("content").innerHTML = data;
+          document.querySelectorAll("#content .card").forEach(card => {observer.observe(card);});
+        })
+        .catch(error => {document.getElementById("content").innerHTML ="<p>Unable to load this page.</p>";});
  }
 
 document.addEventListener("DOMContentLoaded", () => {
