@@ -332,6 +332,7 @@
     font-size: 14pt;
     font-weight: bold;
     color: var(--ink);
+    flex-wrap: nowrap;
         
   }
   .image-icon
