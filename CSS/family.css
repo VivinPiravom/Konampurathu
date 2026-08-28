@@ -329,10 +329,10 @@
     gap: 30px;
     padding:16px;
     font-family:Georgia, cursive;
-    font-size: 16pt;
+    font-size: 14pt;
     font-weight: bold;
     color: var(--ink);
-    flex-wrap:nowrap
+    flex-wrap:flex
     
   }
   .image-icon
@@ -386,4 +386,3 @@
       box-shadow:none
     }
   }
-
