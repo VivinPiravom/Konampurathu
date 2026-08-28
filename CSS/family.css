@@ -1,4 +1,4 @@
- :root
+  :root
   {
     --bg:#f6f1e7; 
     --card:#fffdf8; 
@@ -83,7 +83,7 @@
   main
   {
     width: auto;
-    max-width:1495px;
+    max-width:1295px;
     margin:28px auto;
     padding:0 16px 60px
   }
@@ -328,7 +328,7 @@
     display:flex; 
     align-items: center;
     gap: 20px;
-    padding:12px;
+    padding:1px;
     font-family:Georgia, cursive;
     font-size: 14pt;
     font-weight: bold;
@@ -378,6 +378,33 @@
     main
     {
       max-width:none
+    }
+    .card
+    {
+      box-shadow:none
+    }
+  }
+  @media (max-width:768px)
+    {
+    .toolbar
+    {
+      display:none
+    } 
+    body
+    {
+      background:white
+    } 
+    header
+    {
+      box-shadow:none
+    }
+    details
+    {
+      break-inside:avoid
+    } 
+    main
+    {
+      width:95%
     }
     .card
     {
