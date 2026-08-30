@@ -15,7 +15,7 @@ function loadPage(page, menuItem)
              return response.text();
           })
         .then(data => {document.getElementById("content").innerHTML = data;
-          document.querySelectorAll("#content .card").forEach(card => {observer.observe(card);});
+          document.querySelectorAll("#content .slide-in").forEach(item => {observer.observe(item);});
         })
         .catch(error => {document.getElementById("content").innerHTML ="<p>Unable to load this page.</p>";});
  }
@@ -33,7 +33,7 @@ const observer = new IntersectionObserver((entries) => {
   });
 });
 
-document.querySelectorAll(".card").forEach(card => {observer.observe(card);});
+document.querySelectorAll(".slide-in").forEach(item=> {observer.observe(item);});
 
 const search = document.getElementById("search");
 search.addEventListener("input", () => {
