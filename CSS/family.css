@@ -1,4 +1,4 @@
-  :root
+ :root
   {
     --bg:#f6f1e7; 
     --card:#fffdf8; 
@@ -13,13 +13,6 @@
   {
     box-sizing:border-box
   }
-  body
-  {
-    margin:0;
-    background:linear-gradient(135deg,#f8f4ec,#e4dfd7);
-    color:var(--ink);
-    font-family:"Noto Sans Malayalam","Nirmala UI","Malayalam Sangam MN",system-ui,sans-serif
-  }
   header
   {
     padding:10px 18px 15px;
@@ -33,6 +26,7 @@
     margin:0;
     font-size:clamp(28px,5vw,48px)
   }
+
   .subtitle
   {
     margin-top:7px;
@@ -80,7 +74,14 @@
     padding:9px 12px;
     background:white
   }
-  main
+  body
+  {
+    margin:0;
+    background:linear-gradient(135deg,#f8f4ec,#e4dfd7);
+    color:var(--ink);
+    font-family:"Noto Sans Malayalam","Nirmala UI","Malayalam Sangam MN",system-ui,sans-serif
+  }
+   main
   {
     width: auto;
     max-width:1295px;
@@ -118,11 +119,7 @@
     transform: translateY(40px);
     transition: all 0.6s ease;
   }
-  .card.show 
-  {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  
   .card h3
   {
     margin:0 0 8px;
@@ -198,8 +195,7 @@
   {
     font-size:17px
   }
-  
-  .children
+ .children
   {
     margin-left:18px;
     border-left:2px solid var(--line);
@@ -232,17 +228,7 @@
   {
     display:none!important
   }
-.nav
-  {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-direction: row;
-    flex-wrap: wrap;
-    height: 20px;
-    line-height: 20px;
-    backdrop-filter: blur(20px);
-  } 
+ 
 .menu 
 {
     list-style: none;
@@ -251,7 +237,6 @@
     gap: 25px; 
     height: 20px;   
 }
-
 .menu-item 
 {
     text-decoration: none;
@@ -278,15 +263,6 @@
     font-weight: bold;
 }
 
-.logo-img {
-  width: auto;
-  height: 140px;
-  max-width: 150px;
-  max-height: 150px;
-  object-fit: contain;
-  display: flex;
-  flex: 1; 
-}
 .banner 
   {
     height: 130px;
@@ -294,18 +270,6 @@
     object-fit:fill; 
     flex:1;
   }   
-  .headerhome 
- {
-    justify-content:space-evenly; 
-    background:linear-gradient(200deg,#fffdf8,#d4b898b7);
-    border:2px solid #cbb99d;
-    align-items:stretch;
-    border-style :groove; 
-    /*background-image: url(familynew.png);*/
-    background-image:radial-gradient();
-    box-shadow:0 3px 15px #0002;
-    height: 205px;
-  }
    
   .sticky-note
   {
@@ -322,7 +286,6 @@
     margin-top: 0;
     color: #2a52d6;
   }
-
   .imagerow
   {
     display:flex; 
@@ -337,8 +300,8 @@
   }
   .image-icon
   {
-    max-width: 100px;
-    flex: 1 1 100px;
+    max-width: 75px;
+    flex: 1 1 90px;
     border-radius: 50%;
     overflow: hidden;
     border: 2px solid #ffffff;
@@ -348,14 +311,74 @@
    .image-icon img
   {
     width: 100%;
-    height: 100%;
+    height: 90%;
     object-fit: cover;
-      
   }
   .image-icon:hover
   {
     transform: scale(1.1);
     transition: 0.3s ease;
+  }
+
+  .gallery
+  {
+    display: grid;
+    grid-template-columns:repeat(auto-fit,minmax(290px,1fr));
+    gap: 15px;
+  }
+  .gallery-item
+  {
+    position: relative;
+  }
+  .gallery-image
+  {
+    position: relative;  
+    width: 275px;
+    height: 275px;
+    aspect-ratio: 1 / 1;  
+    border-radius: 10px;
+    overflow: hidden;
+    border: 2px solid #ffffff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+  .gallery-item:hover .gallery-image
+  {
+    transform: scale(1.1);
+    transition: 0.3s ease;
+  }
+  .gallery-image img
+  {
+    width: 100%;
+    height: 100%;
+    object-fit:fill;
+    background: #eee;
+    display:block
+  }
+  .label
+  {
+    position:absolute;
+    bottom: 10px;
+    left: 10px;
+    background: none;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    text-shadow: 1px 1px 3px black;
+  }
+  .slide-in 
+  {
+    opacity: 0;
+    transform: translateY(60px);
+    transition: opacity 0.8s ease,transform 0.8s ease;
+  }
+  .slide-in.show
+  {   
+    opacity: 1;
+    transform: translateY(0);
   }
   @media print
   {
