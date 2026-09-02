@@ -35,6 +35,12 @@ const observer = new IntersectionObserver((entries) => {
 
 document.querySelectorAll(".slide-in").forEach(item=> {observer.observe(item);});
 
+const maleCount = document.querySelectorAll(".male").length;
+const femaleCount = document.querySelectorAll(".female").length;
+document.getElementById("maleCount").textContent = maleCount;
+document.getElementById("femaleCount").textContent = femaleCount;
+
+
 const search = document.getElementById("search");
 search.addEventListener("input", () => {
   const q = search.value.trim().toLocaleLowerCase();
