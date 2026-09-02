@@ -16,8 +16,8 @@ function loadPage(page, menuItem)
           })
         .then(data => {document.getElementById("content").innerHTML = data;
           document.querySelectorAll("#content .slide-in").forEach(item => {observer.observe(item);});
-          document.getElementById("maleCount").textContent = maleCount;
-          document.getElementById("femaleCount").textContent = femaleCount;
+          document.getElementById("maleCount").textContent = document.querySelectorAll(".male").length;
+          document.getElementById("femaleCount").textContent = document.querySelectorAll(".female").length;
         })
         .catch(error => {document.getElementById("content").innerHTML ="<p>Unable to load this page.</p>";});
  }
