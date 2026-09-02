@@ -1,6 +1,7 @@
 function allDetails(){ return [...document.querySelectorAll("details")]; }
 function expandAll(){ allDetails().forEach(d=>d.open=true); }
 function collapseAll(){ allDetails().forEach(d=>d.open=false); }
+
 function loadPage(page, menuItem)
  {
   document.querySelectorAll('.menu-item').forEach(item => {item.classList.remove('active');});
@@ -16,8 +17,7 @@ function loadPage(page, menuItem)
           })
         .then(data => {document.getElementById("content").innerHTML = data;
           document.querySelectorAll("#content .slide-in").forEach(item => {observer.observe(item);});
-          document.getElementById("maleCount").textContent = document.querySelectorAll(".male").length;
-          document.getElementById("femaleCount").textContent = document.querySelectorAll(".female").length;
+          getpeopleCount();
         })
         .catch(error => {document.getElementById("content").innerHTML ="<p>Unable to load this page.</p>";});
  }
@@ -37,10 +37,13 @@ const observer = new IntersectionObserver((entries) => {
 
 document.querySelectorAll(".slide-in").forEach(item=> {observer.observe(item);});
 
+function getpeopleCount()
+{
 const maleCount = document.querySelectorAll(".male").length;
 const femaleCount = document.querySelectorAll(".female").length;
 document.getElementById("maleCount").textContent = maleCount;
 document.getElementById("femaleCount").textContent = femaleCount;
+}
 
 
 const search = document.getElementById("search");
