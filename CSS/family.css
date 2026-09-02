@@ -22,6 +22,15 @@
     color:#4d4a45ab;
     box-shadow:0 3px 18px #0002
   }
+ .peoplecount
+  {
+    padding:5px 12px 10px;
+    text-align:right;
+    background:linear-gradient(300deg,#d6c4afb7,#fffdf8,);
+    color:rgb(20, 20, 20);
+    box-shadow:0 3px 18px #0002
+  }
+
   h1
   {
     margin:0;
@@ -32,8 +41,9 @@
   {
     margin-top:7px;
     font-family:Georgia,serif;
-    font-size:18px;
-    letter-spacing:1px
+    font-size:20px;
+    letter-spacing:1px;
+    font-weight: bold
   }
   /* Menu Display*/
   .toolbar
