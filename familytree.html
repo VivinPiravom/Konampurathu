@@ -3,431 +3,1207 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>കോനാംപുറം കുടുംബം — Family Tree</title>
+  <title>കോനാംപുറത്ത് കുടുംബം — Family Tree</title>
   <link rel="stylesheet" href="CSS/family.css">
 </head>
 <body>
+  <main>
     <header>
-      <!--<h1>കോനാംപുറം കുടുംബം /  Konampurathu Family</h1>-->
       <div class="subtitle">Family Tree</div>
     </header>
+    <section class="peoplecount">
+        <div>  
+          <h3>👨<span style="background-color: #e2edf8;"> Male : <span id="maleCount">0</span></span>
+          👩<span style="background-color: #f5e6f3;"> Female : <span id="femaleCount">0</span></h3>
+        </div>  
+    </section>
+    
     <div class="toolbar">
       <!--<input id="search" type="search" placeholder="പേര് / കുടുംബം തിരയുക… / Name / Family Search...">-->
       <button onclick="expandAll()">എല്ലാം തുറക്കുക / Expand All</button><br>
       <button class="secondary" onclick="collapseAll()">എല്ലാം ചുരുക്കുക / Collapse All</button><br>
       <button class="secondary" onclick="window.print()">Print / PDF</button>
     </div>
- <main>
 
-  <section class="intro">
-    <h2>മൂലകുടുംബം: മൈലക്കുളം (കക്കാട്) / Ancestral Family : Mylakkulam (Kakkadu)</h2>
-    <p><b>മാത്യു മൈലക്കുളം / Mathew Mylakkulam</b></p>
-    <p class="meta">ഭാര്യ: പേര് ലഭ്യമല്ല (വീട് കക്കാട് ആണ്; കൂടുതൽ വിവരം ലഭ്യമല്ല). / Wife : No details<br>
-    തൊഴിൽ: കൃഷി, വൈദ്യം. /  Occupation : Agriculture , Medicine</p>
-  </section>
+    <section class="intro">
+      <h2>മൂലകുടുംബം: മൈലക്കുളം (കക്കാട്) / Ancestral Family : Mylakkulam (Kakkadu)</h2>
+      <p><b>മാത്യു മൈലക്കുളം / Mathew Mylakkulam</b></p>
+      <p class="meta">ഭാര്യ: പേര് ലഭ്യമല്ല (വീട് കക്കാട് ആണ്; കൂടുതൽ വിവരം ലഭ്യമല്ല). / Wife : No details<br>
+     തൊഴിൽ: കൃഷി, വൈദ്യം. /  Occupation : Agriculture , Medicine</p>
+    </section>
 
-  <section class="grid">
-    <div class="card slide-in">
-      <h3>മാത്യു മൈലക്കുളത്തിന്റെ മക്കൾ / Children's of Mathew Mylakkulam</h3>
-      <div class="meta">
-        <span class="badge">1. ചാക്കോ — കോനാംപുറം കുടുംബം, പിറവം / Chacko — Konampuram family, Piravom</span><br>
-        <span class="badge">2. പേര് അറിയില്ല — തണങ്ങാട്ട് കുടുംബം, മുളന്തുരുത്തി / Name unknown — Thanangattu family, Mulanturuthi</span><br>
-        <span class="badge">3. മങ്ക — വേളാമറ്റത്തിൽ (ചെമ്മനം കുടുംബം), കുന്നപ്പിള്ളി, പെരുവ / Manka — Velamattam (Chemmanam family), Kunnappilli, Peruva</span><br>
-        <span class="badge">4. തൊമ്മൻ — കിഴക്കേക്കര കുടുംബം, കുന്നപ്പിള്ളി, പെരുവ / Thomman — Kizhakekkara family, Kunnappilly, Peruva</span><br>
-        <span class="badge">5. പത്രോസ് — കൂടുതൽ വിവരങ്ങൾ ലഭ്യമല്ല / Pathros — No further information available</span>
-      </div><br>
-    </div>
-    <!--
-    <div class="card">
-      <h3>ചാക്കോ അപ്പന്റെ സഹോദരങ്ങൾ</h3>
-      <div class="meta">
-        <span class="badge">സഹോദരൻ: പേര് ലഭ്യമല്ല — തണങ്ങാട്ട് കുടുംബം, മുളന്തുരുത്തി (ദത്ത്)</span>
-        <span class="badge">സഹോദരി: മങ്കാ — വേളാമറ്റത്തിൽ, (ചെമ്മനം കുടുംബം), കുന്നപ്പിള്ളി</span>
-        <span class="badge">സഹോദരൻ: തൊമ്മൻ — കിഴക്കേക്കര കുടുംബം, കുന്നപ്പള്ളി (ദത്ത്)</span>
-        <span class="badge">സഹോദരൻ: പത്രോസ് — കൂടുതൽ വിവരങ്ങൾ ലഭ്യമല്ല</span>
+    <section class="grid">
+      <div class="card slide-in">
+        <h3>മാത്യു മൈലക്കുളത്തിന്റെ മക്കൾ / Children's of Mathew Mylakkulam</h3>
+        <div class="meta">
+          <span class="badge">1. ചാക്കോ — കോനാംപുറത്ത് കുടുംബം, പിറവം / Chacko — Konampurathu family, Piravom</span><br>
+          <span class="badge">2. പേര് അറിയില്ല — തണങ്ങാട്ട് കുടുംബം, മുളന്തുരുത്തി / Name unknown — Thanangattu family, Mulanturuthi</span><br>
+          <span class="badge">3. മങ്ക — വേളാമറ്റത്തിൽ (ചെമ്മനം കുടുംബം), കുന്നപ്പിള്ളി, പെരുവ / Manka — Velamattam (Chemmanam family), Kunnappilli, Peruva</span><br>
+          <span class="badge">4. തൊമ്മൻ — കിഴക്കേക്കര കുടുംബം, കുന്നപ്പിള്ളി, പെരുവ / Thomman — Kizhakekkara family, Kunnappilly, Peruva</span><br>
+          <span class="badge">5. പത്രോസ് — കൂടുതൽ വിവരങ്ങൾ ലഭ്യമല്ല / Pathros — No further information available</span>
+        </div><br>
       </div>
-    </div>
-   --> 
-  </section>
-
-  <section class="tree" id="tree">
-
-    <details open>
-      <summary>ചാക്കോ — കോനാംപുറം കുടുംബം, പിറവം /  Chacko — Konampuram family, Piravom</summary>
-      <div class="person">
-        <strong>ചാക്കോ /  Chacko  (Late)</strong>
-        <div class="note">ഭാര്യ: മറിയം കുരുവിള— പൂവത്തുങ്കൽ കുടുംബാംഗം, നാമക്കുഴി./ Wife: Mariyam Kuruvila—Poovathungal family member, Namakkuzhi.<br>തൊഴിൽ: കൃഷി, വൈദ്യം. / Occupation : Agriculture , Medicine</div>
+      <!--
+      <div class="card">
+        <h3>ചാക്കോ അപ്പന്റെ സഹോദരങ്ങൾ</h3>
+        <div class="meta">
+          <span class="badge">സഹോദരൻ: പേര് ലഭ്യമല്ല — തണങ്ങാട്ട് കുടുംബം, മുളന്തുരുത്തി (ദത്ത്)</span>
+          <span class="badge">സഹോദരി: മങ്കാ — വേളാമറ്റത്തിൽ, (ചെമ്മനം കുടുംബം), കുന്നപ്പിള്ളി</span>
+          <span class="badge">സഹോദരൻ: തൊമ്മൻ — കിഴക്കേക്കര കുടുംബം, കുന്നപ്പള്ളി (ദത്ത്)</span>
+          <span class="badge">സഹോദരൻ: പത്രോസ് — കൂടുതൽ വിവരങ്ങൾ ലഭ്യമല്ല</span>
+        </div>
       </div>
-      <div class="children">
-        <details open>
-          <summary class ="male">മകൻ : തൊമ്മൻ ചാക്കോ / Son: Thommen Chacko</summary>
-          <div class="person">
-            <strong>തൊമ്മൻ ചാക്കോ / Thommen Chacko (Late)</strong>
-            <div class="note">ഭാര്യ: അന്നമ്മ — വെള്ളുക്കാട്ടിൽ കുടുംബാംഗം, പിറവം. (Late) / Wife: Annamma — Vellukkatil, Piravom.(Late)<br>തൊഴിൽ: മലഞ്ചരക്ക് വ്യാപാരം. / Occupation: Business</div>
+    --> 
+    </section>
+
+    <section class="tree" id="tree">
+      <details open>
+        <summary class="male">ചാക്കോ , കോനാംപുറത്ത് കുടുംബം, പിറവം /  Chacko , Konampurathu family, Piravom (Late)</summary>
+        <div class="person">
+          <strong>ചാക്കോ / Chacko  (Late)</strong>
+          <div class="note">
+            തൊഴിൽ: കൃഷി, വൈദ്യം. / Occupation : Agriculture , Medicine<br>
+            <div class="female"><b>ഭാര്യ : മറിയം കുരുവിള, പൂവത്തുങ്കൽ കുടുംബാംഗം, നാമക്കുഴി./ Wife: Mariyam Kuruvila,Poovathungal family, Namakkuzhi.<b></div>
           </div>
-
-          <div class="children">
-            <details>
-              <summary class ="female">മകൾ : മറിയകുട്ടി / Daughter: Mariyakutty</summary>
-              <div class="person">
-                <strong>മറിയകുട്ടി / Mariyakutty (Late)</strong>
-                <div class="note">ഭർത്താവ്: എബ്രഹാം — തേക്കനാട്ട് കുടുംബാംഗം, പെരുവ. (കർണാടക) (Late). / Husband: Abraham — member of the Thekanatt family, Peruva. (Karnataka).(Late)<br>തൊഴിൽ: കൃഷി. / Occupation : Agriculture</div>
+        </div>  
+        <div class="children">
+          <details open>
+            <summary class ="male slide-in">മകൻ : തൊമ്മൻ ചാക്കോ / Son: Thommen Chacko</summary>
+            <div class="person slide-in">
+              <strong>തൊമ്മൻ ചാക്കോ / Thommen Chacko (Late)</strong>
+              <div class="note">
+                തൊഴിൽ: മലഞ്ചരക്ക് വ്യാപാരം. / Occupation: Business<br>
+                <div class="female"><b>ഭാര്യ : അന്നമ്മ, വെള്ളുക്കാട്ടിൽ കുടുംബാംഗം, പിറവം. (Late) / Wife: Annamma, Vellukkatil, Piravom.(Late)</b></div>
               </div>
-              <div class="children">
-                <details>
-                  <summary class="male">മകൻ: പൗലോസ് / Son : Paulose</summary>
-                  <div class="person">
-                    <strong>പൗലോസ് / Paulose (Late)</strong>
-                    <div class="note"> </div>
+            </div>
+            <div class="children">
+              <details>
+                <summary class ="female slide-in">മകൾ : മറിയകുട്ടി / Daughter: Mariyakutty</summary>
+                <div class="person slide-in">
+                  <strong>മറിയകുട്ടി / Mariyakutty (Late)</strong>
+                  <div class="note">
+                    തൊഴിൽ: കൃഷി. / Occupation : Agriculture<br>
+                    <div class="male"><b>ഭർത്താവ്: എബ്രഹാം — തേക്കനാട്ട് കുടുംബാംഗം, പെരുവ. (കർണാടക) (Late). / Husband: Abraham, Thekanattu, Peruva. (Karnataka).(Late)</b></div>
+                  </div>
+                </div>
+                <div class="children">
+                  <details>
+                    <summary class="male slide-in">മകൻ: പൗലോസ് / Son : Paulose</summary>
+                    <div class="person slide-in">
+                      <strong>പൗലോസ് / Paulose (Late)</strong>
+                      <div class="note">
+                        തൊഴിൽ: കൃഷി. / Occupation : Agriculture<br>
+                        <div class="female"><b>ഭാര്യ : ചിന്നമ്മ, കാരമല കുടുംബം, ശീരാടി,(കർണാടക). / Wife: Chinnamma, Karamala Family, Shirady (Karnataka)</b></div>
+                      </div>
+                    </div>  
                     <div class="children">
                       <details>
-                        <summary class="male">മകൻ : XXX / Son : XXX</summary>
-                        <div class="person">
-                          <strong>XXX</strong>
-                          <div class="note"> </div>
-                        </div>
-                      </details>
-                      <details>
-                        <summary class = "male">മകൻ : XXX / Son : XXX</summary>
-                        <div class="person">
-                          <strong>XXX</strong>
-                          <div class="note"> </div>
-                        </div>
-                      </details>
-                    </div>
-                  </div>  
-                </details>
-                <details>
-                  <summary class = "female">മകൾ : തങ്കമ്മ / Daughter : Thankamma (Late)</summary>
-                  <div class="person">
-                    <strong>തങ്കമ്മ / Thankamma</strong>
-                    <div class="note"> </div>
-                     <div class="children">
-                      <details>
-                        <summary class ="male">മകൻ : XXX / Son : XXX</summary>
-                        <div class="person">
-                          <strong>XXX</strong>
-                          <div class="note"> </div>
-                        </div>
-                      </details>
-                      <details>
-                        <summary class ="male">മകൻ : XXX / Son : XXX</summary>
-                        <div class="person">
-                          <strong>XXX</strong>
-                          <div class="note"> </div>
-                        </div>
-                      </details>
-                      <details>
-                        <summary class="female">മകൾ : XXX / Daughter : XXX</summary>
-                        <div class="person">
-                          <strong>XXX</strong>
-                          <div class="note"> </div>
-                        </div>
-                      </details>
-                    </div>
-                  </div>  
-                </details>
-                <details>
-                  <summary class="female">മകൾ : അമ്മണി / Daughter : Ammini</summary>
-                  <div class="person">
-                    <strong>അമ്മണി / Ammini</strong>
-                    <div class="note"> </div>
-                  </div>  
-                </details>
-                <details>
-                  <summary class="male">മകൻ : മാമച്ചൻ / Son : Mamechan</summary>
-                  <div class="person">
-                    <strong>മാമച്ചൻ / Mamechan</strong>
-                    <div class="note"> </div>
-                    <div class="children">
-                      <details>
-                        <summary class ="male">Son : Manoj</summary>
-                        <div class="person">
-                          <strong>Manoj</strong>
-                          <div class="note"> </div>
-                        </div>
-                      </details>
-                      <details>
-                        <summary class="male">Son : Vinod</summary>
-                        <div class="person">
-                          <strong>Vinod</strong>
-                          <div class="note"> </div>
-                        </div>
-                      </details>
-                      <details>
-                        <summary class="male">Son : Promod</summary>
-                        <div class="person">
-                          <strong>Promod</strong>
-                          <div class="note"> </div>
-                        </div>
-                      </details>
-                    </div>
-                  </div>  
-                </details>
-                <details>
-                  <summary class="female">മകൾ : മേരി / Daughter : Mary</summary>
-                  <div class="person">
-                    <strong>മേരി</strong>
-                    <div class="note"> </div>
-                  </div>  
-                </details>
-                <details>
-                  <summary class="male">മകൻ : സാജു / Son : Saju</summary>
-                  <div class="person">
-                    <strong>സാജു</strong>
-                    <div class="note"> </div>
-                  </div>  
-                </details>
-              </div>
-            </details>
-
-            <details>
-              <summary class="female">മകൾ : അന്നക്കുട്ടി / Daughter : Annakutty </summary>
-              <div class="person">
-                <strong>അന്നക്കുട്ടി</strong>
-                <div class="note">ഭർത്താവ്: ഉലഹന്നാൻ എം. യു (കുഞ്ഞപ്പൻ) (Late),മണപ്പാട്ട് കുടുംബാംഗം, കക്കാട്./ Husband : Ulahannan M U (Kunjappan)(Late), Manappattu, Kakkad<br>തൊഴിൽ: കൃഷി. / Occupation : Agriculture</div>
-              </div>
-              <div class="children">
-                <details>
-                  <summary class="male">മകൻ : ജോണി / Son : Johny</summary>
-                  <div class="person">
-                    <strong>ജോണി  / Johny</strong>
-                    <div class="note"> </div>
-                    <div class="children">
-                      <details>
-                        <summary class="female">മകൾ : XXX / Daughter : XXX</summary>
-                        <div class="person">
-                          <strong>XXX</strong>
-                          <div class="note"> </div>
-                        </div>
-                      </details>
-                      <details>
-                        <summary class = "female">മകൾ : XXX / Daughter : XXX</summary>
-                        <div class="person">
-                          <strong>XXX</strong>
-                          <div class="note"> </div>
-                        </div>
-                      </details>
-                    </div>
-                  </div>  
-                </details>
-
-                <details>
-                  <summary class="male">മകൻ : തോമസ് / Son : Thomas</summary>
-                  <div class="person">
-                    <strong>തോമസ്  / Thomas</strong>
-                    <div class="note"> </div>
-                    <div class="children">
-                      <details>
-                        <summary class="female">മകൾ : XXX / Daughter : XXX</summary>
-                        <div class="person">
-                          <strong>XXX</strong>
-                          <div class="note"> </div>
-                        </div>
-                      </details>
-                      <details>
-                        <summary class = "female">മകൾ : XXX / Daughter : XXX</summary>
-                        <div class="person">
-                          <strong>XXX</strong>
-                          <div class="note"> </div>
-                        </div>
-                      </details>
-                      <details>
-                        <summary class = "male">മകൻ : XXX / Son : XXX</summary>
-                        <div class="person">
-                          <strong>XXX</strong>
-                          <div class="note"> </div>
-                        </div>
-                      </details>
-                    </div>
-                  </div>  
-                </details>
-
-                <details>
-                  <summary class="female">മകൾ : തങ്കമ്മ / Daughter : Thankamma</summary>
-                  <div class="person">
-                    <strong>തങ്കമ്മ / Thankamma</strong>
-                    <div class="note"> </div>
-                    <div class="children">
-                      <details>
-                        <summary class="female">മകൾ : XXX / Daughter : XXX</summary>
-                        <div class="person">
-                          <strong>XXX</strong>
-                          <div class="note"> </div>
-                        </div>
-                      </details>
-                      <details>
-                        <summary class = "male">മകൻ : XXX / Son : XXX</summary>
-                        <div class="person">
-                          <strong>XXX</strong>
-                          <div class="note"> </div>
-                        </div>
-                      </details>
-                      <details>
-                        <summary class = "female">മകൾ : XXX / Daughter : XXX</summary>
-                        <div class="person">
-                          <strong>XXX</strong>
-                          <div class="note"> </div>
-                        </div>
-                      </details>
-                    </div>
-                  </div>  
-                </details>
-
-                 <details>
-                  <summary class="female">മകൾ : ചിന്നമ്മ / Daughter : Chinnamma</summary>
-                  <div class="person">
-                    <strong>ചിന്നമ്മ  / Chinnamma</strong>
-                    <div class="note"> </div>
-                    <div class="children">
-                      <details>
-                        <summary class = "male">മകൻ : XXX / Son : XXX</summary>
-                          <div class="person">
-                            <strong>XXX</strong>
-                            <div class="note"> </div>
+                        <summary class="male slide-in">മകൻ : ജോയി / Son : Joy</summary>
+                        <div class="person slide-in">
+                          <strong>ജോയി / Joy</strong>
+                          <div class="note">
+                            തൊഴിൽ: കൃഷി. / Occupation : Agriculture<br>
+                            <div class="female"><b>ഭാര്യ :  വത്സ ജോയി, കുറുപ്പംപടി. / Wife: Valsa Joy Kuruppam padi (Kerala)</b></div>
                           </div>
-                      </details>
+                        </div>  
+                        <div class="children">
+                          <details>
+                            <summary class="female slide-in">മകൾ : ജിസ്വാ / Daughter : Jiswa</summary>
+                            <div class="person slide-in">
+                              <strong> ജിസ്വാ ജോയി/  Jiswa Joy</strong>
+                              <div class="note">
+                                തൊഴിൽ: വസ്ത്രവ്യാപാരം / Occupation : Business<br>
+                                <div class="male"><b>ഭർത്താവ്: ബേസിൽ പി. ജോയി, നെല്ലിമറ്റം, തൊഴിൽ: വെബ് ഡിസൈനർ, ദുബായ്./ Husband: Basil P Joy , Nellimattom, Occupation : Web Designer, Dubai</b></div>
+                              </div>
+                            </div>  
+                            <div class="children">
+                              <details>
+                                <summary class="male slide-in">മകൻ : റേവൻ സെറാ ബേസിൽ / Son : Revan Sera Basil</summary>
+                                <div class="person slide-in">
+                                  <strong> റേവൻ സെറാ ബേസിൽ / Revan Sera Basil</strong>
+                                  <div class="note">
+                                    വിദ്യാർത്ഥി / Student<br>
+                                  </div>
+                                </div>
+                              </details>  
+                              <details>
+                                <summary class="female slide-in">മകൾ : ബെല്ല എസ്ലി ബേസിൽ / Daughter : Bella Esli Basil</summary>
+                                <div class="person slide-in">
+                                  <strong> ബെല്ല എസ്ലി ബേസിൽ / Bella Esli Basil</strong>
+                                  <div class="note">
+                                  </div>
+                                </div>
+                              </details>
+                            </div>
+                          </details>
+                          <details>
+                            <summary class="female slide-in">മകൾ : വിജിജ / Daughter : Vijija</summary>
+                            <div class="person slide-in">
+                              <strong> വിജിജ ജോയി/  Vijija Joy</strong>
+                              <div class="note">
+                                തൊഴിൽ:  HR - ദുബായ് / Occupation : HR Dubai<br>                                  
+                              </div>
+                            </div>
+                          </details>
+                        </div>
+                      </details>   
                       <details>
-                        <summary class = "male">മകൻ : XXX / Son : XXX</summary>
-                          <div class="person">
-                            <strong>XXX</strong>
-                            <div class="note"> </div>
+                        <summary class="male slide-in">മകൻ : ലെനിൻ / Son : Lenin</summary>
+                        <div class="person slide-in">
+                          <strong>ലെനിൻ / Son : Lenin (Late)</strong>
+                          <div class="note">
+                            തൊഴിൽ: മുൻ സൈനികൻ, / Occupation : Retd Govt Servant<br>
+                            <div class="female"><b>ഭാര്യ : ജിനി ലെനിൻ , അടപ്പാട്ട് ഹൗസ്, എൻ.ആർ. പുര, തൊഴിൽ: ഓഡിറ്റർ - IOC ഫ്യൂവൽ സ്റ്റേഷൻ./ Wife: Jini Lenin Adappatu House, N R Pura, Occupation : Auditor - IOC Fuel Station</b></div>
                           </div>
-                      </details>
-                    </div>
-                  </div>  
-                </details>
-              </div>
-            </details>
-
-            <details>
-              <summary class="male">മകൻ : ചാക്കോ / Son : Chacko </summary>
-              <div class="person">
-                <strong>ചാക്കോ (കുഞ്ഞപ്പൻ) (Late)(കർണാടക) / Chacko (Kunjappan) (Late) (Karnataka)</strong>
-                <div class="note">ഭാര്യ: പെണ്ണമ്മ (Late) , മുത്തുപതിക്കൽ കുടുംബാംഗം, ഇടയാർ. / Wife: Pennamma(Late) , Muthupathikkal Family, Edayar.<br>തൊഴിൽ: മലഞ്ചരക്ക് വ്യാപാരം. / Occupation : Business</div>
-              </div>
-              <div class="children">
-                <details>
-                  <summary class="male">മകൻ : സാജു / Son : Saju</summary>
-                  <div class="person">
-                    <strong>സാജു / Saju</strong>
-                    <div class="note"> </div>
-                    <div class="children">
-                      <details>
-                        <summary class="female">മകൾ : XXX / Daughter : XXX</summary>
-                        <div class="person">
-                          <strong>XXX</strong>
-                          <div class="note"> </div>
-                        </div>
-                      </details>
-                      <details>
-                        <summary class = "male">മകൻ : XXX / Son : XXX</summary>
-                        <div class="person">
-                          <strong>XXX</strong>
-                          <div class="note"> </div>
+                        </div>    
+                        <div class="children">
+                          <details>
+                            <summary class="female slide-in">മകൾ : ശ്രദ്ധ / Daughter : Shrudha</summary>
+                            <div class="person slide-in">
+                              <strong> ശ്രദ്ധ / Shrudha</strong>
+                              <div class="note">
+                                തൊഴിൽ: അധ്യാപിക / Occupation : Teacher<br>
+                                <div class="male"><b>ഭർത്താവ്: ശ്രേയസ് ഷാജി, കാനഡ / Husband: Shreyas Shaji , Canada</b></div>
+                              </div>
+                            </div>  
+                          </details>
+                          <details>
+                            <summary class="male slide-in">മകൻ : ശ്രാവിൻ ലെനിൻ / Son : Sravil lenin</summary>
+                            <div class="person slide-in">
+                              <strong> ശ്രാവിൻ ലെനിൻ / Sravil lenin</strong>
+                              <div class="note">
+                                വിദ്യാർത്ഥി / Student<br>                                  
+                              </div>
+                            </div>
+                          </details>
                         </div>
                       </details>
                     </div>
-                  </div>  
-                </details>
+                  </details>
 
-                <details>
-                  <summary class="female">മകൾ : മോളി / Daughter : Molly</summary>
-                  <div class="person">
-                    <strong>മോളി / : Molly</strong>
-                    <div class="note"> </div>
+                  <details>
+                    <summary class = "female slide-in">മകൾ : തങ്കമ്മ / Daughter : Thankamma</summary>
+                    <div class="person slide-in">
+                      <strong>തങ്കമ്മ / Thankamma (Late)</strong>
+                      <div class="note"> 
+                        തൊഴിൽ: കൃഷി. / Occupation : Agriculture<br>
+                        <div class="male"><b>ഭർത്താവ് :  മാത്യു, ഓക്കമറ്റം കുടുംബം, ശീരാടി,(കർണാടക) / Husband: Mathew, Okkamattom Family, Shiradi (Karnataka)</b></div>
+                      </div>
+                    </div>  
                     <div class="children">
                       <details>
-                        <summary class="male">മകൻ : XXX / Son : XXX</summary>
-                        <div class="person">
-                          <strong>XXX</strong>
-                          <div class="note"> </div>
-                        </div>
-                      </details>
-                      <details>
-                        <summary class = "female">മകൾ : XXX / Daughter : XXX</summary>
-                        <div class="person">
-                          <strong>XXX</strong>
-                          <div class="note"> </div>
-                        </div>
-                      </details>
-                    </div>
-                  </div>  
-                </details>
-
-                <details>
-                  <summary class="male">മകൻ : ഷിബു / Son : Shibu</summary>
-                  <div class="person">
-                    <strong>ഷിബു / Shibu</strong>
-                    <div class="note"> </div>
-                    <div class="children">
-                      <details>
-                        <summary class = "male">മകൻ : XXX / Son : XXX</summary>
-                        <div class="person">
-                          <strong>XXX</strong>
-                          <div class="note"> </div>
-                        </div>
-                      </details>
-                      <details>
-                        <summary class = "female">മകൾ : XXX / Daughter : XXX</summary>
-                        <div class="person">
-                          <strong>XXX</strong>
-                          <div class="note"> </div>
-                        </div>
-                      </details>
-                    </div>
-                  </div>  
-                </details>
-
-                 <details>
-                  <summary class="female">മകൾ : ജോളി / Daughter : Jolly</summary>
-                  <div class="person">
-                    <strong>ജോളി / Jolly</strong>
-                    <div class="note"> </div>
-                    <div class="children">
-                      <details>
-                        <summary class = "male">മകൻ : XXX / Son : XXX</summary>
-                          <div class="person">
-                            <strong>XXX</strong>
-                            <div class="note"> </div>
+                        <summary class ="male">മകൻ : സാം മാത്യു / Son : Sam Mathew</summary>
+                        <div class="person slide-in">
+                          <strong>സാം മാത്യു / Sam Mathew</strong>
+                          <div class="note">
+                            തൊഴിൽ: എഞ്ചിനീയർ, ഒമാൻ / Occupation : Engineer, Oman
+                            <div class="female"><b>ഭാര്യ :  ആശ സാം, പെരുവ. / Wife: Asha Sam, Peruva</b></div>
                           </div>
+                        </div>
+                        <div class="children">
+                          <details>
+                            <summary class ="female">മകൾ : മിന്നു സാം / Daughter : Minnu Sam</summary>
+                            <div class="person slide-in">
+                              <strong>മിന്നു സാം /  Minnu Sam</strong>
+                              <div class="note">
+                                തൊഴിൽ: Pharm. D, കാനഡ / Occupation : Pharm D., Canada
+                                <div class="male"><b>ഭർത്താവ് :  സച്ചിൻ, കാനഡ. / Husband: Sachin, Canada</b></div>
+                              </div>
+                            </div>
+                          </details>
+                          <details>
+                            <summary class ="female">മകൾ : മന്യ സാം / Daughter : Manya Sam</summary>
+                            <div class="person slide-in">
+                              <strong>മന്യ സാം / Manya Sam</strong>
+                              <div class="note">
+                                തൊഴിൽ: bangalore / Occupation : Bangalore
+                              </div>
+                            </div>
+                          </details>
+                        </div>  
                       </details>
                       <details>
-                        <summary class = "female">മകൾ : XXX / Daughter : XXX</summary>
-                        <div class="person">
-                          <strong>XXX</strong>
-                          <div class="note"> </div>
+                        <summary class ="male">മകൻ : ഷിബു മാത്യു/ Son : Shibu Mathew</summary>
+                        <div class="person slide-in">
+                          <strong>ഷിബു മാത്യു (Late)/ Son : Shibu Mathew (Late)</strong>
+                          <div class="note">
+                            തൊഴിൽ: എഞ്ചിനീയർ / Occupation : Engineer
+                            <div class="female"><b>ഭാര്യ :  മഞ്ജു ഷിബു, മുളന്തുരുത്തി. / Wife: Manju Shibu, Mulathuruthy</b></div>
+                          </div>
                         </div>
+                        <div class="children">
+                          <details>
+                            <summary class ="female">മകൾ : മിൽന ഷിബു / Daughter : Milna Shibu</summary>
+                            <div class="person slide-in">
+                              <strong>മിൽന ഷിബു /  Milna Shibu</strong>
+                              <div class="note">
+                                വിദ്യാർത്ഥിനി, ഓസ്ട്രേലിയ/ Student , Australia
+                              </div>
+                            </div>
+                          </details>
+                        </div>  
+                      </details>
+                      <details>
+                        <summary class ="female">മകൾ : സുനി മാത്യു / Daughter : Suni Mathew</summary>
+                        <div class="person slide-in">
+                          <strong>സുനി മാത്യു / Suni Mathew</strong>
+                          <div class="note">
+                            തൊഴിൽ:  കൃഷി / Occupation : Agriculture
+                            <div class="male"><b>ഭർത്താവ്: തങ്കച്ചൻ (Late), തൃശൂർ.│തൊഴിൽ: കൃഷി / ബിസിനസ്./ Husband: Thankachan (Late), Thrissur, Occupation : Agriculture / Business</b></div>
+                          </div>
+                        </div>
+                        <div class="children">
+                          <details>
+                            <summary class ="female">മകൾ : നിമിത തങ്കച്ചൻ / Daughter : Nimitha Thankachan</summary>
+                            <div class="person slide-in">
+                              <strong>നിമിത തങ്കച്ചൻ /  Nimitha Thankachan</strong>
+                              <div class="note">
+                                തൊഴിൽ:  ലാബ് ടെക്നീഷ്യൻ / Occupation : Lab Technician
+                              </div>
+                            </div>
+                          </details>
+                          <details>
+                            <summary class ="female">മകൾ : നിഖിത തങ്കച്ചൻ / Daughter : Nikitha Thankachan</summary>
+                            <div class="person slide-in">
+                              <strong>നിഖിത തങ്കച്ചൻ / Nikitha Thankachan</strong>
+                              <div class="note">
+                                തൊഴിൽ:  MSW / Occupation : MSW
+                              </div>
+                            </div>
+                          </details>
+                          <details>
+                            <summary class ="female">മകൾ : നിമിഷ തങ്കച്ചൻ/ Daughter : Nimisha Thankachan</summary>
+                            <div class="person slide-in">
+                              <strong>നിമിഷ തങ്കച്ചൻ/ Nimisha Thankachan</strong>
+                              <div class="note">
+                                തൊഴിൽ:  നേഴ്സിംഗ് വിദ്യാർത്ഥിനി, ജർമ്മനി / Occupation : Nursing Student, Germany
+                              </div>
+                            </div>
+                          </details>
+                        </div>  
                       </details>
                     </div>
-                  </div>  
-                </details>
+                  </details>
+
+                  <details>
+                    <summary class="female slide-in">മകൾ : അമ്മണി / Daughter : Ammini</summary>
+                    <div class="person slide-in">
+                      <strong>അമ്മണി / Ammini</strong>
+                      <div class="note">
+                        │തൊഴിൽ: കൃഷി. / Occupation: Agriculture <br>
+                        <div class="male"><b>ഭർത്താവ്: അബ്രഹാം (Late),കുന്നത്ത് കുടുംബം /  Husband: Abraham (Late), Kunnathu Family</b></div>
+                      </div>
+                    </div> 
+                    <div class="children">
+                      <details>
+                        <summary class ="male">മകൻ : രാജേഷ് കെ. എ / Son : Rajesh K A</summary>
+                        <div class="person slide-in">
+                          <strong>രാജേഷ് കെ. എ /  Rajesh K A</strong>
+                          <div class="note">
+                            തൊഴിൽ: കൃഷി / Occupation : Agriculture
+                            <div class="female"><b>ഭാര്യ :  അനു രാജേഷ്, കോഴിച്ചാൽ / Wife: Anu Rajesh, Kozhichal</b></div>
+                          </div>
+                        </div>
+                        <div class="children">
+                          <details>
+                            <summary class ="male">മകൻ : പ്രജ്വൽ രാജേഷ് / Son : Prijual Rajesh</summary>
+                            <div class="person slide-in">
+                              <strong>പ്രജ്വൽ രാജേഷ് /  Prijual Rajesh</strong>
+                              <div class="note">
+                                തൊഴിൽ: എഞ്ചിനീയർ, ബാംഗ്ലൂർ / Occupation : Engineer Bangalore
+                              </div>
+                            </div>
+                          </details>
+                          <details>
+                            <summary class ="female">മകൾ :  പ്രതീക്ഷ രാജേഷ്  / Daughter : Pratheeksha Rajesh</summary>
+                            <div class="person slide-in">
+                              <strong>പ്രതീക്ഷ രാജേഷ്  /  Pratheeksha Rajesh</strong>
+                              <div class="note">
+                                തൊഴിൽ: വിദ്യാർത്ഥിനി/ Occupation : Student
+                              </div>
+                            </div>
+                          </details>
+                        </div>  
+                      </details>
+                      <details>
+                        <summary class ="male">മകൻ : അശോക് കെ. എ/ Son : Ashok K A</summary>
+                        <div class="person slide-in">
+                          <strong>അശോക് കെ. എ/  Ashok K A</strong>
+                          <div class="note">
+                            തൊഴിൽ: എഞ്ചിനീയർ, ഒമാൻ / Occupation : Engineer, Oman
+                            <div class="female"><b>ഭാര്യ :  ഷൈലറ്റ് അശോക്, മംഗലാപുരം, തൊഴിൽ:ലക്ചറർ / Wife:Shilet Ashok,Mangalore. Occcupation : Lecturer</b></div>
+                          </div>
+                        </div>
+                        <div class="children">
+                          <details>
+                            <summary class ="male">മകൻ : ആരൂൺ അശോക്  / Son : Arun Ashok</summary>
+                            <div class="person slide-in">
+                              <strong>ആരൂൺ അശോക് / Arun Ashok</strong>
+                              <div class="note">
+                                വിദ്യാർത്ഥി / Student  
+                              </div>
+                            </div>
+                          </details>
+                          <details>
+                            <summary class ="male">മകൻ : ആറിക് അശോക്  / Son : Arik Ashok</summary>
+                            <div class="person slide-in">
+                              <strong>ആറിക് അശോക്  / Arik Ashok</strong>
+                              <div class="note">
+                                വിദ്യാർത്ഥി / Student  
+                              </div>
+                            </div>
+                          </details>
+                        </div>  
+                      </details>
+                      <details>
+                        <summary class ="male">മകൻ : പ്രകാശ് കെ. എ/ Son : Prakash K A</summary>
+                        <div class="person slide-in">
+                          <strong>പ്രകാശ് കെ. എ/  Prakash K A</strong>
+                          <div class="note">
+                            തൊഴിൽ: കൃഷി/ Occupation : Agriculture
+                            <div class="female"><b>ഭാര്യ :  സൗമ്യാ, ബൈന്ദൂർ/ Wife:Saumya Bindoor</b></div>
+                          </div>
+                        </div>
+                        <div class="children">
+                          <details>
+                            <summary class ="female">മകൾ : അനന്യ പ്രകാശ് / Daughter : Ananya Prakash</summary>
+                            <div class="person slide-in">
+                              <strong>അനന്യ പ്രകാശ് / Ananya Prakash</strong>
+                              <div class="note">
+                                വിദ്യാർത്ഥിനി / Student  
+                              </div>
+                            </div>
+                          </details>
+                          <details>
+                            <summary class ="male">മകൻ : ബേസിൽ പ്രകാശ്  / Son : Basil Prakash</summary>
+                            <div class="person slide-in">
+                              <strong>ബേസിൽ പ്രകാശ്  / Basil Prakash</strong>
+                              <div class="note">
+                                വിദ്യാർത്ഥി / Student  
+                              </div>
+                            </div>
+                          </details>
+                        </div>  
+                      </details>
+                    </div> 
+                  </details>
                 
-                <details>
-                  <summary class="male">മകൻ : ഏലിയാസ് / Son : Elias</summary>
-                  <div class="person">
-                    <strong>ഏലിയാസ് / Elias</strong>
-                    <div class="note"> </div>
+                  <details>
+                    <summary class="male slide-in">മകൻ : തോമസ് (മാമച്ചൻ) / Son : Thomas (Mamachen)</summary>
+                    <div class="person slide-in">
+                      <strong> തോമസ് (മാമച്ചൻ) / Thomas (Mamachen)</strong>
+                      <div class="note"> 
+                        തൊഴിൽ: കൃഷി / occupation : Agriculture
+                        <div class="female"><b>ഭാര്യ :  ഏലിയാമ്മ, ചേന്നംമ്പിള്ളിൽ കുടുംബം, കർണാടക/ Wife:Eliyamma, Chennampillil Family, Karnataka</b></div>
+                      </div>
+                    </div>  
                     <div class="children">
                       <details>
-                        <summary class = "female">മകൾ : XXX / Daughter : XXX</summary>
-                        <div class="person">
-                          <strong>XXX</strong>
-                          <div class="note"> </div>
+                        <summary class ="male">മകൻ : മനോജ് തോമസ് / Son : Manoj Thomas</summary>
+                        <div class="person slide-in">
+                          <strong>മനോജ് തോമസ് / Manoj Thomas</strong>
+                          <div class="note">
+                            <div class="female"><b>ഭാര്യ :  ടീന, വയനാട്/ Wife: Tina , Wayanad</b></div>
+                          </div>
                         </div>
+                        <div class="children">
+                          <details>
+                            <summary class ="male">മകൻ : മെൽവിൻ മനോജ്  / Son : Melvin Manoj</summary>
+                            <div class="person slide-in">
+                              <strong>മെൽവിൻ മനോജ്  / Melvin Manoj</strong>
+                              <div class="note">
+                               വിദ്യാർത്ഥി / Student 
+                              </div>
+                            </div>
+                          </details>
+                          <details>
+                            <summary class ="male">മകൻ : മിലൻ മനോജ് / Son : Milan Manoj</summary>
+                            <div class="person slide-in">
+                              <strong>മിലൻ മനോജ് / Milan Manoj</strong>
+                              <div class="note">
+                               വിദ്യാർത്ഥി / Student 
+                              </div>
+                            </div>
+                          </details>
+                        </div>  
                       </details>
                       <details>
-                        <summary class = "female">മകൾ : XXX / Daughter : XXX</summary>
-                        <div class="person">
-                          <strong>XXX</strong>
-                          <div class="note"> </div>
+                        <summary class ="male">മകൻ : വിനോദ് തോമസ്,/ Son : Vinod Thomas</summary>
+                        <div class="person slide-in">
+                          <strong>വിനോദ് തോമസ്,/ Vinod Thomas</strong>
+                          <div class="note">
+                            തൊഴിൽ: എഞ്ചിനീയർ, കാനഡ,/ Occupation : Engineer, Canada
+                            <div class="female"><b>ഭാര്യ :  ആൻ മേരി വിനോദ്, പാമ്പാക്കുട, തൊഴിൽ: എഞ്ചിനീയർ, കാനഡ. / Wife:Ann Mary Vinod. Occcupation : Engineer , Canada</b></div>
+                          </div>
+                        </div>
+                        <div class="children">
+                          <details>
+                            <summary class ="male">മകൻ : ഈഡൻ വിനോദ്  / Son : Eden Vinod</summary>
+                            <div class="person slide-in">
+                              <strong>ഈഡൻ വിനോദ്  / Eden Vinod</strong>
+                              <div class="note">
+                                വിദ്യാർത്ഥി / Student  
+                              </div>
+                            </div>
+                          </details>
+                          <details>
+                            <summary class ="male">മകൻ : അരുവാൻ വിനോദ്  / Son : Aruvan Ashok</summary>
+                            <div class="person slide-in">
+                              <strong>അരുവാൻ വിനോദ്  /  Aruvan Ashok</strong>
+                              <div class="note">
+                                വിദ്യാർത്ഥി / Student  
+                              </div>
+                            </div>
+                          </details>
+                          <details>
+                            <summary class ="female">മകൾ : ഇവ വിനോദ്  / Daughter : Eva Vinod</summary>
+                            <div class="person slide-in">
+                              <strong> ഇവ വിനോദ്  / Eva Vinod</strong>
+                              <div class="note">
+                                വിദ്യാർത്ഥി / Student  
+                              </div>
+                            </div>
+                          </details>
+                        </div>  
+                      </details>
+                      <details>
+                        <summary class ="male">മകൻ : പ്രമോദ് തോമസ്/ Son : Pramod Thomas</summary>
+                        <div class="person slide-in">
+                          <strong>പ്രമോദ് തോമസ് /  Pramod Thomas</strong>
+                          <div class="note">
+                            തൊഴിൽ: നേഴ്സ്, ഓസ്ട്രേലിയ/ Occupation : Nurse, Australia 
+                            <div class="female"><b>ഭാര്യ : രമ്യ പ്രമോദ്, അടിമാലി, തൊഴിൽ: നേഴ്സ്, ഓസ്ട്രേലിയ/ Wife:Remya Pramod, Adimali, Occupation : Nurse, Australia </b></div>
+                          </div>
+                        </div>
+                        <div class="children">
+                          <details>
+                            <summary class ="female">മകൾ : ആഞ്ചലീന പ്രമോദ് / Daughter : Anjalina Pramod</summary>
+                            <div class="person slide-in">
+                              <strong>ആഞ്ചലീന പ്രമോദ് / Daughter : Anjalina Pramod</strong>
+                              <div class="note">
+                                വിദ്യാർത്ഥിനി / Student  
+                              </div>
+                            </div>
+                          </details>
+                          <details>
+                            <summary class ="male">മകൻ : ഇവാൻ പ്രമോദ്  / Son : Evan Pramod</summary>
+                            <div class="person slide-in">
+                              <strong>ഇവാൻ പ്രമോദ്  /  Evan Pramod</strong>
+                              <div class="note">
+                                വിദ്യാർത്ഥി / Student  
+                              </div>
+                            </div>
+                          </details>
+                        </div>  
+                      </details>
+                    </div>  
+                  </details>
+
+                  <details>
+                    <summary class="female slide-in">മകൾ : മേരി / Daughter : Mary</summary>
+                      <div class="person slide-in">
+                      <strong> മേരി / Mary</strong>
+                        <div class="note"> 
+                          തൊഴിൽ: കൃഷി / occupation : Agriculture
+                          <div class="male"><b>ഭർത്താവ്: ഈപ്പൻ, (തമ്പി), മേപ്പുറത്ത് കുടുംബം, ഇച്ചിലംപാടി /  Husband:Eapen (Thamby), Meppurathu Family, Ichilampadi Karnataka</b></div>
+                        </div>
+                      </div>  
+                      <div class="children">
+                        <details>
+                          <summary class ="female">മകൾ : മിനി ഈപ്പൻ / Daughter : Mini Eapen</summary>
+                          <div class="person slide-in">
+                            <strong>മിനി ഈപ്പൻ / Mini Eapen</strong>
+                            <div class="note">
+                              വീട്ടമ്മ– ബാംഗ്ലൂർ / House Wife , Bangalore,
+                              <div class="male"><b>ഭർത്താവ്: ജിജി മണി, അടപ്പാട്ട്, എൻ.ആർ. പുര,│തൊഴിൽ: അക്കൗണ്ടന്റ്, ബാംഗ്ലൂർ./ Husband: Jiji Mani, Adappattu, N R Pura Occupation : Accountant , Bangalore</b></div>
+                            </div>
+                          </div>
+                          <div class="children">
+                            <details>
+                              <summary class ="female">മകൾ :മിൻജു ജിജി  / Daughter: Minju Jiji</summary>
+                              <div class="person slide-in">
+                                <strong>മിൻജു ജിജി  /  Minju Jiji</strong>
+                                <div class="note">
+                                തൊഴിൽ: എഞ്ചിനീയർ, ഓസ്ട്രേലിയ. / occupation : Engineer , Australia
+                                </div>
+                              </div>
+                            </details>
+                            <details>
+                              <summary class ="male">മകൻ : ആയുഷ് ജിജി / Son : Ayush Jiji</summary>
+                              <div class="person slide-in">
+                                <strong>ആയുഷ് ജിജി /  Ayush Jiji</strong>
+                                <div class="note">
+                                  വിദ്യാർത്ഥി / Student 
+                                </div>
+                              </div>
+                            </details>
+                          </div>  
+                        </details>
+                      
+                        <details>
+                          <summary class ="male">മകൻ :  റേനി ഈപ്പൻ / Son : Reni Eapen</summary>
+                          <div class="person slide-in">
+                            <strong>റേനി ഈപ്പൻ / Reni Eape</strong>
+                            <div class="note">
+                              തൊഴിൽ: ഇലക്ട്രിക്കൽ സൂപ്പർവൈസർ, ദുബായ്./ Occupation : Electrical Supervisor, Dubai.
+                              <div class="female"><b>ഭാര്യ : സ്മിത റേനി എൻ.ആർ. പുര, തൊഴിൽ: നേഴ്സ്,. / Wife:Smitha Reni, NR Pura  Occcupation : Nurse</b></div>
+                            </div>
+                          </div>
+                          <div class="children">
+                            <details>
+                              <summary class ="female">മകൾ :അലൈന  / Daughter : Alaina </summary>
+                              <div class="person slide-in">
+                                <strong>അലൈന  / Alaina</strong>
+                                <div class="note">
+                                  വിദ്യാർത്ഥിനി / Student 
+                                </div>
+                              </div>
+                            </details>
+                            <details>
+                              <summary class ="female">മകൾ :അൽവിന  / Daughter : Alvina </summary>
+                              <div class="person slide-in">
+                                <strong>അൽവിന  / Alvina</strong>
+                                <div class="note">
+                                  വിദ്യാർത്ഥിനി / Student 
+                                </div>
+                              </div>
+                            </details>
+                          </div>  
+                        </details>
+                        <details>
+                          <summary class ="male">മകൻ : ചാൾസ് ഈപ്പൻ / Son : Charles Eapen</summary>
+                          <div class="person slide-in">
+                            <strong>ചാൾസ് ഈപ്പൻ / Charles Eapen</strong>
+                            <div class="note">
+                              തൊഴിൽ: HSE ഓഫീസർ, റെയിൽവേ,UK/ Occupation : HSE Officer, Railway , UK 
+                              <div class="female"><b>ഭാര്യ : ഡൈന ചാൾസ്, നെല്ലിയാടി. UK /  Wife:Daina charles, Nellyadi, UK </b></div>
+                            </div>
+                          </div>
+                          <div class="children">
+                            <details>
+                              <summary class ="female">മകൻ : അഡ്വിൻ/ Son : Adwin</summary>
+                              <div class="person slide-in">
+                                <strong>അഡ്വിൻ / Adwin</strong>
+                                <div class="note">
+                                  വിദ്യാർത്ഥി/ Student  
+                                </div>
+                              </div>
+                            </details>
+                            <details>
+                              <summary class ="female">മകൻ : അഡ്ലിൻ/ Son : Adlin</summary>
+                              <div class="person slide-in">
+                                <strong>അഡ്ലിൻ / Adlin</strong>
+                                <div class="note">
+                                  വിദ്യാർത്ഥി/ Student  
+                              </div>
+                            </div>
+                          </details>
+                        </div>  
+                      </details>
+                    </div>  
+                  </details>
+
+                  <details>
+                    <summary class="male slide-in">മകൻ : സാജു / Son : Saju</summary>
+                    <div class="person slide-in">
+                      <strong> സാജു / Son : Saju</strong>
+                        <div class="note"> 
+                          തൊഴിൽ: ടെക്നിക്കൽ മാനേജർ , ബഹ്റൈൻ/ Occupation : Technical Manager , Bahrin
+                          <div class="female"><b>ഭാര്യ : മിനി സാജു, അടപ്പാട്ട്, N R പുര തൊഴിൽ: വീട്ടമ്മ, N R പുര. /  Wife:Mini Saju, Adappathu, N RN Pura, Occupation : House Wife</b></div>
+                        </div>
+                    </div>  
+                    <div class="children">
+                      <details>
+                        <summary class ="female">മകൾ : മെറിൻ സാജു / Daughter : Merin Saju</summary>
+                        <div class="person slide-in">
+                          <strong> മെറിൻ സാജു /  Merin Saju</strong>
+                          <div class="note">
+                            തൊഴിൽ:ഹെൽത്ത് ഇൻഫോർമാറ്റിക്, UK / Occupation : health informatic, UK
+                            <div class="male"><b>ഭർത്താവ്: നിതിൻ ജിമ്മി, കാഞ്ഞക്കാട്,തൊഴിൽ:മെഷിനിസ്റ്റ്,UK./ Husband: Nithin Jimmy, Kanhjangadu, occupation : Machinist, UK</b></div>
+                          </div>
+                        </div>
+                        <div class="children">
+                          <details>
+                            <summary class ="male">മകൻ : ജൊനാഥൻ ജിമ്മി  / Son: Johnathan Jimmy</summary>
+                            <div class="person slide-in">
+                              <strong>ജൊനാഥൻ ജിമ്മി  /  Johnathan Jimmy</strong>
+                              <div class="note">
+                              </div>
+                            </div>
+                          </details>
+                          <details>
+                            <summary class ="female">മകൾ :  മാർസെല്ല ജിമ്മി  / Daughter : Marcella Jimmy</summary>
+                            <div class="person slide-in">
+                              <strong>മാർസെല്ല ജിമ്മി  / Marcella Jimmy</strong>
+                              <div class="note">
+                              </div>
+                            </div>
+                          </details>
+                        </div>  
+                      </details>
+                      <details>
+                        <summary class ="male">മകൻ :  ജെറിൻ സാജു/ Son : Jerin Saju</summary>
+                        <div class="person slide-in">
+                          <strong> ജെറിൻ സാജു/ Jerin Saju</strong>
+                          <div class="note">
+                            തൊഴിൽ:  എഞ്ചിനീയർ, കാനഡ / Occupation : Engineer, Canada.
+                            <div class="female"><b>ഭാര്യ : ടീന ജെറിൻ, നെല്ലിയാടി തൊഴിൽ: ലോജിസ്റ്റിക് കോർഡിനേറ്റർ, കാനഡ. / Wife:Teena Jerin , Nellyadi  Occcupation : Logistic Cordinator</b></div>
+                          </div>
                         </div>
                       </details>
+                    </div>  
+                  </details>
+                </div>
+              </details>
+
+              <details>
+                <summary class="female slide-in">മകൾ : അന്നക്കുട്ടി / Daughter : Annakutty </summary>
+                <div class="person slide-in">
+                  <strong>അന്നക്കുട്ടി /  Annakutty</strong>
+                  <div class="note">
+                    തൊഴിൽ: കൃഷി. / Occupation : Agriculture
+                    <div class="male">ഭർത്താവ്: ഉലഹന്നാൻ എം. യു (കുഞ്ഞപ്പൻ) (Late),മണപ്പാട്ട് കുടുംബാംഗം, കക്കാട്./ Husband : Ulahannan M U (Kunjappan)(Late), Manappattu, Kakkad<br>തൊഴിൽ: കൃഷി. / Occupation : Agriculture</div>
+                  </div>
+                </div>  
+                <div class="children">
+                  <details>
+                    <summary class="male slide-in">മകൻ : ജോൺ / Son : John</summary>
+                    <div class="person slide-in">
+                      <strong> ജോൺ / John</strong>
+                        <div class="note"> 
+                          തൊഴിൽ: മുൻ സൈനികൻ / Occupation : Retd. Govt Servant
+                          <div class="female"><b>ഭാര്യ : കുഞ്ഞന്നാമ്മ,│തോട്ടുപുറത്ത് കുടുംബാംഗം.മുളക്കുളം. /  Wife: Kujannamma, Thottupurathu Family, Mulakkulam</b></div>
+                        </div>
+                    </div>  
+                    <div class="children">
+                      <details>
+                        <summary class ="female">മകൾ : ജോമോൾ / Daughter : Jomol</summary>
+                        <div class="person slide-in">
+                          <strong> ജോമോൾ /  Jomol</strong>
+                          <div class="note">
+                            തൊഴിൽ:നേഴ്സ്,, UK / Occupation : Nurse, UK
+                            <div class="male"><b>ഭർത്താവ്: മധു മാമൻ, UK, │ചേലായ്ക്കാമറ്റം കുടുംബാംഗം, മാറാടി/ Husband: Madhu Mammen, Chelakkamattam Family, Marady</b></div>
+                          </div>
+                        </div>
+                        <div class="children">
+                          <details>
+                            <summary class ="male">മകൻ : ജെഫ്രി  / Son: Jeffry</summary>
+                            <div class="person slide-in">
+                              <strong>ജെഫ്രി  / Jeffry</strong>
+                              <div class="note">
+                              </div>
+                            </div>
+                          </details>
+                          <details>
+                            <summary class ="male">മകൻ :  എഫ്രയിം  / Son: Ephraim</summary>
+                            <div class="person slide-in">
+                              <strong>എഫ്രയിം  /  Ephraim</strong>
+                              <div class="note">
+                              </div>
+                            </div>
+                          </details>
+                        </div>  
+                      </details>
+                      <details>
+                        <summary class ="female">മകൾ : ജിജോമോൾ / Daughter : Jijomol</summary>
+                        <div class="person slide-in">
+                          <strong> ജിജോമോൾ / Jijomol</strong>
+                          <div class="note">
+                            തൊഴിൽ:നേഴ്സ്,, ഓസ്ട്രേലിയ/ Occupation : Nurse, Australia
+                            <div class="male"><b>ഭർത്താവ്: ഷെറിൽ സ്‌കറിയ, ഓസ്ട്രേലിയ,│പട്ടരുമഠം കുടുംബാംഗം, പാലക്കുഴ./ Husband: Sheril Skaria, Australia, Pattarumadam family, Palakkuzha</b></div>
+                          </div>
+                        </div>
+                        <div class="children">
+                          <details>
+                            <summary class ="female">മകൾ : ഏഞ്ചല / Daughter : Angela</summary>
+                            <div class="person slide-in">
+                              <strong>ഏഞ്ചല / Angela</strong>
+                              <div class="note">
+                              </div>
+                            </div>
+                          </details>
+                          <details>
+                            <summary class ="female">മകൾ : ആൻലിയ / Daughter : Anlia</summary>
+                            <div class="person slide-in">
+                              <strong>ആൻലിയ / Anlia</strong>
+                              <div class="note">
+                              </div>
+                            </div>
+                          </details>
+                        </div>  
+                      </details>
+                    </div>  
+                  </details>
+
+                  <details>
+                    <summary class="male slide-in">മകൻ : തോമസ് / Son : Thomas</summary>
+                    <div class="person slide-in">
+                      <strong> തോമസ് /  Thomas</strong>
+                        <div class="note"> 
+                          തൊഴിൽ: മുൻ സൈനികൻ / Occupation : Retd. Govt Servant
+                          <div class="female"><b>ഭാര്യ : സൂസി,│വെളിയിൽ കുടുംബാംഗം, ഉദയനാപുരം, വൈക്കം. /  Wife: Susy, Veliyil Family, Udayanapuram, Vaikom</b></div>
+                        </div>
+                    </div>  
+                    <div class="children">
+                      <details>
+                        <summary class ="female">മകൾ : റ്റിസി/ Daughter : Tissy</summary>
+                        <div class="person slide-in">
+                          <strong> റ്റിസി/ Tissy</strong>
+                          <div class="note">
+                            തൊഴിൽ:ടീച്ചർ, / Occupation :Teacher
+                            <div class="male"><b>ഭർത്താവ്: അനിൽ സക്കറിയ,│കോളങ്ങാത്ത് കുടുംബാംഗം, പുളിക്കമാലി.തൊഴിൽ: ടീച്ചർ / Husband: Anil Skaria. Kolangathu Family, Pulikkamali, Occupation : Teacher</b></div>
+                          </div>
+                        </div>
+                        <div class="children">
+                          <details>
+                            <summary class ="female">മകൾ : ഏഞ്ചലിന  / Daughter : Angelina</summary>
+                            <div class="person slide-in">
+                              <strong>ഏഞ്ചലിന  /  Angelina</strong>
+                              <div class="note">
+                              </div>
+                            </div>
+                          </details>
+                          <details>
+                            <summary class ="female">മകൾ : ഏഞ്ചലിയ  / Daughter : Angelia</summary>
+                            <div class="person slide-in">
+                              <strong>ഏഞ്ചലിയ / Angelia</strong>
+                              <div class="note">
+                              </div>
+                            </div>
+                          </details>
+                        </div>  
+                      </details>
+                      <details>
+                        <summary class ="female">മകൾ : റ്റിനി / Daughter : Tinny</summary>
+                        <div class="person slide-in">
+                          <strong> റ്റിനി / Tinny</strong>
+                          <div class="note">
+                            തൊഴിൽ:ഫാർമസിസ്റ്റ്, UK/ Occupation : Pharmacist, UK
+                            <div class="male"><b>ഭർത്താവ്:  എൽദോ മാത്യു, കാവലേലിൽ കുടുംബാംഗം, കുരുവിള സിറ്റി, രാജകുമാരി.തൊഴിൽ:ഫാർമസിസ്റ്റ്, UK /  Husband: Eldho Mathew, Kavalelil Family, Kuruvila City, Rajakumari.Occupation : Pharmacist, UK/</b></div>
+                          </div>
+                        </div>
+                        <div class="children">
+                          <details>
+                            <summary class ="male">മകൻ : റൂബേൻ / Son : Reuben</summary>
+                            <div class="person slide-in">
+                              <strong>റൂബേൻ /  Reuben</strong>
+                              <div class="note">
+                              </div>
+                            </div>
+                          </details>
+                          <details>
+                            <summary class ="male">മകൻ : നെയ്തൻ / Son : Neythan</summary>
+                            <div class="person slide-in">
+                              <strong>നെയ്തൻ /  Neythan</strong>
+                              <div class="note">
+                              </div>
+                            </div>
+                          </details>
+                          <details>
+                            <summary class ="male">മകൻ : ജോസ് / Son : Jose</summary>
+                            <div class="person slide-in">
+                              <strong>ജോസ് / Jose</strong>
+                              <div class="note">
+                              </div>
+                            </div>
+                          </details>
+                        </div>  
+                      </details>
+                      <details>
+                        <summary class ="male">മകൻ : റവ. ഫാ. എൽദോ മണപ്പാട്ട് / Son : Rev. Father Eldho Manappattu</summary>
+                        <div class="person slide-in">
+                          <strong> ഫാ. എൽദോ മണപ്പാട്ട് / Rev. Father Eldho Manappattu</strong>
+                          <div class="note">
+                            <div class="female"><b>ഭാര്യ: ബെറ്റ്സി, നാൻചിറയിൽ കുടുംബാംഗം, വാളകം.തൊഴിൽ: ടീച്ചർ, /  Wife: Betsy, Nanchirayil Family, Valakom.Occupation : Teacher</b></div>
+                          </div>
+                        </div>
+                        <div class="children">
+                          <details>
+                            <summary class ="male">മകൻ : യോഹാൻ / Son : Yohan</summary>
+                            <div class="person slide-in">
+                              <strong>യോഹാൻ / Son : Yohan</strong>
+                              <div class="note">
+                              </div>
+                            </div>
+                          </details>
+                          <details>
+                            <summary class ="male">മകൻ : ഏദൻ / Son : Eden</summary>
+                            <div class="person slide-in">
+                              <strong>ഏദൻ /  Eden</strong>
+                              <div class="note">
+                              </div>
+                            </div>
+                          </details>
+                        </div>  
+                      </details>
+                    </div>  
+                  </details>
+
+                  <details>
+                    <summary class="female slide-in">മകൾ : തങ്ക (Eliyamma) / Daughter : Thanka (Eliyamma)</summary>
+                    <div class="person slide-in">
+                      <strong> തങ്ക (Eliyamma) / Thanka (Eliyamma)</strong>
+                        <div class="note"> 
+                          <div class="male"><b>ഭർത്താവ്: മാർക്കോസ്. റ്റി. എ (Late),│താത്തോത്ത് കുടുംബാംഗം, കളമ്പൂർ./  Husband: Markose T A (Late), Tathoth, Kalamboor</b></div>
+                        </div>
+                    </div>  
+                    <div class="children">
+                      <details>
+                        <summary class ="female">മകൾ : സ്മിത/ Daughter : Smitha</summary>
+                        <div class="person slide-in">
+                          <strong> സ്മിത/  Smitha</strong>
+                          <div class="note">
+                            തൊഴിൽ:നേഴ്സ്,ഓസ്ട്രേലിയ  / Occupation :Nurse, Australia
+                            <div class="male"><b>ഭർത്താവ്:  ജോണി വർഗീസ്,മൈലാടിക്കുന്നേൽ കുടുംബാംഗം,  കിഴകൊമ്പ്,തൊഴിൽ: എഞ്ചിനീയർ, ഓസ്ട്രേലിയ / Husband : Johny Varghese, Myladikunnel Family, Kizhakombu, Occupation : Engineer, Australia</b></div>
+                          </div>
+                        </div>
+                        <div class="children">
+                          <details>
+                            <summary class ="male">മകൻ : ജോഹൻ  / Son : Johan</summary>
+                            <div class="person slide-in">
+                              <strong>ജോഹൻ / Johan</strong>
+                              <div class="note">
+                              </div>
+                            </div>
+                          </details>
+                          <details>
+                            <summary class ="female">മകൾ :ഒലിവിയ  / Daughter : Olivia</summary>
+                            <div class="person slide-in">
+                              <strong>ഒലിവിയ  / Olivia</strong>
+                              <div class="note">
+                              </div>
+                            </div>
+                          </details>
+                        </div>  
+                      </details>
+                      <details>
+                        <summary class ="male">മകൻ : സുമിത്ത് / Son : Sumith</summary>
+                        <div class="person slide-in">
+                          <strong> സുമിത്ത് / Sumith</strong>
+                          <div class="note">
+                            തൊഴിൽ: എഞ്ചിനീയർ,ഖത്തർ / Occupation : Engineer, Qatar
+                            <div class="female"><b>ഭാര്യ: ലിയോണ, മൂത്താനിച്ചിറയിൽ കുടുംബാംഗം, പിറവം.തൊഴിൽ:  നേഴ്സ്, ഖത്തർ, /  Wife: Leona, Muthanichirayil Family, Piravom.Occupation : Nurse , Qatar</b></div>
+                          </div>
+                        </div>
+                        <div class="children">
+                          <details>
+                            <summary class ="male">മകൻ : ആൽഡ്രിൻ / Son : Aldrin</summary>
+                            <div class="person slide-in">
+                              <strong>ആൽഡ്രിൻ / Son : Aldrin</strong>
+                              <div class="note">
+                              </div>
+                            </div>
+                          </details>
+                          <details>
+                            <summary class ="male">മകൻ : എയ്റോൺ/ Son : Airon</summary>
+                            <div class="person slide-in">
+                              <strong>എയ്റോൺ / Airon</strong>
+                              <div class="note">
+                              </div>
+                            </div>
+                          </details>
+                        </div>  
+                      </details>
+                      <details>
+                        <summary class ="female">മകൾ : അനു/ Daughter : Anu</summary>
+                        <div class="person slide-in">
+                          <strong> അനു/ Anu</strong>
+                          <div class="note">
+                            തൊഴിൽ:ഫാർമസിസ്റ്റ്, UK/ Occupation : Pharmacist, UK
+                            <div class="male"><b>ഭർത്താവ്:  ജെസ്സ് പോൾ, കാനഡ,, കൊച്ചുപറമ്പിൽ കുടുംബാംഗം,മുളന്തുരുത്തി/  Husband: Jes Paul, Canada, Kochparambil family, Mulathuruthy/</b></div>
+                          </div>
+                        </div>
+                        <div class="children">
+                          <details>
+                            <summary class ="male">മകൻ : എസക്കിയേൽ / Son : Ezhacheal</summary>
+                            <div class="person slide-in">
+                              <strong>എസക്കിയേൽ /  Ezhacheal</strong>
+                              <div class="note">
+                              </div>
+                            </div>
+                          </details>
+                        </div>  
+                      </details>
+                    </div>  
+                  </details>
+
+                   <details>
+                    <summary class="female slide-in">മകൾ : ചിന്നമ്മ / Daughter : Chinnamma</summary>
+                    <div class="person slide-in">
+                      <strong> ചിന്നമ്മ / Chinnamma</strong>
+                        <div class="note"> 
+                          <div class="male"><b>ഭർത്താവ്:  ജേക്കബ്,തുമ്പയിൽ കുടുംബാംഗം, പിറവം./  Husband: Jacob, Thumayil Piravom</b></div>
+                        </div>
+                    </div>  
+                    <div class="children">
+                      <details>
+                        <summary class ="male">മകൻ : ജാക്സൺ/ Son : Jackson</summary>
+                        <div class="person slide-in">
+                          <strong> ജാക്സൺ/ Jackson</strong>
+                          <div class="note">
+                            <div class="female"><b>ഭാര്യ:അനു,പെരിങ്ങാമല കുടുംബാംഗം, പിറവം. തൊഴിൽ: നേഴ്സ് / Wife : Anu, Peringamalayil Family, Piravom, Occupation : Nurse Australia</b></div>
+                          </div>
+                        </div>
+                        <div class="children">
+                          <details>
+                            <summary class ="male">മകൻ : ജുവാൻ  / Son : Juvaan</summary>
+                            <div class="person slide-in">
+                              <strong>ജുവാൻ  /  Juvaan</strong>
+                              <div class="note">
+                              </div>
+                            </div>
+                          </details>
+                          <details>
+                            <summary class ="female">മകൾ : ജാക്ലിൻ  / Daughter : Jacklin</summary>
+                            <div class="person slide-in">
+                              <strong>ജാക്ലിൻ  /  Jacklin</strong>
+                              <div class="note">
+                              </div>
+                            </div>
+                          </details>
+                          <details>
+                            <summary class ="male">മകൻ : ജെറോൺ  / Son : Jeron</summary>
+                            <div class="person slide-in">
+                              <strong>ജെറോൺ /  Jeron</strong>
+                              <div class="note">
+                              </div>
+                            </div>
+                          </details>
+                        </div>  
+                      </details>
+                      <details>
+                        <summary class ="male">മകൻ : ജോൺസൺ/ Son : Johnson</summary>
+                        <div class="person slide-in">
+                          <strong> ജോൺസൺ/ Johnson</strong>
+                          തൊഴിൽ: പ്രൈവറ്റ് / Occupation : Private
+                          <div class="note">
+                            <div class="female"><b>ഭാര്യ:മീതു,ചിറയ്ക്കച്ചാലിൽ കുടുംബാംഗം,  ആരക്കുന്നം. തൊഴിൽ: ഐ. റ്റി / Wife : Meethu, Chirakkachalil Family, Arakkunnam, Occupation  IT</b></div>
+                          </div>
+                        </div>
+                        <div class="children">
+                          <details>
+                            <summary class ="female">മകൾ : ജെന്നിഫർ  / Daughter : Jennifer</summary>
+                            <div class="person slide-in">
+                              <strong>ജെന്നിഫർ  / Jennifer</strong>
+                              <div class="note">
+                              </div>
+                            </div>
+                          </details>
+                          <details>
+                            <summary class ="male">മകൻ : ജെയ്ഡൻ  / Son : Jayden</summary>
+                            <div class="person slide-in">
+                              <strong>ജെയ്ഡൻ  / Jayden</strong>
+                              <div class="note">
+                              </div>
+                            </div>
+                          </details>
+                        </div>  
+                      </details>
+                    </div>  
+                  </details>
+                </div>
+              </details>
+
+              <details>
+                <summary class="male slide-in">മകൻ : ചാക്കോ / Son : Chacko </summary>
+                <div class="person slide-in">
+                  <strong>ചാക്കോ (കുഞ്ഞപ്പൻ) (Late)(കർണാടക) / Chacko (Kunjappan) (Late) (Karnataka)</strong>
+                  <div class="note">
+                     തൊഴിൽ: മലഞ്ചരക്ക് വ്യാപാരം. / Occupation : Business
+                     <div class="female"><b>ഭാര്യ: പെണ്ണമ്മ (Late) , മുത്തുപതിക്കൽ കുടുംബാംഗം, ഇടയാർ. / Wife: Pennamma(Late) , Muthupathikkal Family, Edayar</b>
                     </div>
-                  </div>  
-                </details>
-              </div>
-            </details>
+                  </div>
+                  <div class="children">
+                    <details>
+                      <summary class="male slide-in">മകൻ : സാജു / Son : Saju</summary>
+                      <div class="person slide-in">
+                        <strong> സാജു / Saju</strong>
+                          <div class="note"> 
+                            തൊഴിൽ: കൃഷി / Occupation :Agriculture
+                            <div class="female"><b>ഭാര്യ : ലിസ്സി, ചാലുനിലത്തിൽ കുടുംബാംഗം, മണ്ണാർക്കാട്. /  Wife: Lissy, Chalunilathil Family, Mannarkadu</b></div>
+                          </div>
+                      </div>  
+                      <div class="children">
+                        <details>
+                          <summary class ="female">മകൾ : പ്രിയങ്ക/ Daughter : Priyanka</summary>
+                          <div class="person slide-in">
+                            <strong> പ്രിയങ്ക/ Priyanka</strong>
+                            <div class="note">
+                              തൊഴിൽ:നേഴ്സ്, / Occupation :Nurse
+                              <div class="male"><b>ഭർത്താവ്: ബേസിൽ,അമ്പഴചാലിൽ കുടുംബാംഗം,പുതുപ്പാടി.തൊഴിൽ:എൻജിനിയർ, ന്യൂസിലാൻഡ്/ Husband: Basil, Ambazhachalil Family, Puduppady, Occupation : Engineer, New Zealand</b></div>
+                            </div>
+                          </div>
+                          <div class="children">
+                            <details>
+                              <summary class ="male">മകൻ : ജേക്ക്  / Son : Jake</summary>
+                              <div class="person slide-in">
+                                <strong>ജേക്ക്  /  Jake</strong>
+                                <div class="note">
+                                </div>
+                              </div>
+                            </details>
+                             <details>
+                              <summary class ="male">മകൻ : ജേഡൻ / Son : Jayden</summary>
+                              <div class="person slide-in">
+                                <strong>ജേഡൻ / Jayden</strong>
+                                <div class="note">
+                                </div>
+                              </div>
+                            </details>
+                          </div>  
+                        </details>
+                        <details>
+                          <summary class ="male">മകൻ : പ്രതീക്/ Son : Prathik</summary>
+                          <div class="person slide-in">
+                            <strong> പ്രതീക്/  Prathik</strong>
+                            <div class="note">
+                              തൊഴിൽ: എൻജിനിയർ, UAE / Occupation : Engineer , UAE
+                              <div class="female"><b>ഭാര്യ :മോനിഷ,  കല്യാററ് വീട് നെല്യാടി, തൊഴിൽ:ബയോടെക്നോളജിസ്റ്റ്, UAE / Wife : Monisha, Kalyattu Family, Nellyadi, Occupation : Bio technologyst</b></div>
+                            </div>
+                          </div>
+                          <div class="children">
+                            <details>
+                              <summary class ="female">മകൾ : നൈറ / Daughter : Naira</summary>
+                              <div class="person slide-in">
+                                <strong>നൈറ /  Naira</strong>
+                                <div class="note">
+                                </div>
+                              </div>
+                            </details>
+                          </div>  
+                        </details>
+                      </div>  
+                    </details>
+
+                    <details>
+                      <summary class="female slide-in">മകൾ  : മോളി / Daughter : Molly</summary>
+                      <div class="person slide-in">
+                        <strong> മോളി /  Molly</strong>
+                          <div class="note"> 
+                            <div class="male"><b>ഭർത്താവ്: മുരളി , മുൻ കസ്റ്റംസ് ഉദ്യോഗസ്ഥൻ,│കഴുന്നാട്ടുപറമ്പിൽ കുടുംബാംഗം, പിറവം / Husband : Murali Retd. Customs Officer, Kazhunattu Parambil, Piravom</b></div>
+                          </div>
+                      </div>  
+                      <div class="children">
+                        <details>
+                          <summary class ="male">മകൻ : മിഥുൻ/ Son : Mithun</summary>
+                          <div class="person slide-in">
+                            <strong>മിഥുൻ/ Mithun</strong>
+                            <div class="note">
+                              തൊഴിൽ:ഐ.ടി.പ്രൊഫഷണൽ,ബാംഗ്ലൂർ. / Occupation : IT , Bangalore
+                              <div class="female"><b>ഭാര്യ : അമിത,│മണപ്പറമ്പിൽ കുടുംബം, പയ്യന്നൂർ. /  Wife: Amitha, Manapparambil Family, Payyanoor</b></div>
+                            </div>
+                          </div>
+                        </details>
+                        <details>
+                          <summary class ="female">മകൾ  :  മീര/ Daughter : Meera</summary>
+                          <div class="person slide-in">
+                            <strong> മീര/  Meera</strong>
+                            <div class="note">
+                              തൊഴിൽ: സൈക്കോളജിസ്റ്റ്, വരാപ്പുഴ / Occupation : Psychologyst, varappuzha
+                            </div>
+                          </div>
+                        </details>
+                      </div>  
+                    </details>
+
+                    <details>
+                      <summary class="male slide-in">മകൻ : ഷിബു / Son : Shibu</summary>
+                      <div class="person slide-in">
+                        <strong> ഷിബു / Shibu</strong>
+                          <div class="note"> 
+                            തൊഴിൽ: വിമുക്ത വായുസേനാദ്യോഗസ്ഥൻ. / Occupation : Retd. Staff Airforce
+                            <div class="female"><b>ഭാര്യ : ശോഭ,ചെമ്പോത്തിനാൽ കുടുംബാംഗം, ശിരാടി , തൊഴിൽ: റിട്ട: നഴ്‌സിംഗ് സൂപ്രണ്ട്. / Wife" Shobha, Chembothinal Family, Shirady. Occupation: Retd . Nursing Superintend</b></div>
+                          </div>
+                      </div>  
+                      <div class="children">
+                        <details>
+                          <summary class ="male">മകൻ : നിക്കിൽ/ Son : Nikil</summary>
+                          <div class="person slide-in">
+                            <strong>നിക്കിൽ/  Nikil</strong>
+                            <div class="note">
+                              തൊഴിൽ:എൻജിനിയർ,ബാംഗ്ലൂർ. / Occupation :Engineer , Bangalore
+                              <div class="female"><b>അലീന, നെടുംമണ്ണിൽ കുടുംബാംഗം, ബാംഗ്ലൂർ  തൊഴിൽ: എൻജിനിയർ,ബാംഗ്ലൂർ / Wife: Aleena, Nedumannil Family, Bangalore. Occupation :Engineer , Bangalore </b></div>
+                            </div>
+                          </div>
+                        </details>
+                        <details>
+                          <summary class ="female">മകൾ  :  നമിത/ Daughter : Namitha</summary>
+                          <div class="person slide-in">
+                            <strong> നമിത/ Daughter : Namitha</strong>
+                            <div class="note">
+                              തൊഴിൽ: BDS UK / Occupation : BDS UK
+                            </div>
+                          </div>
+                        </details>
+                      </div>  
+                    </details>
+
+                    <details>
+                      <summary class="female slide-in">മകൾ  : ജോളി / Daughter : Jolly</summary>
+                      <div class="person slide-in">
+                        <strong> ജോളി / Jolly</strong>
+                          <div class="note"> 
+                            തൊഴിൽ: കോളേജ് ലക്ചറർ, / Occupation : College Lecturer
+                            <div class="male"><b>ഭർത്താവ്:  ജോർജ് , മുൻ സൈനികൻ,വാതക്കാട്ടേൽ കുടുംബാംഗം, നെല്ലിയാടി./ Husband : George, - Retd. govt Servant, Vathakkattel family, Nellaydy</b></div>
+                          </div>
+                      </div>  
+                      <div class="children">
+                        <details>
+                          <summary class ="male">മകൻ : അഖിൽ/ Son : Akhil</summary>
+                          <div class="person slide-in">
+                            <strong>അഖിൽ/ Akhil</strong>
+                            <div class="note">
+                              തൊഴിൽ:HR മാനേജർ, (Byadgi).. / Occupation :HR Manager, (Byadgi).
+                              <div class="female"><b>നവ്യ. പീഴത്തിങ്ങൽ കുടുംബാംഗം(കഡബ),തൊഴിൽ :  HR മാനേജർ, St: Johns ഹോസ്പിറ്റൽ, ബാംഗ്ലൂർ. / Wife : Navya, Pizhatthingal family,Kadaba, Occupation : HR manager, St Johns Hopital, Bangalore</b></div>
+                            </div>
+                          </div>
+                        </details>
+                        <details>
+                          <summary class ="female">മകൾ  :  നാൻസി/ Daughter : Nancy</summary>
+                          <div class="person slide-in">
+                            <strong> നാൻസി /  Nancy</strong>
+                            <div class="note">
+                              തൊഴിൽ: സൈക്കോളജിസ്റ്റ്, │അയർലണ്ട്. / Occupation : Psychologyst, Ireland
+                            </div>
+                          </div>
+                        </details>
+                      </div>  
+                    </details>
+
+                    <details>
+                      <summary class="male slide-in">മകൻ : ഏലിയാസ് / Son : Elias</summary>
+                      <div class="person slide-in">
+                        <strong> ഏലിയാസ് / Elias</strong>
+                          <div class="note"> 
+                            തൊഴിൽ: പഞ്ചായത്ത് ക്ലർക്ക്, / Occupation : Pachayath Clerk
+                            <div class="female"><b>ഭാര്യ : സാലി, പൂക്കളത്തുകുന്നേൽ കുടുംബാംഗം, ശീരാടി. / Wife: Sali, Pookkalathu Kunnel, Shirady</b></div>
+                          </div>
+                      </div>  
+                      <div class="children">
+                        <details>
+                          <summary class ="female">മകൾ  : അഞ്ചു/ Daughter : Anju</summary>
+                          <div class="person slide-in">
+                            <strong>അഞ്ചു/  Anju</strong>
+                            <div class="note">
+                              തൊഴിൽ: നേഴ്സിംഗ്  വിദ്യാർത്ഥിനി / Occupation : Nursing Student
+                            </div>
+                          </div>
+                        </details>
+                        <details>
+                          <summary class ="female">മകൾ  : ആഷ്‌ലി/ Daughter : Ashly</summary>
+                          <div class="person slide-in">
+                            <strong>ആഷ്‌ലി /  Ashly</strong>
+                            <div class="note">
+                              തൊഴിൽ: വിദ്യാർത്ഥിനി / Occupation : Student
+                            </div>
+                          </div>
+                        </details>
+                      </div>  
+                    </details>
+                  </div>
+                </details>         
+
+                
 
             <details>
               <summary class="male">മകൻ : തോമസ് / Son : M.T.Thomas </summary>
@@ -1189,7 +1965,7 @@
     </details>
 
     <details>
-      <summary>ചാക്കോ — കോനാംപുറം -  സഹോദരശാഖകൾ</summary>
+      <summary>ചാക്കോ — കോനാംപുറത്ത് -  സഹോദരശാഖകൾ</summary>
       <div class="person"><strong>പേര് ലഭ്യമല്ല — സഹോദരൻ</strong><div class="note">തണങ്ങാട്ട് കുടുംബം, മുളന്തുരുത്തി (ദത്ത്).</div></div>
       <div class="person"><strong>മങ്കാ — സഹോദരി</strong><div class="note">വേളാമറ്റത്തിൽ (ചെമ്മനം കുടുംബം), കുന്നപ്പിള്ളി.</div></div>
       <div class="person"><strong>തൊമ്മൻ — സഹോദരൻ</strong><div class="note">കിഴക്കേക്കര കുടുംബം, കുന്നപ്പള്ളി (ദത്ത്).</div></div>
@@ -1199,5 +1975,4 @@
 </main>
 <script src="Js/script.js"></script>
 </body>
-</html>
 </html>
