@@ -37,15 +37,24 @@ const observer = new IntersectionObserver((entries) => {
 
 document.querySelectorAll(".slide-in").forEach(item=> {observer.observe(item);});
 
-function getpeopleCount()
-{
-const maleCount = document.querySelectorAll(".male").length;
-const femaleCount = document.querySelectorAll(".female").length;
-document.getElementById("maleCount").textContent = maleCount;
-document.getElementById("femaleCount").textContent = femaleCount;
+
+function getpeopleCount() {
+    const content = document.getElementById("content");
+
+    const maleCount = content.querySelectorAll(".male").length;
+    const femaleCount = content.querySelectorAll(".female").length;
+
+    const maleDisplay = document.getElementById("maleCount");
+    const femaleDisplay = document.getElementById("femaleCount");
+
+    if (maleDisplay) {
+        maleDisplay.textContent = maleCount;
+    }
+
+    if (femaleDisplay) {
+        femaleDisplay.textContent = femaleCount;
+    }
 }
-
-
 const search = document.getElementById("search");
 search.addEventListener("input", () => {
   const q = search.value.trim().toLocaleLowerCase();
