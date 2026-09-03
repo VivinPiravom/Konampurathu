@@ -181,8 +181,8 @@ document.addEventListener("DOMContentLoaded", () => {
     // Initial page
     getpeopleCount(document);
 
-    // Send Message
-    submitMessage(document);
+    /*// Send Message
+    submitMessage(document);*/
 
     const firstMenuItem = document.querySelector(".menu-item");
 
