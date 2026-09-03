@@ -33,6 +33,8 @@ function loadPage(page, menuItem) {
             document.querySelectorAll("#content .slide-in").forEach(item => {observer.observe(item);});
 
             getpeopleCount(document.getElementById("content"));
+
+            submitMessage(document.getElementById("content"));
         })
         .catch(error => {
             console.error(error);
@@ -58,6 +60,102 @@ function getpeopleCount(container=document)
     }
 }
 
+function submitMessage(container=document) 
+{
+    const form = container.getElementById("contactForm");
+    const sendbutton = container.getElementById("sendButton");
+    const status = container.getElementById("formStatus");
+    form.addEventListener("submit", async function (event) 
+    {
+        event.preventDefault();
+        sendbutton.disabled = true;
+        sendbutton.textContent = "Sending....";
+        status.textContent = "";
+        const name = document.getElementById("name").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const subject = document.getElementById("subject").value.trim();
+        const message = document.getElementById("message").value.trim();
+        
+        // Check required fields
+
+        if (!name || !email || !subject || !message) 
+        {
+            alert("Please fill in all fields.");
+            return;
+        }
+
+        // Simple email validation
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailPattern.test(email)) 
+            {
+            alert("Please enter a valid email address.");
+            return;
+        }
+        const formData = new FormData(form);
+        try 
+        {
+            const response = await fetch(form.action, 
+                {
+                    method: "POST",
+                    body: formData,
+                    headers: 
+                        {
+                            "Accept": "application/json"
+                        }
+                });
+
+            if (response.ok) 
+                {
+                status.textContent = "Thank you! Your message has been sent successfully.";
+                status.className = "success";
+                form.reset();
+            } else 
+                {
+                status.textContent =  "Sorry, there was a problem sending your message.";
+                status.className = "error";
+            }
+        } catch (error) 
+            {
+            status.textContent =  "Unable to send the message. Please try again.";
+            status.className = "error";
+            }
+        sendbutton.disabled = false;
+        sendbutton.textContent = "Send Message";
+    });
+    }
+
+        /*
+         * Prepare an email using the visitor's
+         * default email application.
+         *
+         * Change this address to your family email.
+        
+        const familyEmail = "vivincallyou@gmail.com";
+        const mailSubject =
+            encodeURIComponent(subject);
+        const mailBody =
+            encodeURIComponent(
+                "Name: " + name +
+                "\nEmail: " + email +
+                "\n\nMessage:\n" + message
+            );
+        const mailtoLink =
+            "mailto:" +
+            familyEmail +
+            "?subject=" +
+            mailSubject +
+            "&body=" +
+            mailBody;
+
+        // Open email application
+        window.location.href = mailtoLink;
+
+        // Show success message
+        successMessage.style.display = "block";
+        // Clear form
+        form.reset();*/
+
+
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -71,6 +169,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Initial page
     getpeopleCount(document);
+
+    // Send Message
+    submitMessage(document);
 
     const firstMenuItem = document.querySelector(".menu-item");
 
