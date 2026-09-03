@@ -422,6 +422,151 @@
     opacity: 1;
     transform: translateY(0);
   }
+/* Contact Pages*/
+
+/* Two-column layout */
+
+.contact-content 
+{
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+    gap: 30px;
+}
+
+/* Contact information */
+.contact-info, .contact-form 
+{
+    background: linear-gradient(200deg,#d4b898b7, #fffaf0ee);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.contact-info h2,
+.contact-form h2 
+{
+    margin-bottom: 20px;
+}
+
+.contact-info > p 
+{
+    line-height: 1.7;
+    margin-bottom: 25px;
+    color: #555;
+}
+
+/* Information items */
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.icon {
+    font-size: 25px;
+    width: 45px;
+    text-align: center;
+}
+
+.info-item h3 {
+    font-size: 16px;
+    margin-bottom: 5px;
+
+}
+
+.info-item p 
+{
+    color: #666;
+}
+
+/* Form */
+
+.form-group 
+{
+
+    margin-bottom: 18px;
+
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 7px;
+    font-weight: bold;
+}
+
+
+.form-group input,
+.form-group textarea 
+{
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 7px;
+    font-size: 15px;
+    font-family: inherit;
+    outline: none;
+}
+
+.form-group input:focus,
+.form-group textarea:focus 
+{
+    border-color: #555;
+
+}
+.form-group textarea {
+    resize: vertical;
+}
+
+
+/* Send button */
+
+#sendButton 
+{
+    width: 100%;
+    padding: 13px;
+    border: none;
+    border-radius: 7px;
+    background: var(--accent2);
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#sendButton:hover 
+{
+    background: #9d97d1;
+}
+
+#sendButton:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* Form send status message */
+
+#formStatus {
+    margin-top: 15px;
+    padding: 10px;
+    border-radius: 6px;
+    text-align: center;
+    display: none;
+}
+
+#formStatus.success {
+    display: block;
+    background: #e8f5e9;
+    color: #2e7d32;
+}
+
+#formStatus.error {
+    display: block;
+    background: #ffebee;
+    color: #c62828;
+}
+
   /*Print Options*/
   @media print
   {
