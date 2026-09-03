@@ -62,25 +62,28 @@ function getpeopleCount(container=document)
 
 function submitMessage(container=document) 
 {
-    const form = container.getElementById("contactForm");
-    const sendbutton = container.getElementById("sendButton");
-    const status = container.getElementById("formStatus");
+    const form = container.querySelector("#contactForm");
+    if(!form)
+    {
+        return;
+    }
+    const sendbutton = form.querySelector("#sendButton");
+    const status = form.querySelector("#formStatus");
     form.addEventListener("submit", async function (event) 
     {
         event.preventDefault();
-        sendbutton.disabled = true;
-        sendbutton.textContent = "Sending....";
-        status.textContent = "";
-        const name = document.getElementById("name").value.trim();
-        const email = document.getElementById("email").value.trim();
-        const subject = document.getElementById("subject").value.trim();
-        const message = document.getElementById("message").value.trim();
+        
+        const name = form.querySelector("#name").value.trim();
+        const email = form.querySelector("#email").value.trim();
+        const subject = form.querySelector("#subject").value.trim();
+        const message = form.querySelector("#message").value.trim();
         
         // Check required fields
 
         if (!name || !email || !subject || !message) 
         {
             alert("Please fill in all fields.");
+            status.className = "error";
             return;
         }
 
@@ -89,8 +92,13 @@ function submitMessage(container=document)
         if (!emailPattern.test(email)) 
             {
             alert("Please enter a valid email address.");
+            status.className = "error";
             return;
         }
+        sendbutton.disabled = true;
+        sendbutton.textContent = "Sending....";
+        status.textContent = "";
+        status.className = "";
         const formData = new FormData(form);
         try 
         {
@@ -119,8 +127,11 @@ function submitMessage(container=document)
             status.textContent =  "Unable to send the message. Please try again.";
             status.className = "error";
             }
-        sendbutton.disabled = false;
-        sendbutton.textContent = "Send Message";
+            finally 
+            {
+                sendbutton.disabled = false;
+                sendbutton.textContent = "Send Message";
+            }
     });
     }
 
