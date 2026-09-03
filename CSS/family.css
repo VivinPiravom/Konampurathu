@@ -429,15 +429,18 @@
 .contact-content 
 {
     display: grid;
-    grid-template-columns: 1fr 1.3fr;
+    grid-template-columns:repeat(auto-fit,minmax(290px,1fr));
     gap: 30px;
+    place-items: center;
+    margin-bottom: 20px;
+    margin-top: 20px;
 }
 
 /* Contact information */
 .contact-info, .contact-form 
 {
     background: linear-gradient(200deg,#d4b898b7, #fffaf0ee);
-    padding: 30px;
+    padding: 20px;
     border-radius: 12px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
 }
@@ -524,7 +527,7 @@
 
 #sendButton 
 {
-    width: 100%;
+    width: 75%;
     padding: 13px;
     border: none;
     border-radius: 7px;
