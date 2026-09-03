@@ -97,8 +97,8 @@ function submitMessage(container=document)
         }
         sendbutton.disabled = true;
         sendbutton.textContent = "Sending....";
-        // status.textContent = "";
-        // status.className = "";
+        status.textContent = "";
+        status.className = "";
         const formData = new FormData(form);
         try 
         {
