@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ml">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us</title>
+  <link rel="stylesheet" href="CSS/family.css">
+</head>
+<body>
+    <main>
+        <header>
+            <div class="subtitle">Contact Us</div> We would love to hear from you
+        </header>
+        
+        <div class="grid">
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h2>Visit & Connect</h2>
+                    <p>If you have any information, photographs, family history, corrections, or suggestions, please contact us.</p>
+                    <!-- <div class="info-item slide-in">
+                            <span class="icon">📧</span>
+                            <div>
+                                <h3>Email</h3>
+                                <p>yourfamily@email.com</p>
+                            </div>
+                    </div> -->
+                </div>
+                
+            <!-- Contact Form -->
+
+                <div class="contact-form">
+                    <h2>Send Us a Message</h2>
+                    <form id="contactForm"
+                        action="https://formspree.io/f/mqpkbyjg"
+                        method="POST">
+                        <div class="form-group">
+                            <label for="name">Name<span style="color: rgba(255, 0, 0, 0.801); ">*</span></label>
+                            <input type="text" id="name" name="name" placeholder="Enter your name"  required>
+                        </div>
+                    
+                        <div class="form-group">
+                            <label for="email">Email<span style="color: rgba(255, 0, 0, 0.801); ">*</span></label>
+                            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject">Subject<span style="color: rgba(255, 0, 0, 0.801); ">*</span></label>
+                            <input type="text" id="subject" name="subject" placeholder="Enter subject" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Message<span style="color: rgba(255, 0, 0, 0.801); ">*</span></label>
+                            <textarea id="message" name="message" rows = "6" maxlength="500" placeholder="Write your message..." required>
+                            </textarea>
+                        </div>
+
+                        <button type="submit" id="sendButton">
+                             Send Message
+                        </button>
+                    </form>
+
+                <!-- Status message -->
+                    <div id="formStatus"></div>
+                </div>
+            </div>
+        </div>
+    </main> 
+</body>
+<script src="Js/script.js"></script>   
+</html>
