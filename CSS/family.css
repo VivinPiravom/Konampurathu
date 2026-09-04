@@ -1,4 +1,4 @@
- :root
+  :root
   {
     --bg:#f6f1e7; 
     --card:#fffdf8; 
@@ -373,7 +373,7 @@
   .gallery-item:hover .gallery-image
   {
     transform: scale(1.1);
-    transition: 0.2s ease;
+    transition: 0.3s ease;
   }
   .gallery-image img
   {
@@ -642,12 +642,11 @@
     font-size: 11px;
     line-height: 14px;
 }
-
-
-    .mobile-toolbar button1.active {
-        color: #1976d2;
+.mobile-toolbar button1.active 
+{
+        color: #e9ebec;
         font-weight: bold;
-    }
+}
 
     /* Prevent toolbar from covering page content */
     body {
