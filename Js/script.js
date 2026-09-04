@@ -198,7 +198,7 @@ document.addEventListener("DOMContentLoaded", () => {
         loadPage("home.html", firstMenuItem);
     }
 
-    const firstMenuItem1 = document.querySelector("..mobile-toolbar button1");
+    const firstMenuItem1 = document.querySelector(".mobile-toolbar button1");
 
     if (firstMenuItem1) {
         loadPage("home.html", firstMenuItem1);
