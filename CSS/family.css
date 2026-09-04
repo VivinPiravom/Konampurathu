@@ -24,13 +24,13 @@
   }
  .peoplecount
   {
-    padding:5px 12px 10px;
+    padding:5px 10px 8px;
     text-align:right;
     background:linear-gradient(300deg,#d6c4afb7,#fffdf8,);
     color:rgb(20, 20, 20);
-    box-shadow:0 3px 18px #0002
-  }
-
+    box-shadow:0 3px 18px #0002;
+    font-size: 14px;  
+}
   h1
   {
     margin:0;
@@ -67,7 +67,7 @@
   button
   {
     border:1px solid var(--accent);
-    background:var(--accent);
+    background:var(--accent2);
     color:white;
     border-radius:8px;
     padding:4px 8px;
@@ -568,6 +568,91 @@
     display: block;
     background: #ffebee;
     color: #c62828;
+}
+
+.mobile-toolbar {
+    display: none;
+}
+
+/* Mobile phones */
+@media (max-width: 768px) {
+
+    .mobile-toolbar
+     {
+        position: fixed;
+        display: flex;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 65px;
+
+        background: var(--soft);
+        border-top: 1px solid #ddd;
+
+        justify-content: space-between;
+        align-items: stretch;
+
+        z-index: 9999;
+
+        padding-bottom: env(safe-area-inset-bottom);
+
+        flex-direction: row;
+        flex-wrap: nowrap;
+        
+    }
+
+    .mobile-toolbar button1 {
+        flex: 1 1 0;
+        height: 100%;
+
+        border: none;
+        background: transparent;
+
+        display: flex;
+        flex-direction:column;
+        align-items: center;
+        justify-content: center;
+        gap: 4px;
+
+        font-size: 14px;
+        color: var(--ink);
+        
+        cursor: pointer;
+        
+        height: 100%;
+        margin: 0;
+        padding: 4px 2px;
+        text-align: center;
+        white-space: nowrap
+
+    }
+
+    .mobile-toolbar .icon {
+        font-size: 20px;
+        line-height: 25px;
+        margin-bottom: 2px;
+        display: flex;
+        align-items: center;
+        justify-content: center
+    }
+
+    /* Text */
+.mobile-toolbar button1 > span:not(.icon) {
+    display: block;
+    font-size: 11px;
+    line-height: 14px;
+}
+
+
+    .mobile-toolbar button1.active {
+        color: #1976d2;
+        font-weight: bold;
+    }
+
+    /* Prevent toolbar from covering page content */
+    body {
+        padding-bottom: 75px;
+    }
 }
 
   /*Print Options*/
