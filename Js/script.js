@@ -19,6 +19,14 @@ function loadPage(page, menuItem) {
         menuItem.classList.add("active");
     }
 
+    document.querySelectorAll(".mobile-toolbar button1").forEach(item => {
+        item.classList.remove("active");
+    });
+
+    if (menuItem) {
+        menuItem.classList.add("active");
+    }
+
     fetch(page)
         .then(response => {
             if (!response.ok) {
@@ -188,6 +196,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (firstMenuItem) {
         loadPage("home.html", firstMenuItem);
+    }
+
+    const firstMenuItem1 = document.querySelector("..mobile-toolbar button1");
+
+    if (firstMenuItem1) {
+        loadPage("home.html", firstMenuItem1);
     }
 
     // Observe elements already present on the page
