@@ -1,4 +1,4 @@
-  :root
+ :root
   {
     --bg:#f6f1e7; 
     --card:#fffdf8; 
@@ -644,8 +644,9 @@
 }
 .mobile-toolbar button1.active 
 {
-        color: #e9ebec;
-        font-weight: bold;
+      color: #ff7b00;
+      text-decoration-color: #ff7b00;
+      font-weight: bold;
 }
 
     /* Prevent toolbar from covering page content */
