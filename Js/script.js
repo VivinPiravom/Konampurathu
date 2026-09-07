@@ -270,7 +270,7 @@ const observer = new IntersectionObserver((entries) => {
 
 function showphotos(container=document , category) {
 
-    const grid = container.getElementById("photogrid");
+    const grid = container.querySelector("#photogrid");
 
     if (!grid)
     {
