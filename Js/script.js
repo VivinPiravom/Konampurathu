@@ -325,7 +325,7 @@ document.addEventListener("DOMContentLoaded", () => {
         observer.observe(item);
     });
 
-    showphotos(document, "profile");
+    // showphotos(document, "profile");
     
     // Search
     const search = document.getElementById("search");
