@@ -8,6 +8,13 @@
 </head>
 <body>
   <main>
+     <div class="toolbar">
+      <!--<input id="search" type="search" placeholder="പേര് / കുടുംബം തിരയുക… / Name / Family Search...">-->
+      <button onclick="expandAll()">എല്ലാം തുറക്കുക / Expand All</button><br>
+      <button class="secondary" onclick="collapseAll()">എല്ലാം ചുരുക്കുക / Collapse All</button><br>
+      <button class="secondary" onclick="window.print()">Print / PDF</button>
+    </div>
+    
     <header>
       <div class="subtitle">Family Tree</div>
     </header>
@@ -17,14 +24,6 @@
           👩<span style="background-color: #f5e6f3;"> Female : <span id="femaleCount">0</span></h3>
         </div>  
     </section>
-    
-    <div class="toolbar">
-      <!--<input id="search" type="search" placeholder="പേര് / കുടുംബം തിരയുക… / Name / Family Search...">-->
-      <button onclick="expandAll()">എല്ലാം തുറക്കുക / Expand All</button><br>
-      <button class="secondary" onclick="collapseAll()">എല്ലാം ചുരുക്കുക / Collapse All</button><br>
-      <button class="secondary" onclick="window.print()">Print / PDF</button>
-    </div>
-
     <section class="intro">
       <h2>മൂലകുടുംബം: മൈലക്കുളം (കക്കാട്) / Ancestral Family : Mylakkulam (Kakkadu)</h2>
       <p><b>മാത്യു മൈലക്കുളം / Mathew Mylakkulam</b></p>
