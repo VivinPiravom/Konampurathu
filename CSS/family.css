@@ -60,6 +60,21 @@
     backdrop-filter:blur(8px);
     border-bottom:1px solid var(--line)
   }
+
+  .hometool
+  {
+     position:sticky;
+    top:0;
+    z-index:10;
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+    justify-content:center;
+    padding:10px;
+    background:linear-gradient(200deg,#d4b898b7, #fffaf0ee);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line)
+  }
   button,input
   {
     font:inherit
@@ -577,6 +592,10 @@
 /* Mobile phones */
 @media (max-width: 785px) {
 
+    .hometool 
+    {
+      display: none;
+    }
     .mobile-toolbar
      {
         position: fixed;
