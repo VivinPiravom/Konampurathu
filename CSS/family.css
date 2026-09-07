@@ -575,7 +575,7 @@
 }
 
 /* Mobile phones */
-@media (max-width: 768px) {
+@media (max-width: 785px) {
 
     .mobile-toolbar
      {
@@ -587,7 +587,10 @@
         height: 65px;
 
         background: var(--soft);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
         border-top: 1px solid #ddd;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 
         justify-content: space-between;
         align-items: stretch;
@@ -607,6 +610,8 @@
 
         border: none;
         background: transparent;
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
 
         display: flex;
         flex-direction:column;
@@ -623,8 +628,9 @@
         margin: 0;
         padding: 4px 2px;
         text-align: center;
-        white-space: nowrap
-
+        white-space: nowrap;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+        transition: all, 0,3s ease;
     }
 
     .mobile-toolbar .icon {
@@ -664,7 +670,8 @@
     } 
     body
     {
-      background:white
+      background:white;
+      margin: 0;
     } 
     header
     {
@@ -672,7 +679,8 @@
     }
     details
     {
-      break-inside:avoid
+      break-inside:avoid;
+      page-break-inside:avoid
     } 
     main
     {
@@ -682,6 +690,11 @@
     {
       box-shadow:none
     }
+    .mobile-toolbar
+    {
+      display: none;
+    }
+ 
   }
   
 
