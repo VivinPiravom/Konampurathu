@@ -44,7 +44,7 @@ function loadPage(page, menuItem) {
 
             submitMessage(document.getElementById("content"));
 
-            showphotos("profile");
+            showphotos(document.getElementById("content"), "profile");
         })
         .catch(error => {
             console.error(error);
@@ -268,10 +268,14 @@ const observer = new IntersectionObserver((entries) => {
     },       
  ];
 
-function showphotos(category) {
+function showphotos(container=document , category) {
 
-    const grid = document.getElementById("photogrid");
+    const grid = container.getElementById("photogrid");
 
+    if (!grid)
+    {
+        return;
+    }
     grid.innerHTML = "";
 
     const filteredPhotos =
@@ -321,7 +325,7 @@ document.addEventListener("DOMContentLoaded", () => {
         observer.observe(item);
     });
 
-    showphotos("profile");
+    showphotos(document, "profile");
     
     // Search
     const search = document.getElementById("search");
