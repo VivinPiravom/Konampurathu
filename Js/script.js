@@ -43,6 +43,8 @@ function loadPage(page, menuItem) {
             getpeopleCount(document.getElementById("content"));
 
             submitMessage(document.getElementById("content"));
+
+            showphotos("profile");
         })
         .catch(error => {
             console.error(error);
@@ -143,38 +145,6 @@ function submitMessage(container=document)
     });
     }
 
-        /*
-         * Prepare an email using the visitor's
-         * default email application.
-         *
-         * Change this address to your family email.
-        
-        const familyEmail = "vivincallyou@gmail.com";
-        const mailSubject =
-            encodeURIComponent(subject);
-        const mailBody =
-            encodeURIComponent(
-                "Name: " + name +
-                "\nEmail: " + email +
-                "\n\nMessage:\n" + message
-            );
-        const mailtoLink =
-            "mailto:" +
-            familyEmail +
-            "?subject=" +
-            mailSubject +
-            "&body=" +
-            mailBody;
-
-        // Open email application
-        window.location.href = mailtoLink;
-
-        // Show success message
-        successMessage.style.display = "block";
-        // Clear form
-        form.reset();*/
-
-
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -183,6 +153,148 @@ const observer = new IntersectionObserver((entries) => {
         }
     });
 });
+
+// Galley category display
+
+    const photos = [
+    {
+        image: "images/Kathanar Poovathungal.jpg",
+        title: "Thomas Kathanar Poovathingal",
+        category: "profile"
+    },
+
+    {
+        image: "images/Chacko Konampurathu.jpg",
+        title: "Chacko Konampurathu",
+        category: "profile"
+    },
+     
+    {
+        image: "images/Pennamma Konampurathu.jpg",
+        title: "Pennamma Konampurathu",
+        category: "profile"
+    },
+
+     {
+        image: "images/Eliyamma Konampurathu.jpg",
+        title: "Eliyamma Konampurathu",
+        category: "profile"
+    },
+
+     {
+        image: "images/Thomas Konampurathu.jpg",
+        title: "M. T. Thomas Konampurathu",
+        category: "profile"
+    },
+
+    {
+        image: "images/Simon Konampurathu.jpg",
+        title: "M. T. Simon Konampurathu",
+        category: "profile"
+    },
+
+     {
+        image: "images/Leela Kuriakose.jpg",
+        title: "Leela Kuriakose Konampurathu",
+        category: "profile"
+    },
+
+     {
+        image: "images/Baby Pallithazhathu.jpg",
+        title: "Baby Pallithazhathu",
+        category: "profile"
+    },
+
+     {
+        image: "images/Markose Thathoth.jpg",
+        title: "Markose Thathoth",
+        category: "profile"
+    },
+
+      {
+        image: "images/Shibu Thekkanattu.jpg",
+        title: "Shibu Thekkanattu",
+        category: "profile"
+    },
+
+    
+      {
+        image: "images/Thanka Thekkanattu.jpg",
+        title: "Thanka Thekkanattu",
+        category: "profile"
+    },
+
+     
+      {
+        image: "images/Varghese Meppadathu.jpg",
+        title: "Varghese Meppadathu",
+        category: "profile"
+    },
+
+    {
+        image: "images/Varghese Kallidukkil.jpg",
+        title: "Varghese Kallidukkil",
+        category: "profile"
+    },
+
+     {
+        image: "images/Thomas Elanjimattathil.jpg",
+        title: "Thomas Elanjimattathil",
+        category: "profile"
+    },
+
+    {
+        image: "images/Kunju Thekkanattu.jpg",
+        title: "Abraham Kunnathu",
+        category: "profile"
+    },
+
+    {
+        image: "images/Mariyakutty Thekkanattu.jpg",
+        title: "Mariyakutty & Abraham Thekkanattu",
+        category: "familyphotos"
+    },
+
+    {
+        image: "images/Annakutty Manappattu.jpg",
+        title: "Ulahannan & Annakutty Manappattu",
+        category: "familyphotos"
+    },
+
+     {
+        image: "images/Paulose Thekkanattu.jpg",
+        title: "Paulose Thekkanattu",
+        category: "familyphotos"
+    },       
+ ];
+
+function showphotos(category) {
+
+    const grid = document.getElementById("photogrid");
+
+    grid.innerHTML = "";
+
+    const filteredPhotos =
+        category === "all"
+        ? photos
+        : photos.filter(photo => photo.category === category);
+
+    filteredPhotos.forEach(photo => {
+
+        const item = document.createElement("div");
+
+        item.className = "gallery-item slide-in";
+
+        item.innerHTML = `
+            <div class="gallery-image">
+                <img src="${photo.image}"><span class="label">${photo.title}</span>
+            </div>    
+        `;
+        grid.appendChild(item);
+        observer.observe(item);
+    });
+}
+
 
 document.addEventListener("DOMContentLoaded", () => {
 
@@ -209,6 +321,8 @@ document.addEventListener("DOMContentLoaded", () => {
         observer.observe(item);
     });
 
+    showphotos("profile");
+    
     // Search
     const search = document.getElementById("search");
 
