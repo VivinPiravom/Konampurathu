@@ -24,17 +24,17 @@ function loadPage(page, menuItem)
                 {
                     menuItem.classList.add("active");
                 }
-        }   
+        }
+        else
+            {   
 
-        if (classname.substring(0, 14) === "mobile-toolbar")
-        {
-            document.querySelectorAll(".mobile-toolbar button1").forEach(item => {item.classList.remove("active");});
+             document.querySelectorAll(".mobile-toolbar button1").forEach(item => {item.classList.remove("active");});
 
-            if (menuItem) 
-            {
-                menuItem.classList.add("active");
-            }
-        }    
+             if (menuItem) 
+                {
+                    menuItem.classList.add("active");
+                }
+            }    
        
 
     fetch(page)
