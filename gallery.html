@@ -29,10 +29,11 @@
                 </div>    
             </div>  
         </section> 
-        <section class="grid">
-            <button onclick="showphotos(document.getElemenyById('content'),'profile')">Profiles</button>
-            <button class="secondary" onclick="showphotos(document.getElementById('content'),'familyphotos')">Family Photos</button>
-        </section>
+
+        <div class="gallery-buttons">
+            <button class="gallery-btn active" data-category="profile">Profiles</button>
+            <button class="gallery-btn" data-category="familyphotos">Family Photos</button>
+        </div>
         
         <div id="photogrid" class="gallery">
 
