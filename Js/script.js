@@ -15,19 +15,25 @@ function collapseAll()
 
 function loadPage(page, menuItem) 
 {
-    document.querySelectorAll(".menu-item").forEach(item => { item.classList.remove("active");});
-
-    if (menuItem) 
+    if (menuItem.className === "menu-item" )
     {
-        menuItem.classList.add("active");
-    }
+        document.querySelectorAll(".menu-item").forEach(item => { item.classList.remove("active");});
 
-    document.querySelectorAll(".mobile-toolbar button1").forEach(item => {item.classList.remove("active");});
+        if (menuItem) 
+            {
+                menuItem.classList.add("active");
+            }
+    }        
 
-    if (menuItem) 
+    if (menuItem.className === ".mobile-toolbar button1" )
     {
-        menuItem.classList.add("active");
-    }
+        document.querySelectorAll(".mobile-toolbar button1").forEach(item => {item.classList.remove("active");});
+
+        if (menuItem) 
+        {
+            menuItem.classList.add("active");
+         }
+    }    
 
     fetch(page)
         .then(response => 
