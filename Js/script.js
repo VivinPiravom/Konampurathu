@@ -1,56 +1,70 @@
-function allDetails() {
+function allDetails() 
+{
     return [...document.querySelectorAll("details")];
 }
 
-function expandAll() {
+function expandAll() 
+{
     allDetails().forEach(d => d.open = true);
 }
 
-function collapseAll() {
+function collapseAll()
+{
     allDetails().forEach(d => d.open = false);
 }
 
-function loadPage(page, menuItem) {
-    document.querySelectorAll(".menu-item").forEach(item => {
-        item.classList.remove("active");
-    });
+function loadPage(page, menuItem) 
+{
+    document.querySelectorAll(".menu-item").forEach(item => { item.classList.remove("active");});
 
-    if (menuItem) {
+    if (menuItem) 
+    {
         menuItem.classList.add("active");
     }
 
-    document.querySelectorAll(".mobile-toolbar button1").forEach(item => {
-        item.classList.remove("active");
-    });
+    document.querySelectorAll(".mobile-toolbar button1").forEach(item => {item.classList.remove("active");});
 
-    if (menuItem) {
+    if (menuItem) 
+    {
         menuItem.classList.add("active");
     }
 
     fetch(page)
-        .then(response => {
-            if (!response.ok) {
+        .then(response => 
+            {
+            if (!response.ok) 
+                {
                 throw new Error("Page not found");
-            }
+                }
 
-            return response.text();
-        })
-        .then(data => {
-            document.getElementById("content").innerHTML = data;
+                return response.text();
+            })
+        .then(data => 
+            {
+                document.getElementById("content").innerHTML = data;
 
-            document.querySelectorAll("#content .slide-in").forEach(item => {observer.observe(item);});
+                document.querySelectorAll("#content .slide-in").forEach(item => {observer.observe(item);});
 
-            getpeopleCount(document.getElementById("content"));
+                if (page === "familytree.html")
+                {
+                    getpeopleCount(document.getElementById("content"));
+                }    
 
-            submitMessage(document.getElementById("content"));
-
-            showphotos(document.getElementById("content"), "profile");
-        })
-        .catch(error => {
-            console.error(error);
-            document.getElementById("content").innerHTML =
-                "<p>Unable to load this page.</p>";
-        });
+                if (page === "contact.html")
+                {    
+                    submitMessage(document.getElementById("content"));
+                }    
+                if (page === "gallery.html")
+                {
+                    setupGallery(document.getElementById("content"));    
+                    showphotos(document.getElementById("content"), "profile");
+                }    
+            })
+        .catch(error => 
+            {
+                console.error(error);
+                document.getElementById("content").innerHTML = "<p>Unable to load this page.</p>";
+            });
 }
 
 function getpeopleCount(container=document) 
@@ -61,11 +75,13 @@ function getpeopleCount(container=document)
     const maleDisplay = document.getElementById("maleCount");
     const femaleDisplay = document.getElementById("femaleCount");
 
-    if (maleDisplay) {
+    if (maleDisplay) 
+    {
         maleDisplay.textContent = maleCount;
     }
 
-    if (femaleDisplay) {
+    if (femaleDisplay) 
+    {
         femaleDisplay.textContent = femaleCount;
     }
 }
@@ -104,7 +120,7 @@ function submitMessage(container=document)
             alert("Please enter a valid email address.");
             status.className = "error";
             return;
-        }
+            }
         sendbutton.disabled = true;
         sendbutton.textContent = "Sending....";
         status.textContent = "";
@@ -123,12 +139,13 @@ function submitMessage(container=document)
                 });
 
             if (response.ok) 
-                {
+            {
                 status.textContent = "Thank you! Your message has been sent successfully.";
                 status.className = "success";
                 form.reset();
-            } else 
-                {
+            } 
+            else 
+            {
                 status.textContent =  "Sorry, there was a problem sending your message.";
                 status.className = "error";
             }
@@ -143,16 +160,19 @@ function submitMessage(container=document)
                 sendbutton.textContent = "Send Message";
             }
     });
-    }
+}
 
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add("show");
-            observer.unobserve(entry.target);
-        }
+const observer = new IntersectionObserver((entries) => 
+    {
+        entries.forEach(entry => 
+            {
+                if (entry.isIntersecting) 
+                    {
+                        entry.target.classList.add("show");
+                        observer.unobserve(entry.target);
+                    }
+            });
     });
-});
 
 // Galley category display
 
@@ -218,14 +238,14 @@ const observer = new IntersectionObserver((entries) => {
     },
 
     
-      {
+    {
         image: "images/Thanka Thekkanattu.jpg",
         title: "Thanka Thekkanattu",
         category: "profile"
     },
 
      
-      {
+    {
         image: "images/Varghese Meppadathu.jpg",
         title: "Varghese Meppadathu",
         category: "profile"
@@ -237,7 +257,7 @@ const observer = new IntersectionObserver((entries) => {
         category: "profile"
     },
 
-     {
+    {
         image: "images/Thomas Elanjimattathil.jpg",
         title: "Thomas Elanjimattathil",
         category: "profile"
@@ -261,15 +281,34 @@ const observer = new IntersectionObserver((entries) => {
         category: "familyphotos"
     },
 
-     {
+    {
         image: "images/Paulose Thekkanattu.jpg",
         title: "Paulose Thekkanattu",
         category: "familyphotos"
     },       
  ];
 
-function showphotos(container=document , category) {
+function setupGallery(container)
+{
+    const galleryButtons = container.querySelectorAll(".gallery-btn");
+    if (!galleryButtons.length)
+        {
+            return;
+        } 
+    galleryButtons.forEach(button => {
+        button.addEventListener("click",() =>{
+            const category = button.dataset.category;
+            galleryButtons.forEach(btn => {
+                btn.classList.remove("active");
 
+            });
+            button.classList.add("actve");
+            showphotos(container,category);    
+        });
+    });    
+} 
+function showphotos(container=document , category) 
+{
     const grid = container.querySelector("#photogrid");
 
     if (!grid)
@@ -283,7 +322,8 @@ function showphotos(container=document , category) {
         ? photos
         : photos.filter(photo => photo.category === category);
 
-    filteredPhotos.forEach(photo => {
+    filteredPhotos.forEach(photo => 
+        {
 
         const item = document.createElement("div");
 
@@ -296,11 +336,12 @@ function showphotos(container=document , category) {
         `;
         grid.appendChild(item);
         observer.observe(item);
-    });
+        });
 }
 
 
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", () => 
+    {
 
     // Initial page
     getpeopleCount(document);
@@ -310,83 +351,90 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const firstMenuItem = document.querySelector(".menu-item");
 
-    if (firstMenuItem) {
+    if (firstMenuItem) 
+    {
         loadPage("home.html", firstMenuItem);
     }
 
     const firstMenuItem1 = document.querySelector(".mobile-toolbar button1");
 
-    if (firstMenuItem1) {
+    if (firstMenuItem1) 
+    {
         loadPage("home.html", firstMenuItem1);
     }
 
     // Observe elements already present on the page
-    document.querySelectorAll(".slide-in").forEach(item => {
-        observer.observe(item);
-    });
+    document.querySelectorAll(".slide-in").forEach(item => {observer.observe(item);});
 
-    // showphotos(document, "profile");
-    
+   
     // Search
     const search = document.getElementById("search");
 
-    if (search) {
-        search.addEventListener("input", () => {
-            const q = search.value.trim().toLocaleLowerCase();
-            const details = allDetails();
+    if (search) 
+        {
+            search.addEventListener("input", () => 
+                {
+                    const q = search.value.trim().toLocaleLowerCase();
+                    const details = allDetails();
 
-            // Empty search
-            if (!q) {
-                details.forEach(d => d.classList.remove("hidden"));
+                // Empty search
+                if (!q) 
+                    {
+                        details.forEach(d => d.classList.remove("hidden"));
 
-                document.querySelectorAll(".person").forEach(p => {
-                    p.classList.remove("hidden");
-                });
+                        document.querySelectorAll(".person").forEach(p => {p.classList.remove("hidden");});
 
-                return;
-            }
+                        return;
+                    }
 
             // Hide everything initially
-            details.forEach(d => d.classList.add("hidden"));
+                details.forEach(d => d.classList.add("hidden"));
 
-            document.querySelectorAll(".person").forEach(person => {
-                const text = person.innerText.toLocaleLowerCase();
+                document.querySelectorAll(".person").forEach(person => 
+                    {
+                    const text = person.innerText.toLocaleLowerCase();
 
-                if (text.includes(q)) {
-                    person.classList.remove("hidden");
+                    if (text.includes(q)) 
+                        {
+                            person.classList.remove("hidden");
 
-                    let parent = person.closest("details");
+                            let parent = person.closest("details");
 
-                    while (parent) {
-                        parent.classList.remove("hidden");
-                        parent.open = true;
+                            while (parent) 
+                                {
+                                    parent.classList.remove("hidden");
+                                    parent.open = true;
 
-                        parent = parent.parentElement?.closest("details");
-                    }
-                } else {
-                    person.classList.add("hidden");
-                }
-            });
+                                    parent = parent.parentElement?.closest("details");
+                                }
+                        } 
+                        else 
+                            {
+                                person.classList.add("hidden");
+                            }
+                    });
 
             // Search summaries
-            document.querySelectorAll("summary").forEach(summary => {
-                if (summary.innerText.toLocaleLowerCase().includes(q)) {
-                    const detailsElement = summary.parentElement;
+                document.querySelectorAll("summary").forEach(summary => 
+                    {
+                        if (summary.innerText.toLocaleLowerCase().includes(q)) 
+                            {
+                                const detailsElement = summary.parentElement;
 
-                    detailsElement.classList.remove("hidden");
-                    detailsElement.open = true;
+                                detailsElement.classList.remove("hidden");
+                                detailsElement.open = true;
 
-                    let parent =
-                        detailsElement.parentElement?.closest("details");
+                                let parent =  detailsElement.parentElement?.closest("details");
 
-                    while (parent) {
-                        parent.classList.remove("hidden");
-                        parent.open = true;
+                                while (parent) 
+                                    {
+                                        parent.classList.remove("hidden");
+                                        parent.open = true;
 
-                        parent = parent.parentElement?.closest("details");
-                    }
-                }
-            });
-        });
-    }
-});
+                                        parent = parent.parentElement?.closest("details");
+                                    }
+                            }
+                    });
+                });
+            }
+    });
