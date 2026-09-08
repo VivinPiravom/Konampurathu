@@ -15,25 +15,22 @@ function collapseAll()
 
 function loadPage(page, menuItem) 
 {
-    if (menuItem.className === "menu-item" )
-    {
+   
         document.querySelectorAll(".menu-item").forEach(item => { item.classList.remove("active");});
 
         if (menuItem) 
             {
                 menuItem.classList.add("active");
             }
-    }        
+           
 
-    if (menuItem.className === ".mobile-toolbar button1" )
-    {
         document.querySelectorAll(".mobile-toolbar button1").forEach(item => {item.classList.remove("active");});
 
         if (menuItem) 
         {
             menuItem.classList.add("active");
          }
-    }    
+       
 
     fetch(page)
         .then(response => 
@@ -308,7 +305,7 @@ function setupGallery(container)
                 btn.classList.remove("active");
 
             });
-            button.classList.add("actve");
+            button.classList.add("active");
             showphotos(container,category);    
         });
     });    
@@ -350,24 +347,24 @@ document.addEventListener("DOMContentLoaded", () =>
     {
 
     // Initial page
-    getpeopleCount(document);
+   // getpeopleCount(document);
 
     /*// Send Message
     submitMessage(document);*/
 
-    const firstMenuItem = document.querySelector(".menu-item");
+   // const firstMenuItem = document.querySelector(".menu-item");
 
-    if (firstMenuItem) 
-    {
-        loadPage("home.html", firstMenuItem);
-    }
+   // if (firstMenuItem) 
+   // {
+   //     loadPage("home.html", firstMenuItem);
+   // }
 
-    const firstMenuItem1 = document.querySelector(".mobile-toolbar button1");
+   // const firstMenuItem1 = document.querySelector(".mobile-toolbar button1");
 
-    if (firstMenuItem1) 
-    {
-        loadPage("home.html", firstMenuItem1);
-    }
+   // if (firstMenuItem1) 
+   // {
+   //     loadPage("home.html", firstMenuItem1);
+   // }
 
     // Observe elements already present on the page
     document.querySelectorAll(".slide-in").forEach(item => {observer.observe(item);});
