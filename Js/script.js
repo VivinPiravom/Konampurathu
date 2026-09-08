@@ -255,13 +255,13 @@ const observer = new IntersectionObserver((entries) =>
      
     {
         image: "images/Varghese Meppadathu.jpg",
-        title: "Varghese Meppadathu",
+        title: "P P Varghese Meppadathu",
         category: "profile"
     },
 
     {
         image: "images/Varghese Kallidukkil.jpg",
-        title: "Varghese Kallidukkil",
+        title: "K J Varghese Kallidukkil",
         category: "profile"
     },
 
@@ -274,6 +274,12 @@ const observer = new IntersectionObserver((entries) =>
     {
         image: "images/Kunju Thekkanattu.jpg",
         title: "Abraham Kunnathu",
+        category: "profile"
+    },
+
+    {
+        image: "images/Suni Thekkanattu.jpg",
+        title: "Thankachan Thekkanattu",
         category: "profile"
     },
 
