@@ -61,6 +61,7 @@
     border-bottom:1px solid var(--line)
   }
 
+   /* Home tool bar Display*/
   .hometool
   {
     position:sticky;
@@ -437,6 +438,32 @@
     opacity: 1;
     transform: translateY(0);
   }
+.gallery-buttons
+{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 20px 0;
+}
+.gallery-btn
+{
+  padding: 10px 18px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.gallery-btn:hover
+{
+  transform: translateY(-2px);
+}
+.gallery-btn.active
+{
+background: #333;
+color: white;
+}
+
 /* Contact Pages*/
 
 /* Two-column layout */
@@ -590,7 +617,7 @@
 }
 
 /* Mobile phones */
-@media (max-width: 785px) {
+@media (max-width: 800px) {
 
     .hometool 
     {
@@ -604,20 +631,15 @@
         left: 0;
         width: 100%;
         height: 65px;
-
         background: var(--soft);
         backdrop-filter: blur(12px);
         -webkit-backdrop-filter: blur(12px);
         border-top: 1px solid #ddd;
         box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-
         justify-content: space-between;
         align-items: stretch;
-
         z-index: 9999;
-
         padding-bottom: env(safe-area-inset-bottom);
-
         flex-direction: row;
         flex-wrap: nowrap;
         
@@ -626,23 +648,18 @@
     .mobile-toolbar button1 {
         flex: 1 1 0;
         height: 100%;
-
         border: none;
         background: transparent;
         backdrop-filter: blur(10px);
         -webkit-backdrop-filter: blur(10px);
-
         display: flex;
         flex-direction:column;
         align-items: center;
         justify-content: center;
         gap: 4px;
-
         font-size: 14px;
         color: var(--ink);
-        
         cursor: pointer;
-        
         height: 100%;
         margin: 0;
         padding: 4px 2px;
@@ -717,7 +734,6 @@
     {
       display: none;
     }
- 
   }
   
 
