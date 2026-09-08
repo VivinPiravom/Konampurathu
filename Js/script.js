@@ -15,21 +15,26 @@ function collapseAll()
 
 function loadPage(page, menuItem) 
 {
-   
-        document.querySelectorAll(".menu-item").forEach(item => { item.classList.remove("active");});
+        const classname =  menuItem.className;
+        if (classname.substring(0,9) === "menu-item")
+        {
+            document.querySelectorAll(".menu-item").forEach(item => { item.classList.remove("active");});
 
-        if (menuItem) 
+            if (menuItem) 
+                {
+                    menuItem.classList.add("active");
+                }
+        }   
+
+        if (classname.substring(0, 14) === "mobile-toolbar")
+        {
+            document.querySelectorAll(".mobile-toolbar button1").forEach(item => {item.classList.remove("active");});
+
+            if (menuItem) 
             {
                 menuItem.classList.add("active");
             }
-           
-
-        document.querySelectorAll(".mobile-toolbar button1").forEach(item => {item.classList.remove("active");});
-
-        if (menuItem) 
-        {
-            menuItem.classList.add("active");
-         }
+        }    
        
 
     fetch(page)
