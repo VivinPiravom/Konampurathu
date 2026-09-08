@@ -352,19 +352,19 @@ document.addEventListener("DOMContentLoaded", () =>
     /*// Send Message
     submitMessage(document);*/
 
-   // const firstMenuItem = document.querySelector(".menu-item");
+    const firstMenuItem = document.querySelector(".menu-item");
 
-   // if (firstMenuItem) 
-   // {
-   //     loadPage("home.html", firstMenuItem);
-   // }
+    if (firstMenuItem) 
+    {
+        loadPage("home.html", firstMenuItem);
+    }
 
-   // const firstMenuItem1 = document.querySelector(".mobile-toolbar button1");
+    const firstMenuItem1 = document.querySelector(".mobile-toolbar button1");
 
-   // if (firstMenuItem1) 
-   // {
-   //     loadPage("home.html", firstMenuItem1);
-   // }
+    if (firstMenuItem1) 
+    {
+        loadPage("home.html", firstMenuItem1);
+    }
 
     // Observe elements already present on the page
     document.querySelectorAll(".slide-in").forEach(item => {observer.observe(item);});
