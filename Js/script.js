@@ -366,7 +366,7 @@ const upArrow = document.getElementById("upArrow");
 window.addEventListener("scroll", function()
         {
            
-            if(window.screenY > 200)
+            if(window.scrollY > 200)
             {
                 upArrow.classList.add("show");
             }
