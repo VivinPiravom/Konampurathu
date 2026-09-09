@@ -53,6 +53,8 @@ function loadPage(page, menuItem)
 
                 document.querySelectorAll("#content .slide-in").forEach(item => {observer.observe(item);});
 
+                window.scrollTo(0, 0);
+
                 if (page === "familytree.html")
                 {
                     getpeopleCount(document.getElementById("content"));
@@ -353,15 +355,31 @@ function showphotos(container=document , category)
         });
 }
 
+const upArrow = document.getElementById("upArrow");
+
+window.addEventListener("scroll", function()
+        {
+            if(window.scrollY > 200)
+            {
+                upArrow.classList.add("show");
+            }
+            else
+            {
+                upArrow.classList.remove("show");
+            }
+        });
+
+    upArrow.addEventListener("click", function()
+        {
+        window.scrollTo(
+        {
+            top:0,
+            behavior:"smooth"
+        });
+        });
 
 document.addEventListener("DOMContentLoaded", () => 
     {
-
-    // Initial page
-   // getpeopleCount(document);
-
-    /*// Send Message
-    submitMessage(document);*/
 
     const firstMenuItem = document.querySelector(".menu-item");
 
