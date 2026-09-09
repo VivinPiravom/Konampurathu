@@ -53,11 +53,12 @@ function loadPage(page, menuItem)
 
                 document.querySelectorAll("#content .slide-in").forEach(item => {observer.observe(item);});
 
-                document.getElementById("content").scrollTo(
+                window.scrollTo(
                     {
                         top:0,
                         behavior: "instant"
                     });
+                
                 upArrow.classList.remove("show");
 
                 if (page === "familytree.html")
@@ -360,13 +361,12 @@ function showphotos(container=document , category)
         });
 }
 
-
-const content = document.getElementById("content");
+/*const content = document.getElementById("content");*/
 const upArrow = document.getElementById("upArrow");
-content.addEventListener("scroll", function()
+window.addEventListener("scroll", function()
         {
            
-            if(content.scrollTop > 200)
+            if(window.screenY > 200)
             {
                 upArrow.classList.add("show");
             }
@@ -378,12 +378,13 @@ content.addEventListener("scroll", function()
 
 upArrow.addEventListener("click", function()
         {
-            content.scrollTo(
+            window.scrollTo(
                 {
                     top:0,
                     behavior:"smooth"
                 });
         });
+
 document.addEventListener("DOMContentLoaded", () => 
     {
 
@@ -404,9 +405,7 @@ document.addEventListener("DOMContentLoaded", () =>
     // Observe elements already present on the page
     document.querySelectorAll(".slide-in").forEach(item => {observer.observe(item);});
 
-   //addUpArrow ();
-
-    // Search
+   // Search
     const search = document.getElementById("search");
 
     if (search) 
