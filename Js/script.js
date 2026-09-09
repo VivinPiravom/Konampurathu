@@ -53,7 +53,12 @@ function loadPage(page, menuItem)
 
                 document.querySelectorAll("#content .slide-in").forEach(item => {observer.observe(item);});
 
-                addUpArrow ();
+                document.getElementById("content").scrollTo(
+                    {
+                        top:0,
+                        behavior: "instant"
+                    });
+                upArrow.classList.remove("show");
 
                 if (page === "familytree.html")
                 {
@@ -355,49 +360,30 @@ function showphotos(container=document , category)
         });
 }
 
-function addUpArrow()
-{
-    if (document.getElementById("upArrow"))
-    {
-        return;
-    }
-    const arrow = document.createElement("button");
-    arrow.id = "upArrow";
-    arrow.innerHTML = "↑";
-    arrow.title = "Go to top";
-    document.body.appendChild(arrow);
-    arrow.addEventListener("click", function()
+
+const content = document.getElementById("content");
+const upArrow = document.getElementById("upArrow");
+content.addEventListener("scroll", function()
         {
-            document.getElementById("content").scrollTo(
+           
+            if(content.scrollTop > 200)
+            {
+                upArrow.classList.add("show");
+            }
+            else
+            {
+                upArrow.classList.remove("show");
+            }
+        });    
+
+upArrow.addEventListener("click", function()
+        {
+            content.scrollTo(
                 {
                     top:0,
                     behavior:"smooth"
                 });
         });
-}        
-
-const content = document.getElementById("content");
-
-if (content)
-{
-    content.addEventListener("scroll", function()
-        {
-            const arrow = document.getElementById("upArrow");
-            if (!arrow)
-            {
-                return;
-
-            }
-            if(content.scrollTop > 200)
-            {
-                arrow.classList.add("show");
-            }
-            else
-            {
-                arrow.classList.remove("show");
-            }
-        });    
-}
 document.addEventListener("DOMContentLoaded", () => 
     {
 
