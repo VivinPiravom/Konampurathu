@@ -53,7 +53,7 @@ function loadPage(page, menuItem)
 
                 document.querySelectorAll("#content .slide-in").forEach(item => {observer.observe(item);});
 
-                window.scrollTo(0, 0);
+                addUpArrow ();
 
                 if (page === "familytree.html")
                 {
@@ -355,29 +355,49 @@ function showphotos(container=document , category)
         });
 }
 
-const upArrow = document.getElementById("upArrow");
-
-window.addEventListener("scroll", function()
+function addUpArrow()
+{
+    if (document.getElementById("upArrow"))
+    {
+        return;
+    }
+    const arrow = document.createElement("button");
+    arrow.id = "upArrow";
+    arrow.innerHTML = "↑";
+    arrow.title = "Go to top";
+    document.body.appendChild(arrow);
+    arrow.addEventListener("click", function()
         {
-            if(window.scrollY > 200)
+            document.getElementById("content").scrollTo(
+                {
+                    top:0,
+                    behavior:"smooth"
+                });
+        });
+}        
+
+const content = document.getElementById("content");
+
+if (content)
+{
+    content.addEventListener("scroll", function()
+        {
+            const arrow = document.getElementById("upArrow");
+            if (!arrow)
             {
-                upArrow.classList.add("show");
+                return;
+
+            }
+            if(content.scrollTop > 200)
+            {
+                arrow.classList.add("show");
             }
             else
             {
-                upArrow.classList.remove("show");
+                arrow.classList.remove("show");
             }
-        });
-
-    upArrow.addEventListener("click", function()
-        {
-        window.scrollTo(
-        {
-            top:0,
-            behavior:"smooth"
-        });
-        });
-
+        });    
+}
 document.addEventListener("DOMContentLoaded", () => 
     {
 
@@ -398,7 +418,8 @@ document.addEventListener("DOMContentLoaded", () =>
     // Observe elements already present on the page
     document.querySelectorAll(".slide-in").forEach(item => {observer.observe(item);});
 
-   
+   //addUpArrow ();
+
     // Search
     const search = document.getElementById("search");
 
