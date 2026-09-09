@@ -649,7 +649,13 @@ color: white;
 
 #upArrow.show
 {
-  display: block;
+  display: block !important;
+}
+#content
+{
+  height: calc(100vh - 100px);
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 /* Mobile phones */
