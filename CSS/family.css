@@ -1,4 +1,4 @@
-  :root
+   :root
   {
     --bg:#f6f1e7; 
     --card:#fffdf8; 
@@ -752,14 +752,25 @@ color: white;
   /*Print Options*/
   @media print
   {
-    .toolbar
+    @page
+    {
+      size: A4;
+      margin: 10mm;
+    }
+    #content
+    {
+      height: auto !important;
+      max-height: none !important;
+      overflow: visible !important;
+    }
+    .toolbar,
+    .peoplecount,
+    .hometool,
+    .mobile-toolbar
     {
       display:none
     } 
-     .hometool
-    {
-      display:none
-    } 
+   
     body
     {
       background:white;
@@ -769,7 +780,9 @@ color: white;
     {
       box-shadow:none
     }
-    details
+    details,
+    .note,
+    .person
     {
       break-inside:avoid;
       page-break-inside:avoid
@@ -782,10 +795,7 @@ color: white;
     {
       box-shadow:none
     }
-    .mobile-toolbar
-    {
-      display: none;
-    }
+   
   }
   
 
