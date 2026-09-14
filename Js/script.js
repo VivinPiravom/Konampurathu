@@ -305,7 +305,7 @@ const observer = new IntersectionObserver((entries) =>
 
     {
         image: "images/Paulose Thekkanattu.jpg",
-        title: "Paulose Thekkanattu",
+        title: "Paulose & Chinnamma Thekkanattu",
         category: "familyphotos"
     },       
  ];
