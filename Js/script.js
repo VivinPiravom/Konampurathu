@@ -13,6 +13,7 @@ function collapseAll()
     allDetails().forEach(d => d.open = false);
 }
 
+                
 function loadPage(page, menuItem) 
 {
         const classname =  menuItem.className;
@@ -61,9 +62,12 @@ function loadPage(page, menuItem)
                 
                 upArrow.classList.remove("show");
 
+                arrowDisplay();    
+
                 if (page === "familytree.html")
                 {
                     getpeopleCount(document.getElementById("content"));
+                    printFamilyTree();
                 }    
 
                 if (page === "contact.html")
@@ -361,9 +365,45 @@ function showphotos(container=document , category)
         });
 }
 
-/*const content = document.getElementById("content");*/
-const upArrow = document.getElementById("upArrow");
-window.addEventListener("scroll", function()
+
+
+function printFamilyTree() 
+{
+    document.getElementById("printFamilyTree").addEventListener("click", function ()
+    {
+    
+        const iframe = document.createElement("iframe");
+
+        iframe.style.position = "fixed";
+        iframe.style.width = "0";
+        iframe.style.height = "0";
+        iframe.style.border = "0";
+        iframe.style.visibility = "hidden";
+
+        iframe.src = "family-tree-document.html";
+
+        document.body.appendChild(iframe);
+
+        iframe.onload = function () 
+        
+        {
+            setTimeout(function () 
+            {
+
+                iframe.contentWindow.focus();
+
+                // Open browser Print dialog
+                iframe.contentWindow.print();
+
+            }, 500);
+        };
+    });
+};    
+
+function arrowDisplay()
+{
+    const upArrow = document.getElementById("upArrow");
+    window.addEventListener("scroll", function()
         {
            
             if(window.scrollY > 200)
@@ -376,7 +416,7 @@ window.addEventListener("scroll", function()
             }
         });    
 
-upArrow.addEventListener("click", function()
+    upArrow.addEventListener("click", function()
         {
             window.scrollTo(
                 {
@@ -384,7 +424,7 @@ upArrow.addEventListener("click", function()
                     behavior:"smooth"
                 });
         });
-
+}
 document.addEventListener("DOMContentLoaded", () => 
     {
 
