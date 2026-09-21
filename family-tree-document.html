@@ -1,0 +1,458 @@
+﻿<!DOCTYPE html>
+<html lang="ml">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>കോനാംപുറത്ത് കുടുംബം — Family Tree Document</title>
+<style>
+:root{
+ --male-bg:#e2edf8; --male-border:#4a7fb5; --male-text:#1c3d5a;
+ --female-bg:#f5e6f3; --female-border:#b5679e; --female-text:#5a1c4a;
+ --root-bg:#fdf6e3; --root-border:#c9a227; --ink:#2b2b2b; --muted:#6b6b6b;
+ }
+ *{box-sizing:border-box;}
+ body{font-family:"Segoe UI","Noto Sans Malayalam",Tahoma,sans-serif;color:var(--ink);line-height:1.5;margin:0;background:#fff;padding:30px 40px;}
+ header.doc-title{text-align:center;border-bottom:4px solid var(--root-border);padding-bottom:16px;margin-bottom:22px;}
+ header.doc-title h1{margin:0 0 6px;font-size:30px;color:#7a5c00;}
+ header.doc-title .subtitle{font-size:16px;color:var(--muted);}
+.legend{display:flex;gap:18px;justify-content:center;flex-wrap:wrap;margin:16px 0 26px;}
+.legend span{padding:5px 14px;border-radius:20px;font-size:14px;font-weight:600;border:1px solid transparent;}
+.legend .male{background:var(--male-bg);color:var(--male-text);border-color:var(--male-border);}
+.legend .female{background:var(--female-bg);color:var(--female-text);border-color:var(--female-border);}
+.intro-box{background:var(--root-bg);border:1px solid var(--root-border);border-radius:8px;padding:14px 20px;margin-bottom:24px;}
+.intro-box h2{margin-top:0;font-size:19px;color:#6b4e00;}
+ h2.branch-title{background:var(--root-bg);border-left:8px solid var(--root-border);padding:12px 16px;font-size:21px;color:#6b4e00;border-radius:4px;margin-top:36px;page-break-after:avoid;}
+.person{border-radius:8px;padding:8px 13px;margin:7px 0;border-left:6px solid;page-break-inside:avoid;}
+.person.male{background:var(--male-bg);border-color:var(--male-border);}
+.person.female{background:var(--female-bg);border-color:var(--female-border);}
+.person .name{font-weight:700;font-size:14.5px;}
+.person.male .name{color:var(--male-text);}
+.person.female .name{color:var(--female-text);}
+.person .detail{font-size:13px;color:#333;margin-top:2px;}
+.indent-0{margin-left:0;}.indent-1{margin-left:26px;}.indent-2{margin-left:52px;}
+.indent-3{margin-left:78px;}.indent-4{margin-left:104px;}.indent-5{margin-left:130px;}.indent-6{margin-left:156px;}
+ header.doc-title .family-logo{max-width:180px;max-height:180px;width:auto;height:auto;margin:0 auto 14px;display:block;}
+ header.doc-title .caption{font-size:14px;color:var(--muted);margin-top:10px;line-height:1.6;}
+ @media print{
+   body{padding:0 10px;}
+   header.doc-title .family-logo{max-width:175px;max-height:175px;}
+   /* Keep the whole header block together on one page */
+   header.doc-title{ break-inside:avoid; page-break-inside:avoid; }
+   header.doc-title, header.doc-title *{ break-inside:avoid; page-break-inside:avoid; }
+   /* Start the intro box on a new page */
+   .intro-box{ break-inside:avoid; page-break-inside:avoid; }
+   .title-page{ min-height:100vh; display:flex; flex-direction:column; justify-content:center; align-items:center; break-inside:avoid; page-break-inside:avoid; break-after:page; page-break-after:always; }
+   .title-page header.doc-title{ border-bottom:none; margin-bottom:18px; }
+   .legend{ break-inside:avoid; page-break-inside:avoid; }
+ }
+</style>
+</head>
+<body>
+<div class="title-page">
+<header class="doc-title">
+ <img class="family-logo" src="images/familylogonew.png" alt="Konampurathu family logo">
+ <h1>കോനാംപുറത്ത് കുടുംബം</h1>
+ <div class="subtitle">Konampurathu Family Tree &mdash; Genealogy Document</div>
+ <div class="caption">A bilingual genealogical record &middot; മലയാളം (English)<br>September 2026</div>
+</header>
+</div>
+<div class="intro-box">
+ <h2>മൂലകുടുംബം : മൈലക്കുളം (കക്കാട്) (Ancestral Family : Mylakkulam (Kakkadu))</h2>
+ <p><b>മാത്യു മൈലക്കുളം (Mathew Mylakkulam)</b> &mdash; തൊഴിൽ : കൃഷി, വൈദ്യം (Occupation : Agriculture, Medicine.)<br>ഭാര്യ : ഏലിയാമ്മ, കക്കാട്, കൂടുതൽ വിവരം ലഭ്യമല്ല  (Wife : Eliyamma, kakkad, No further details)</p>
+ <p><b>മക്കൾ (Children) : </b> 1. ചാക്കോ കോനാംപുറത്ത്, പിറവം (Chacko, Konampurathu, Piravom) &nbsp; 2. പേര് അറിയില്ല, തണങ്ങാട്ട് (Name Unknown, Thanangattu, Mulanturuthi) &nbsp; 3. മങ്ക, മണപ്പുറം കുടുംബം, മണകുന്നം (Manka, Manappuram Family, Manakunnam) &nbsp; 4. തൊമ്മൻ, കിഴക്കേക്കര,  കുന്നപ്പിള്ളി, പെരുവ (Kizhakekkara, Kunnappilly, Peruva) &nbsp; 5. പത്രോസ് (Pathrose)</p>
+</div>
+<h2 class="branch-title">ശാഖ 1 (Branch 1) &mdash; ചാക്കോ, കോനാംപുറത്ത് കുടുംബം, പിറവം (Chacko, Konampurathu Family, Piravom)</h2>
+<div class="person male indent-0"><div class="name">ചാക്കോ (Chacko) (Late)</div><div class="detail">തൊഴിൽ : കൃഷി, വൈദ്യം. (Occupation : Agriculture, Medicine)<br>ഭാര്യ : മറിയം കുരുവിള, പൂവത്തുങ്കൽ കുടുംബാംഗം, നാമക്കുഴി. (Wife : Mariyam Kuruvila,Poovathungal family, Namakkuzhi.)<br><p><b>മക്കൾ (Children) : </b> 1. തൊമ്മൻ ചാക്കോ, കോനാംപുറത്ത് (Thommen Chacko, Konampurathu ) &nbsp; 2. കുരുവിള ചാക്കോ, കോനാംപുറത്ത് (Kuruvila Chacko, Konampurathu)</p></div></div>
+
+<h2 class="branch-title">ഉപശാഖ 1.1 (Sub-branch 1.1) &mdash; തൊമ്മൻ ചാക്കോ കോനാംപുറത്ത് ശാഖ (Thommen Chacko Konampurathu Line)</h2>
+<div class="person male indent-1"><div class="name">തൊമ്മൻ ചാക്കോ (Thommen Chacko) (Late)</div><div class="detail">തൊഴിൽ : മലഞ്ചരക്ക് വ്യാപാരം. (Occupation : Business). <br>ഭാര്യ : അന്നമ്മ, വെള്ളുക്കാട്ടിൽ കുടുംബാംഗം, പിറവം. (Wife : Annamma, Vellukkatil, Piravom).(Late)<p><b>മക്കൾ (Children) : </b> 1. മറിയകുട്ടി തേക്കനാട്ട് (Mariyakutty Thekkanattu) &nbsp; 2. അന്നക്കുട്ടി മണപ്പാട്ട് (Annakutty Manappattu), &nbsp; 3. ചാക്കോ (കുഞ്ഞപ്പൻ) കോനാംപുറത്ത് (Chacko (Kunajppan), Konampurathu), &nbsp; 4.തോമസ് (കുഞ്ഞൂഞ്ഞ്) കോനാംപുറത്ത് (Thomas (Kunjuju) Konampurathu), &nbsp; 5.ഏലിയാമ്മ കല്ലിടുക്കിൽ പുത്തൻപുര (Eliyamma Kallidukkil Puthenpura), &nbsp; 6. സൈമൺ (കുഞ്ഞ്) കോനാംപുറത്ത് (Simon (Kunju) Konampurathu), &nbsp; 7. കുര്യാക്കോസ് (ജോയി) കോനാംപുറത്ത് (Kuriakose (Joy) Konampurathu), &nbsp; 8. ശുശാമ്മ മേപ്പാടത്ത് (Susamma Meppadathu), &nbsp; 9. വർഗീസ് (കുഞ്ഞ് വർക്കി) കോനാംപുറത്ത് (Varghese (Kunju Varkey) Konampurathu). </p></div></div>
+
+<h2 class="branch-title indent-2">ഉപശാഖ 1.1.1 (Sub-branch 1.1.1) &mdash; മറിയകുട്ടി തേക്കനാട്ട് ശാഖ (Mariyakutty Thekkanattu Line)</h2>
+<div class="person female indent-2"><div class="name">മറിയകുട്ടി (Mariyakutty) (Late)</div><div class="detail">തൊഴിൽ : കൃഷി. (Occupation : Agriculture ) <br>ഭർത്താവ് : എബ്രഹാം, തേക്കനാട്ട് കുടുംബാംഗം, പെരുവ. (കർണാടക). (Husband : Abraham, Thekkanattu, Peruva. (Karnataka)).(Late)<p><b>മക്കൾ (Children) : </b> 1. പൗലോസ് തേക്കനാട്ട് (Paulose Thekkanattu) &nbsp; 2. തങ്കമ്മ ഓക്കമറ്റം (Thankamma Okamattom), &nbsp; 3. അമ്മണി കുന്നത്ത് (Ammani Kunnathu), &nbsp; 4.തോമസ് (മാമച്ചൻ) തേക്കനാട്ട് (Thomas (Mamachen) Thekkanattu), &nbsp; 5.മേരി മേപ്പുറത്ത് (Mary Meppurathu), &nbsp; 6. സാജു തേക്കനാട്ട് (Saju Thekkanattu).</p></div></div>
+
+<div class="person male indent-3"><div class="name">പൗലോസ് (Paulose) (Late)</div><div class="detail">തൊഴിൽ : കൃഷി. (Occupation : Agriculture) <br>ഭാര്യ : ചിന്നമ്മ, കാരമല കുടുംബം, ശീരാടി,(കർണാടക). (Wife : Chinnamma, Karamala Family, Shirady (Karnataka))<p><b>മക്കൾ (Children) : </b> 1. ജോയി (Joy) &nbsp; 2. ലെനിൻ (Lenin).</p></div></div>
+<div class="person male indent-4"><div class="name">ജോയി (Joy)</div><div class="detail">തൊഴിൽ : കൃഷി. (Occupation : Agriculture)<br>ഭാര്യ : വത്സ ജോയി, കുറുപ്പംപടി. (Wife : Valsa Joy Kuruppam padi (Kerala))<p><b>മക്കൾ (Children) : </b> 1. ജിസ്വാ ജോയി (Jiswa Joy) &nbsp; 2. വിസിജ ജോയി (Visija Joy).</p></div></div>
+<div class="person female indent-5"><div class="name">ജിസ്വാ ജോയി (Jiswa Joy)</div><div class="detail">തൊഴിൽ : വസ്ത്രവ്യാപാരം (Occupation : Business)<br>ഭർത്താവ് : ബേസിൽ പി. ജോയി, നെല്ലിമറ്റം, തൊഴിൽ : വെബ് ഡിസൈനർ, ദുബായ്. (Husband : Basil P Joy, Nellimattom, Occupation : Web Designer, Dubai)<p><b>മക്കൾ (Children) : </b> 1. റേവൻ സെറാ ബേസിൽ (Revan Sera Basil) &nbsp; 2. ബെല്ല എസ്ലി ബേസിൽ (Bella Esli Basil).</p></div></div>
+<div class="person male indent-6"><div class="name">റേവൻ സെറാ ബേസിൽ (Revan Sera Basil)</div><div class="detail">വിദ്യാർത്ഥി (Student)</div></div>
+<div class="person female indent-6"><div class="name">ബെല്ല എസ്ലി ബേസിൽ (Bella Esli Basil)</div></div>
+<div class="person female indent-5"><div class="name">വിസിജ ജോയി (Visija Joy)</div><div class="detail">തൊഴിൽ : HR - ദുബായ് (Occupation : HR Dubai)</div></div>
+<div class="person male indent-4"><div class="name">ലെനിൻ (Lenin) (Late)</div><div class="detail">തൊഴിൽ : മുൻ സൈനികൻ (Occupation : Retd Govt Servant)<br>ഭാര്യ : ജിനി ലെനിൻ, അടപ്പാട്ട് ഹൗസ്, എൻ.ആർ. പുര, തൊഴിൽ : ഓഡിറ്റർ - IOC ഫ്യൂവൽ സ്റ്റേഷൻ. (Wife : Jini Lenin, Adappatu House, N R Pura, Occupation : Auditor - IOC Fuel Station) <p><b>മക്കൾ (Children) : </b> 1. ശ്രദ്ധ (Shrudha) &nbsp; 2. ശ്രാവിൻ ലെനിൻ (Sravin Lenin).</div></div>
+<div class="person female indent-5"><div class="name">ശ്രദ്ധ (Shrudha)</div><div class="detail">തൊഴിൽ : അധ്യാപിക (Occupation : Teacher)<br>ഭർത്താവ് : ശ്രേയസ് ഷാജി, കാനഡ (Husband : Shreyas Shaji, Canada)</div></div>
+<div class="person male indent-5"><div class="name">ശ്രാവിൻ ലെനിൻ (Sravin Lenin)</div><div class="detail">വിദ്യാർത്ഥി (Student)</div></div>
+
+<div class="person female indent-3"><div class="name">തങ്കമ്മ (Thankamma) (Late)</div><div class="detail">തൊഴിൽ : കൃഷി. (Occupation : Agriculture)<br>ഭർത്താവ് : മാത്യു, ഓക്കമറ്റം കുടുംബം, ശീരാടി,(കർണാടക) (Husband : Mathew (Late), Okkamattom Family, Shiradi (Karnataka)) <p><b>മക്കൾ (Children) : </b> 1. സാം മാത്യു (Sam Mathew) &nbsp; 2. ഷിബു മാത്യു (Shibu Mathew) &nbsp; 3. സുനി മാത്യു (Suni Mathew).</p></div></div>
+<div class="person male indent-4"><div class="name">സാം മാത്യു (Sam Mathew) </div><div class="detail">തൊഴിൽ : എഞ്ചിനീയർ, ഒമാൻ (Occupation : Engineer, Oman) <br>ഭാര്യ : ആശ സാം, പെരുവ. (Wife : Asha Sam, Peruva)<p><b>മക്കൾ (Children) : </b> 1. മിന്നു സാം (Minnu Sam) &nbsp; 2. മന്യ സാം (Manya Sam).</p></div></div>
+<div class="person female indent-5"><div class="name">മിന്നു സാം (Minnu Sam) </div><div class="detail">തൊഴിൽ : Pharm. D, കാനഡ (Occupation : Pharm D., Canada)<br>ഭർത്താവ് : സച്ചിൻ, കാനഡ. (Husband : Sachin, Canada)</div></div>
+<div class="person female indent-5"><div class="name">മന്യ സാം (Manya Sam)</div><div class="detail">തൊഴിൽ : Bangalore (Occupation : Bangalore)</div></div>
+<div class="person male indent-4"><div class="name">ഷിബു മാത്യു (Shibu Mathew) (Late)</div><div class="detail">തൊഴിൽ : എഞ്ചിനീയർ (Occupation : Engineer)<br>ഭാര്യ : മഞ്ജു ഷിബു, മുളന്തുരുത്തി. (Wife : Manju Shibu, Mulathuruthy)<p><b>മക്കൾ (Children) : </b> 1. മിൽന ഷിബു (Milna Shibu)</p></div></div>
+<div class="person female indent-5"><div class="name">മിൽന ഷിബു (Milna Shibu)</div><div class="detail">വിദ്യാർത്ഥിനി, ഓസ്ട്രേലിയ (Student, Australia)</div></div>
+<div class="person female indent-4"><div class="name">സുനി മാത്യു (Suni Mathew)</div><div class="detail">തൊഴിൽ : കൃഷി (Occupation : Agriculture)<br>ഭർത്താവ് : തങ്കച്ചൻ, തൃശൂർ. തൊഴിൽ : കൃഷി / ബിസിനസ്. (Husband : Thankachan (Late), Thrissur, Occupation : Agriculture / Business)<p><b>മക്കൾ (Children) : </b> 1. നിമിത തങ്കച്ചൻ (Nimitha Thankachan) &nbsp; 2. നിഖിത തങ്കച്ചൻ (Nikitha Thankachan) &nbsp; 3. നിമിഷ തങ്കച്ചൻ (Nimisha Thankachan). </p></div></div>
+<div class="person female indent-5"><div class="name">നിമിത തങ്കച്ചൻ (Nimitha Thankachan)</div><div class="detail">തൊഴിൽ : ലാബ് ടെക്നീഷ്യൻ (Occupation : Lab Technician)</div></div>
+<div class="person female indent-5"><div class="name">നിഖിത തങ്കച്ചൻ (Nikitha Thankachan)</div><div class="detail">തൊഴിൽ : MSW (Occupation : MSW)</div></div>
+<div class="person female indent-5"><div class="name">നിമിഷ തങ്കച്ചൻ (Nimisha Thankachan)</div><div class="detail">തൊഴിൽ : നേഴ്സിംഗ് വിദ്യാർത്ഥിനി, ജർമ്മനി (Occupation : Nursing Student, Germany)</div></div>
+
+<div class="person female indent-3"><div class="name">അമ്മണി (Ammini)</div><div class="detail"> തൊഴിൽ : കൃഷി. (Occupation : Agriculture)<br>ഭർത്താവ് : അബ്രഹാം,കുന്നത്ത് കുടുംബം (Husband : Abraham (Late), Kunnathu Family) <p><b>മക്കൾ (Children) : </b> 1. രാജേഷ് കെ. എ (Rajesh K. A) &nbsp; 2. അശോക് കെ. എ (Ashok K. A) &nbsp; 3. പ്രകാശ് കെ. എ (Prakash K. A) </p></div></div>
+<div class="person male indent-4"><div class="name">രാജേഷ് കെ. എ (Rajesh K. A)</div><div class="detail">തൊഴിൽ : കൃഷി (Occupation : Agriculture)<br>ഭാര്യ : അനു രാജേഷ്, കോഴിച്ചാൽ (Wife : Anu Rajesh, Kozhichal) <p><b>മക്കൾ (Children) : </b> 1. പ്രജ്വൽ രാജേഷ് (Prijual Rajesh) &nbsp; 2.പ്രതീക്ഷ രാജേഷ് (Pratheeksha Rajesh)</div></div>
+<div class="person male indent-5"><div class="name">പ്രജ്വൽ രാജേഷ് (Prijual Rajesh)</div><div class="detail">തൊഴിൽ : എഞ്ചിനീയർ, ബാംഗ്ലൂർ (Occupation : Engineer Bangalore) </div></div>
+<div class="person female indent-5"><div class="name">പ്രതീക്ഷ രാജേഷ് (Pratheeksha Rajesh)</div><div class="detail">തൊഴിൽ : വിദ്യാർത്ഥിനി (Occupation : Student)</div></div>
+<div class="person male indent-4"><div class="name">അശോക് കെ. എ (Ashok K. A)</div><div class="detail">തൊഴിൽ : എഞ്ചിനീയർ, ഒമാൻ (Occupation : Engineer, Oman)<br>ഭാര്യ : ഷൈലറ്റ് അശോക്, മംഗലാപുരം, തൊഴിൽ : ലക്ചറർ (Wife : Shilet Ashok,Mangalore. Occcupation : Lecturer) <p><b>മക്കൾ (Children) : </b> 1. ആരൂൺ അശോക് (Arun Ashok) &nbsp; 2.ആറിക് അശോക് (Arik Ashok)</p></div></div>
+<div class="person male indent-5"><div class="name">ആരൂൺ അശോക് (Arun Ashok)</div><div class="detail">വിദ്യാർത്ഥി (Student)</div></div>
+<div class="person male indent-5"><div class="name">ആറിക് അശോക് (Arik Ashok)</div><div class="detail">വിദ്യാർത്ഥി (Student)</div></div>
+<div class="person male indent-4"><div class="name">പ്രകാശ് കെ. എ (Prakash K. A)</div><div class="detail">തൊഴിൽ : കൃഷി (Occupation : Agriculture)<br>ഭാര്യ : സൗമ്യാ, ബൈന്ദൂർ (Wife : Saumya Bindoor) <p><b>മക്കൾ (Children) : </b> 1. അനന്യ പ്രകാശ് (Ananya Prakash) &nbsp; 2. ബേസിൽ പ്രകാശ് (Basil Prakash)</p></div></div>
+<div class="person female indent-5"><div class="name">അനന്യ പ്രകാശ് (Ananya Prakash)</div><div class="detail">വിദ്യാർത്ഥിനി (Student)</div></div>
+<div class="person male indent-5"><div class="name">ബേസിൽ പ്രകാശ് (Basil Prakash)</div><div class="detail">വിദ്യാർത്ഥി (Student)</div></div>
+
+<div class="person male indent-3"><div class="name">തോമസ് (മാമച്ചൻ) (Thomas (Mamachen))</div><div class="detail">തൊഴിൽ : കൃഷി (Occupation : Agriculture)<br>ഭാര്യ : ഏലിയാമ്മ, ചേന്നംമ്പിള്ളിൽ കുടുംബം, കർണാടക (Wife : Eliyamma, Chennampillil Family, Karnataka) <p><b>മക്കൾ (Children) : </b> 1. മനോജ് തോമസ് (Manoj Thomas) &nbsp; 2. വിനോദ് തോമസ് (Vinod Thomas) &nbsp; 3. പ്രമോദ് തോമസ് (Pramod Thomas)</p></div></div>
+<div class="person male indent-4"><div class="name">മനോജ് തോമസ് (Manoj Thomas)</div><div class="detail">ഭാര്യ : ടീന, വയനാട് (Wife : Tina, Wayanad) <p><b>മക്കൾ (Children) : </b> 1. മെൽവിൻ മനോജ് (Melvin Manoj) &nbsp; 2. മിലൻ മനോജ് (Milan Manoj)</p></div></div>
+<div class="person male indent-5"><div class="name">മെൽവിൻ മനോജ് (Melvin Manoj)</div><div class="detail">വിദ്യാർത്ഥി (Student)</div></div>
+<div class="person male indent-5"><div class="name">മിലൻ മനോജ് (Milan Manoj)</div><div class="detail">വിദ്യാർത്ഥി (Student)</div></div>
+<div class="person male indent-4"><div class="name">വിനോദ് തോമസ് (Vinod Thomas)</div><div class="detail">തൊഴിൽ : എഞ്ചിനീയർ, കാനഡ, (Occupation : Engineer, Canada)<br>ഭാര്യ : ആൻ മേരി വിനോദ്, പാമ്പാക്കുട, തൊഴിൽ : എഞ്ചിനീയർ, കാനഡ. (Wife : Ann Mary Vinod. Occcupation : Engineer, Canada)<p><b>മക്കൾ (Children) : </b> 1. ഈഡൻ വിനോദ് (Eden Vinod) &nbsp; 2. അരുവാൻ വിനോദ് (Aruvan Vinod) &nbsp; 3. ഇവ വിനോദ് (Eva Vinod)</p></div></div>
+<div class="person male indent-5"><div class="name">ഈഡൻ വിനോദ് (Eden Vinod)</div><div class="detail">വിദ്യാർത്ഥി (Student)</div></div>
+<div class="person male indent-5"><div class="name">അരുവാൻ വിനോദ് (Aruvan Vinod)</div><div class="detail">വിദ്യാർത്ഥി (Student)</div></div>
+<div class="person female indent-5"><div class="name">ഇവ വിനോദ് (Eva Vinod)</div><div class="detail">വിദ്യാർത്ഥി (Student)</div></div>
+<div class="person male indent-4"><div class="name">പ്രമോദ് തോമസ് (Pramod Thomas)</div><div class="detail">തൊഴിൽ : നേഴ്സ്, ഓസ്ട്രേലിയ (Occupation : Nurse, Australia)<br>ഭാര്യ : രമ്യ പ്രമോദ്, അടിമാലി, തൊഴിൽ : നേഴ്സ്, ഓസ്ട്രേലിയ (Wife : Remya Pramod, Adimali, Occupation : Nurse, Australia)<p><b>മക്കൾ (Children) : </b> 1. ആഞ്ചലീന പ്രമോദ് (Anjalina Pramod) &nbsp; 2. ഇവാൻ പ്രമോദ് (Evan Pramod)</p></div></div>
+<div class="person female indent-5"><div class="name">ആഞ്ചലീന പ്രമോദ് (Anjalina Pramod)</div><div class="detail">വിദ്യാർത്ഥിനി (Student)</div></div>
+<div class="person male indent-5"><div class="name">ഇവാൻ പ്രമോദ് (Evan Pramod)</div><div class="detail">വിദ്യാർത്ഥി (Student)</div></div>
+
+<div class="person female indent-3"><div class="name">മേരി (Mary)</div><div class="detail">തൊഴിൽ : കൃഷി (occupation : Agriculture) <br>ഭർത്താവ് : ഈപ്പൻ, (തമ്പി), മേപ്പുറത്ത് കുടുംബം, ഇച്ചിലംപാടി (Husband : Eapen (Thamby), Meppurathu Family, Ichilampadi Karnataka)<p><b>മക്കൾ (Children) : </b> 1. മിനി ഈപ്പൻ (Mini Eapen) &nbsp; 2. റേനി ഈപ്പൻ (Reni Eapen) &nbsp; 3. ചാൾസ് ഈപ്പൻ (Charles Eapen)</p> </div></div>
+<div class="person female indent-4"><div class="name">മിനി ഈപ്പൻ (Mini Eapen) </div><div class="detail">വീട്ടമ്മ– ബാംഗ്ലൂർ (House Wife, Bangalore) <br>ഭർത്താവ് : ജിജി മണി, അടപ്പാട്ട്, എൻ.ആർ. പുര, തൊഴിൽ : അക്കൗണ്ടന്റ്, ബാംഗ്ലൂർ. (Husband : Jiji Mani, Adappattu, N R Pura Occupation : Accountant, Bangalore)<p><b>മക്കൾ (Children) : </b> 1. മിൻജു ജിജി (Minju Jiji) &nbsp; 2. ആയുഷ് ജിജി (Ayush Jiji)</p></div></div>
+<div class="person female indent-5"><div class="name">മിൻജു ജിജി (Minju Jiji)</div><div class="detail">തൊഴിൽ : എഞ്ചിനീയർ, ഓസ്ട്രേലിയ. (Occupation : Engineer, Australia)</div></div>
+<div class="person male indent-5"><div class="name">ആയുഷ് ജിജി (Ayush Jiji)</div><div class="detail">വിദ്യാർത്ഥി (Student)</div></div>
+<div class="person male indent-4"><div class="name">റേനി ഈപ്പൻ (Reni Eapen)</div><div class="detail">തൊഴിൽ : ഇലക്ട്രിക്കൽ സൂപ്പർവൈസർ, ദുബായ്. (Occupation : Electrical Supervisor, Dubai).<br>ഭാര്യ : സ്മിത റേനി എൻ.ആർ. പുര, തൊഴിൽ : നേഴ്സ്,. (Wife : Smitha Reni, NR Pura Occcupation : Nurse)<p><b>മക്കൾ (Children) : </b> 1. അലൈന (Alaina) &nbsp; 2. അൽവിന (Alvina)</p></div></div>
+<div class="person female indent-5"><div class="name">അലൈന (Alaina)</div><div class="detail">വിദ്യാർത്ഥിനി (Student)</div></div>
+<div class="person female indent-5"><div class="name">അൽവിന (Alvina)</div><div class="detail">വിദ്യാർത്ഥിനി (Student)</div></div>
+<div class="person male indent-4"><div class="name">ചാൾസ് ഈപ്പൻ (Charles Eapen)</div><div class="detail">തൊഴിൽ : HSE ഓഫീസർ, റെയിൽവേ,UK (Occupation : HSE Officer, Railway, UK)<br>ഭാര്യ : ഡൈന ചാൾസ്, നെല്ലിയാടി. UK (Wife : Daina charles, Nellyadi, UK)<p><b>മക്കൾ (Children) : </b> 1. അഡ്വിൻ (Adwin) &nbsp; 2. അഡ്ലിൻ (Adlin)</p></div></div>
+<div class="person male indent-5"><div class="name">അഡ്വിൻ (Adwin)</div><div class="detail">വിദ്യാർത്ഥി (Student)</div></div>
+<div class="person male indent-5"><div class="name">അഡ്ലിൻ (Adlin)</div><div class="detail">വിദ്യാർത്ഥി (Student)</div></div>
+
+<div class="person male indent-3"><div class="name">സാജു (Saju)</div><div class="detail">തൊഴിൽ : ടെക്നിക്കൽ മാനേജർ, ബഹ്റൈൻ (Occupation : Technical Manager, Bahrin)<br>ഭാര്യ : മിനി സാജു, അടപ്പാട്ട്, N R പുര തൊഴിൽ : വീട്ടമ്മ, N R പുര. (Wife : Mini Saju, Adappathu, N RN Pura, Occupation : House Wife)<p><b>മക്കൾ (Children) : </b> 1. മെറിൻ സാജു (Merin Saju) &nbsp; 2. ജെറിൻ സാജു (Jerin Saju)</p></div></div>
+<div class="person female indent-4"><div class="name">മെറിൻ സാജു (Merin Saju)</div><div class="detail">തൊഴിൽ : ഹെൽത്ത് ഇൻഫോർമാറ്റിക്, UK (Occupation : Health informatic, UK)<br>ഭർത്താവ് : നിതിൻ ജിമ്മി, കാഞ്ഞക്കാട്. തൊഴിൽ : മെഷിനിസ്റ്റ്,UK. (Husband : Nithin Jimmy, Kanhjangadu, Occupation : Machinist, UK)<p><b>മക്കൾ (Children) : </b> 1. ജൊനാഥൻ ജിമ്മി (Johnathan Jimmy) &nbsp; 2. മാർസെല്ല ജിമ്മി (Marcella Jimmy)</p></div></div>
+<div class="person male indent-5"><div class="name">ജൊനാഥൻ ജിമ്മി (Johnathan Jimmy)</div></div>
+<div class="person female indent-5"><div class="name">മാർസെല്ല ജിമ്മി (Marcella Jimmy)</div></div>
+<div class="person male indent-4"><div class="name">ജെറിൻ സാജു (Jerin Saju)</div><div class="detail">തൊഴിൽ : എഞ്ചിനീയർ, കാനഡ (Occupation : Engineer, Canada).<br>ഭാര്യ : ടീന ജെറിൻ, നെല്ലിയാടി തൊഴിൽ : ലോജിസ്റ്റിക് കോർഡിനേറ്റർ, കാനഡ. (Wife : Teena Jerin, Nellyadi Occcupation : Logistic Cordinator)</div></div>
+
+<h2 class="branch-title indent-2">ഉപശാഖ 1.1.2 (Sub-branch 1.1.2) &mdash; അന്നക്കുട്ടി മണപ്പാട്ട്  ശാഖ (Annakutty Manappattu Line)</h2>
+<div class="person female indent-2"><div class="name">അന്നക്കുട്ടി (Annakutty)(Late) </div><div class="detail">തൊഴിൽ : കൃഷി. (Occupation : Agriculture) <br>ഭർത്താവ് : ഉലഹന്നാൻ എം. യു (കുഞ്ഞപ്പൻ),മണപ്പാട്ട് കുടുംബാംഗം, കക്കാട്. (Husband : Ulahannan M U (Kunjappan)(Late), Manappattu, Kakkad),തൊഴിൽ : കൃഷി. (Occupation : Agriculture) <p><b>മക്കൾ (Children) : </b> 1. ജോൺ (John) &nbsp; 2. തോമസ് (Thomas) &nbsp; 3. തങ്ക (Thanka) / ഏലിയാമ്മ (Eliyamma) &nbsp; 4. ചിന്നമ്മ (Chinnamma)</p></div></div>
+
+<div class="person male indent-3"><div class="name">ജോൺ (John)</div><div class="detail">തൊഴിൽ : മുൻ സൈനികൻ (Occupation : Retd. Govt Servant)<br>ഭാര്യ : കുഞ്ഞന്നാമ്മ, തോട്ടുപുറത്ത് കുടുംബാംഗം.മുളക്കുളം. (Wife : Kujannamma, Thottupurathu Family, Mulakkulam) <p><b>മക്കൾ (Children) : </b> 1. ജോമോൾ (Jomol) &nbsp; 2. ജിജോമോൾ (Jijomol)</p></div></div>
+<div class="person female indent-4"><div class="name">ജോമോൾ (Jomol)</div><div class="detail">തൊഴിൽ : നേഴ്സ്,, UK (Occupation : Nurse, UK)<br>ഭർത്താവ് : മധു മാമൻ, UK, ചേലായ്ക്കാമറ്റം കുടുംബാംഗം, മാറാടി (Husband : Madhu Mammen, Chelakkamattam Family, Marady) <p><b>മക്കൾ (Children) : </b> 1. ജെഫ്രി (Jeffry) &nbsp; 2. എഫ്രയിം (Ephraim)</p></div></div>
+<div class="person male indent-5"><div class="name">ജെഫ്രി (Jeffry)</div><div class="detail">വിദ്യാർത്ഥി (Student)</div></div>
+<div class="person male indent-5"><div class="name">എഫ്രയിം (Ephraim)</div><div class="detail">വിദ്യാർത്ഥി (Student)</div></div>
+<div class="person female indent-4"><div class="name">ജിജോമോൾ (Jijomol)</div><div class="detail">തൊഴിൽ : നേഴ്സ്,, ഓസ്ട്രേലിയ (Occupation : Nurse, Australia)<br>ഭർത്താവ് : ഷെറിൽ സ്‌കറിയ, ഓസ്ട്രേലിയ, പട്ടരുമഠം കുടുംബാംഗം, പാലക്കുഴ. (Husband : Sheril Skaria, Australia, Pattarumadam family, Palakkuzha)<p><b>മക്കൾ (Children) : </b> 1. ഏഞ്ചല (Angela) &nbsp; 2. ആൻലിയ (Anlia)</p></div></div>
+<div class="person female indent-5"><div class="name">ഏഞ്ചല (Angela)</div><div class="detail">വിദ്യാർത്ഥിനി (Student)</div></div>
+<div class="person female indent-5"><div class="name">ആൻലിയ (Anlia)</div><div class="detail">വിദ്യാർത്ഥിനി (Student)</div></div>
+
+<div class="person male indent-3"><div class="name">തോമസ് (Thomas)</div><div class="detail">തൊഴിൽ : മുൻ സൈനികൻ (Occupation : Retd. Govt Servant)<br>ഭാര്യ : സൂസി, വെളിയിൽ കുടുംബാംഗം, ഉദയനാപുരം, വൈക്കം. (Wife : Susy, Veliyil Family, Udayanapuram, Vaikom) <p><b>മക്കൾ (Children) : </b> 1. റ്റിസി (Tissy) &nbsp; 2. റ്റിനി (Tinny) &nbsp; 3.ഫാ. എൽദോ മണപ്പാട്ട് (Rev. Fr. Eldho Manappattu)</p></div></div>
+<div class="person female indent-4"><div class="name">റ്റിസി (Tissy)</div><div class="detail">തൊഴിൽ : ടീച്ചർ, (Occupation : Teacher)<br>ഭർത്താവ് : അനിൽ സക്കറിയ, കോളങ്ങാത്ത് കുടുംബാംഗം, പുളിക്കമാലി.തൊഴിൽ : ടീച്ചർ (Husband : Anil Skaria. Kolangathu Family, Pulikkamali, Occupation : Teacher) <p><b>മക്കൾ (Children) : </b> 1. ഏഞ്ചലിന (Angelina) &nbsp; 2. ഏഞ്ചലിയ (Angelia)</p></div></div>
+<div class="person female indent-5"><div class="name">ഏഞ്ചലിന (Angelina)</div><div class="detail">വിദ്യാർത്ഥിനി (Student)</div></div>
+<div class="person female indent-5"><div class="name">ഏഞ്ചലിയ (Angelia)</div><div class="detail">വിദ്യാർത്ഥിനി (Student)</div></div>
+<div class="person female indent-4"><div class="name">റ്റിനി (Tinny) </div><div class="detail">തൊഴിൽ : ഫാർമസിസ്റ്റ്, UK (Occupation : Pharmacist, UK)<br>ഭർത്താവ് : എൽദോ മാത്യു, കാവലേലിൽ കുടുംബാംഗം, കുരുവിള സിറ്റി, രാജകുമാരി. തൊഴിൽ : ഐ.ടി.പ്രൊഫഷണൽ , UK (Husband : Eldho Mathew, Kavalelil Family, Kuruvila City, Rajakumari.Occupation : IT Professional, UK)<p><b>മക്കൾ (Children) : </b> 1. റൂബേൻ (Reuben) &nbsp; 2. നെയ്തൻ (Neythan) &nbsp; 3. ജോസ് (Jose)</p>  </div></div>
+<div class="person male indent-5"><div class="name">റൂബേൻ (Reuben)</div><div class="detail">വിദ്യാർത്ഥി (Student)</div></div>
+<div class="person male indent-5"><div class="name">നെയ്തൻ (Neythan)</div><div class="detail">വിദ്യാർത്ഥി (Student)</div></div>
+<div class="person male indent-5"><div class="name">ജോസ് (Jose)</div><div class="detail">വിദ്യാർത്ഥി (Student)</div></div>
+<div class="person male indent-4"><div class="name">ഫാ. എൽദോ മണപ്പാട്ട് (Rev. Father Eldho Manappattu)</div><div class="detail">ഭാര്യ : ബെറ്റ്സി, നാൻചിറയിൽ കുടുംബാംഗം, വാളകം.തൊഴിൽ : ടീച്ചർ, (Wife : Betsy, Nanchirayil Family, Valakom. Occupation : Teacher) <p><b>മക്കൾ (Children) : </b> 1. യോഹാൻ (Yohan) &nbsp; 2. ഏദൻ (Eden)</p></div></div>
+<div class="person male indent-5"><div class="name">യോഹാൻ (Yohan)</div><div class="detail">വിദ്യാർത്ഥി (Student)</div></div>
+<div class="person male indent-5"><div class="name">ഏദൻ (Eden)</div></div>
+
+<div class="person female indent-3"><div class="name">തങ്ക (Thanka) / ഏലിയാമ്മ (Eliyamma)</div><div class="detail">ഭർത്താവ് : മാർക്കോസ്. റ്റി. എ,  താത്തോത്ത് കുടുംബാംഗം, കളമ്പൂർ. (Husband : Markose T. A (Late), Tathoth, Kalamboor) <p><b>മക്കൾ (Children) : </b> 1. സ്മിത (Smitha) &nbsp; 2. സുമിത്ത് (Sumith) &nbsp; 3. അനു (Anu)</p></div></div>
+<div class="person female indent-4"><div class="name">സ്മിത (Smitha)</div><div class="detail">തൊഴിൽ : നേഴ്സ്, ഓസ്ട്രേലിയ (Occupation : Nurse, Australia)<br>ഭർത്താവ് : ജോണി വർഗീസ്, മൈലാടിക്കുന്നേൽ കുടുംബാംഗം, കിഴകൊമ്പ്, തൊഴിൽ : എഞ്ചിനീയർ, ഓസ്ട്രേലിയ (Husband : Johny Varghese, Myladikunnel Family, Kizhakombu, Occupation : Engineer, Australia) <p><b>മക്കൾ (Children) : </b> 1. ജോഹൻ (Johan) &nbsp; 2. ഒലിവിയ (Olivia)</p></div></div>
+<div class="person male indent-5"><div class="name">ജോഹൻ (Johan)</div><div class="detail">വിദ്യാർത്ഥി (Student)</div></div>
+<div class="person female indent-5"><div class="name">ഒലിവിയ (Olivia)</div><div class="detail">വിദ്യാർത്ഥിനി (Student)</div></div>
+<div class="person male indent-4"><div class="name">സുമിത്ത് (Sumith)</div><div class="detail">തൊഴിൽ : എഞ്ചിനീയർ,ഖത്തർ (Occupation : Engineer, Qatar)<br>ഭാര്യ : ലിയോണ, മൂത്താനിച്ചിറയിൽ കുടുംബാംഗം, പിറവം.തൊഴിൽ : നേഴ്സ്, ഖത്തർ, (Wife : Leona, Muthanichirayil Family, Piravom.Occupation : Nurse, Qatar) <p><b>മക്കൾ (Children) : </b> 1. ആൽഡ്രിൻ (Aldrin) &nbsp; 2. എയ്റോൺ (Airon)</p></div></div>
+<div class="person male indent-5"><div class="name">ആൽഡ്രിൻ (Aldrin)</div><div class="detail">വിദ്യാർത്ഥി (Student)</div></div>
+<div class="person male indent-5"><div class="name">എയ്റോൺ (Airon)</div><div class="detail">വിദ്യാർത്ഥി (Student)</div></div>
+<div class="person female indent-4"><div class="name">അനു (Anu)</div><div class="detail">തൊഴിൽ : ഐ.ടി.പ്രൊഫഷണൽ, കാനഡ (Occupation : IT Professional, Canada)<br>ഭർത്താവ് : ജെസ്സ് പോൾ, കാനഡ, കൊച്ചുപറമ്പിൽ കുടുംബാംഗം, മുളന്തുരുത്തി. (Husband : Jes Paul, Canada, Kochparambil family, Mulathuruthy) <p><b>മക്കൾ (Children) : </b> 1. എസക്കിയേൽ (Ezekiel)</p></div></div>
+<div class="person male indent-5"><div class="name">എസക്കിയേൽ (Ezekiel)</div><div class="detail">വിദ്യാർത്ഥി (Student)</div></div>
+
+<div class="person female indent-3"><div class="name">ചിന്നമ്മ (Chinnamma)</div><div class="detail">ഭർത്താവ് : ജേക്കബ്,തുമ്പയിൽ കുടുംബാംഗം, പിറവം. (Husband : Jacob, Thumayil Piravom ) <p><b>മക്കൾ (Children) : </b> 1. ജാക്സൺ (Jackson) &nbsp; 2. ജോൺസൺ (Johnson)</p></div></div>
+<div class="person male indent-4"><div class="name">ജാക്സൺ (Jackson)</div><div class="detail">ഭാര്യ : അനു,പെരിങ്ങാമല കുടുംബാംഗം, പിറവം. തൊഴിൽ : നേഴ്സ് (Wife : Anu, Peringamalayil Family, Piravom, Occupation : Nurse Australia) <p><b>മക്കൾ (Children) : </b> 1. ജുവാൻ (Juvaan) &nbsp; 2. ജാക്ലിൻ (Jacklin) &nbsp; 3. ജെറോൺ (Jeron)</p></div></div>
+<div class="person male indent-5"><div class="name">ജുവാൻ (Juvaan)</div><div class="detail">വിദ്യാർത്ഥി (Student)</div></div>
+<div class="person female indent-5"><div class="name">ജാക്ലിൻ (Jacklin)</div><div class="detail">വിദ്യാർത്ഥിനി (Student)</div></div>
+<div class="person male indent-5"><div class="name">ജെറോൺ (Jeron)</div><div class="detail">വിദ്യാർത്ഥി (Student)</div></div>
+<div class="person male indent-4"><div class="name">ജോൺസൺ (Johnson)</div><div class="detail">തൊഴിൽ : പ്രൈവറ്റ് (Occupation : Private)<br>ഭാര്യ : മീതു, ചിറയ്ക്കച്ചാലിൽ കുടുംബാംഗം, ആരക്കുന്നം. തൊഴിൽ : ഐ.ടി.പ്രൊഫഷണൽ (Wife : Meethu, Chirakkachalil Family, Arakkunnam, Occupation IT Professional) <p><b>മക്കൾ (Children) : </b> 1. ജെന്നിഫർ (Jennifer) &nbsp; 2. ജെയ്ഡൻ (Jayden)</p></div></div>
+<div class="person female indent-5"><div class="name">ജെന്നിഫർ (Jennifer)</div><div class="detail">വിദ്യാർത്ഥിനി (Student)</div></div>
+<div class="person male indent-5"><div class="name">ജെയ്ഡൻ (Jayden)</div><div class="detail">വിദ്യാർത്ഥി (Student)</div></div>
+
+<h2 class="branch-title indent-2">ഉപശാഖ 1.1.3 (Sub-branch 1.1.3) &mdash; ചാക്കോ (കുഞ്ഞപ്പൻ) കോനാംപുറത്ത്  ശാഖ (Chacko (Kunjappan) Konampurathu Line)</h2>
+<div class="person male indent-2"><div class="name">ചാക്കോ (കുഞ്ഞപ്പൻ) (കർണാടക) (Chacko (Kunjappan) (Karnataka)) (Late)</div><div class="detail">തൊഴിൽ : മലഞ്ചരക്ക് വ്യാപാരം. (Occupation : Business)<br>ഭാര്യ : പെണ്ണമ്മ,  മുത്തുപതിക്കൽ കുടുംബാംഗം, ഇടയാർ. (Wife : Pennamma (Late), Muthupathikkal Family, Edayar) <p><b>മക്കൾ (Children) : </b> 1. സാജു (Saju) &nbsp; 2. മോളി (Molly) &nbsp; 3. ഷിബു (Shibu) / കുഞ്ഞുമോൻ (Kunjumon) &nbsp; 4. ജോളി (Jolly) &nbsp; 5. ഏലിയാസ് (Elias)</p></div></div>
+<div class="person male indent-3"><div class="name">സാജു (Saju)</div><div class="detail">തൊഴിൽ : കൃഷി (Occupation : Agriculture)<br>ഭാര്യ : ലിസ്സി, ചാലുനിലത്തിൽ കുടുംബാംഗം, മണ്ണാർക്കാട്. (Wife : Lissy, Chalunilathil Family, Mannarkadu)<p><b>മക്കൾ (Children) : </b> 1. പ്രിയങ്ക (Priyanka) &nbsp; 2.പ്രതീക് (Prathik)</p></div></div>
+<div class="person female indent-4"><div class="name">പ്രിയങ്ക (Priyanka)</div><div class="detail">തൊഴിൽ : നേഴ്സ്, (Occupation : Nurse)<br>ഭർത്താവ് : ബേസിൽ, അമ്പഴചാലിൽ കുടുംബാംഗം, പുതുപ്പാടി. തൊഴിൽ : എൻജിനിയർ, ന്യൂസിലാൻഡ് (Husband : Basil, Ambazhachalil Family, Puduppady, Occupation : Engineer, New Zealand)<p><b>മക്കൾ (Children) : </b> 1. ജേക്ക് (Jake) &nbsp; 2. ജേഡൻ (Jayden)</p></div></div>
+<div class="person male indent-5"><div class="name">ജേക്ക് (Jake)</div></div>
+<div class="person male indent-5"><div class="name">ജേഡൻ (Jayden)</div></div>
+<div class="person male indent-4"><div class="name">പ്രതീക് (Prathik)</div><div class="detail">തൊഴിൽ : എൻജിനിയർ, UAE (Occupation : Engineer, UAE)<br>ഭാര്യ : മോനിഷ, കല്യാററ് വീട് നെല്യാടി, തൊഴിൽ : ബയോ ടെക്നോളജിസ്റ്റ്, UAE (Wife : Monisha, Kalyattu Family, Nellyadi, Occupation : Bio technologyst) <p><b>മക്കൾ (Children) : </b> 1. നൈറ (Naira)</p></div></div>
+<div class="person female indent-5"><div class="name">നൈറ (Naira)</div></div>
+<div class="person female indent-3"><div class="name">മോളി (Molly)</div><div class="detail">ഭർത്താവ് : മുരളി, മുൻ കസ്റ്റംസ് ഉദ്യോഗസ്ഥൻ, കഴുന്നാട്ടുപറമ്പിൽ കുടുംബാംഗം, പിറവം (Husband : Murali Retd. Customs Officer, Kazhunattu Parambil, Piravom) <p><b>മക്കൾ (Children) : </b> 1. മിഥുൻ (Mithun) &nbsp; 2. മീര (Meera)</p></div></div>
+<div class="person male indent-4"><div class="name">മിഥുൻ (Mithun)</div><div class="detail">തൊഴിൽ : ഐ.ടി.പ്രൊഫഷണൽ, ബാംഗ്ലൂർ. (Occupation : IT Professional, Bangalore)<br>ഭാര്യ : അമിത, മണപ്പറമ്പിൽ കുടുംബം, പയ്യന്നൂർ. (Wife : Amitha, Manapparambil Family, Payyanoor)</div></div>
+<div class="person female indent-4"><div class="name">മീര (Meera)</div><div class="detail">തൊഴിൽ : സൈക്കോളജിസ്റ്റ്, വരാപ്പുഴ (Occupation : Psychologyst, Varappuzha)</div></div>
+<div class="person male indent-3"><div class="name">ഷിബു (Shibu) / കുഞ്ഞുമോൻ (Kunjumon) </div><div class="detail">തൊഴിൽ : വിമുക്ത വായുസേനാദ്യോഗസ്ഥൻ. (Occupation : Retd. Staff Airforce)<br>ഭാര്യ : ശോഭ, ചെമ്പോത്തിനാൽ കുടുംബാംഗം, ശിരാടി, തൊഴിൽ : റിട്ട : നഴ്‌സിംഗ് സൂപ്രണ്ട്. (Wife: Shobha, Chembothinal Family, Shirady. Occupation : Retd. Nursing Superintend) <p><b>മക്കൾ (Children) : </b> 1. നിക്കിൽ (Nikil) &nbsp; 2. നമിത (Namitha)</p></div></div>
+<div class="person male indent-4"><div class="name">നിക്കിൽ (Nikil) </div><div class="detail">തൊഴിൽ : എൻജിനിയർ, ബാംഗ്ലൂർ. (Occupation : Engineer, Bangalore)<br>ഭാര്യ : അലീന, നെടുംമണ്ണിൽ കുടുംബാംഗം, ബാംഗ്ലൂർ തൊഴിൽ : എൻജിനിയർ, ബാംഗ്ലൂർ (Wife : Aleena, Nedumannil Family, Bangalore. Occupation : Engineer, Bangalore)</div></div>
+<div class="person female indent-4"><div class="name">നമിത (Namitha)</div><div class="detail">തൊഴിൽ : BDS UK (Occupation : BDS UK)</div></div>
+<div class="person female indent-3"><div class="name">ജോളി (Jolly)</div><div class="detail">തൊഴിൽ : കോളേജ് ലക്ചറർ, (Occupation : College Lecturer)<br>ഭർത്താവ് : ജോർജ്, മുൻ സൈനികൻ, വാതക്കാട്ടേൽ കുടുംബാംഗം, നെല്ലിയാടി. (Husband : George, Retd. Govt Servant, Vathakkattel family, Nellaydy) <p><b>മക്കൾ (Children) : </b> 1. അഖിൽ (Akhil) &nbsp; 2. നാൻസി (Nancy)</p></div></div>
+<div class="person male indent-4"><div class="name">അഖിൽ (Akhil)</div><div class="detail">തൊഴിൽ : HR മാനേജർ, (Byadgi). (Occupation : HR Manager, (Byadgi)).<br>ഭാര്യ : നവ്യ. പീഴത്തിങ്ങൽ കുടുംബാംഗം (കഡബ), തൊഴിൽ : HR മാനേജർ, St : Johns ഹോസ്പിറ്റൽ, ബാംഗ്ലൂർ. (Wife : Navya, Pizhatthingal family,Kadaba, Occupation : HR manager, St Johns Hopital, Bangalore)</div></div>
+<div class="person female indent-4"><div class="name">നാൻസി (Nancy)</div><div class="detail">തൊഴിൽ : സൈക്കോളജിസ്റ്റ്, അയർലണ്ട്. (Occupation : Psychologyst, Ireland)</div></div>
+<div class="person male indent-3"><div class="name">ഏലിയാസ് (Elias)</div><div class="detail">തൊഴിൽ : പഞ്ചായത്ത് ക്ലർക്ക്, (Occupation : Pachayath Clerk)<br>ഭാര്യ : സാലി, പൂക്കളത്തുകുന്നേൽ കുടുംബാംഗം, ശീരാടി. (Wife : Sali, Pookkalathu Kunnel, Shirady) <p><b>മക്കൾ (Children) : </b> 1. അഞ്ചു (Anju) &nbsp; 2. ആഷ്‌ലി (Ashly)</p></div></div>
+<div class="person female indent-4"><div class="name">അഞ്ചു (Anju)</div><div class="detail">നേഴ്സിംഗ് വിദ്യാർത്ഥിനി (Nursing Student)</div></div>
+<div class="person female indent-4"><div class="name">ആഷ്‌ലി (Ashly)</div><div class="detail">വിദ്യാർത്ഥിനി (Student)</div></div>
+
+<h2 class="branch-title indent-2">ഉപശാഖ 1.1.4 (Sub-branch 1.1.4) &mdash; തോമസ് (കുഞ്ഞൂഞ്ഞ് ) കോനാംപുറത്ത്  ശാഖ (Thomas (Kunjuju) Konampurathu Line)</h2>
+<div class="person male indent-2"><div class="name">തോമസ് (കുഞ്ഞൂഞ്ഞ് ) (Thomas (Kunjuju)) (Late)</div><div class="detail">തൊഴിൽ : മുൻ എക്സൈസ് സർക്കിൾ ഉദ്യോഗസ്ഥൻ (Retd). (Occupation : Retd. Govt Servant (Circle, Excise))<br>ഭാര്യ : ഏലിക്കുട്ടി, പുല്ലുവേലിൽ കുടുംബാംഗം, മണകുന്നം. (Wife : Elikkutty, Pulluvelil, Manakunnam)<p><b>മക്കൾ (Children) : </b> 1. ജിജി (Gigi) &nbsp; 2. ബിനി (Bini) &nbsp; 3. എൽദോ (Eldho)</p></div></div>
+<div class="person female indent-3"><div class="name">ജിജി (Gigi)</div><div class="detail">തൊഴിൽ : റിട്ടയേഡ് ടീച്ചർ (Occupation : Retd. Teacher)<br>ഭർത്താവ് : ജോർജ്‌,ചേന്നംമ്പിള്ളിൽ കുടുംബാംഗം, അന്തിയാൽ,തൊഴിൽ : റിട്ടയേഡ് ഡെപ്യൂട്ടി മാനേജർ (പ്രൊഡക്ഷൻ), FACT, (Husband : George, Chennampillil Family, Anthial, Occupation : Retd Deputy Manager, FACT) <p><b>മക്കൾ (Children) : </b> 1. അലീഷ (Alisha) &nbsp; 2. അലൻ (Alan)</p></div></div>
+<div class="person female indent-4"><div class="name">അലീഷ (Alisha)</div><div class="detail">തൊഴിൽ : ടീച്ചർ (Occupation : Teacher)<br>ഭർത്താവ് : ജോം,കയ്യാലപ്പറമ്പിൽ കുടുംബാംഗം, പെരുവ. തൊഴിൽ : HR Manager (Husband : Jom, Kayyalaparambil Family, Peruva. Occupation : HR Manager) <p><b>മക്കൾ (Children) : </b> 1. കാതറിൻ (Catherine)</p></div></div>
+<div class="person female indent-5"><div class="name">കാതറിൻ (Catherine)</div></div>
+<div class="person male indent-4"><div class="name">അലൻ (Alan)</div><div class="detail">തൊഴിൽ : എഞ്ചിനീയർ (Occupation : Engineer)</div></div>
+<div class="person female indent-3"><div class="name">ബിനി (Bini)</div><div class="detail">ഭർത്താവ് : ബേബി, നാരിയേലിൽ കുടുംബാംഗം, വീട്ടൂർ.തൊഴിൽ : ബിസിനസ്, കൃഷി (Husband : Baby, Nariyelil Family, Vittoor, Occupation : Business, Agriculture) <p><b>മക്കൾ (Children) : </b> 1. അബിൻ (Abin) &nbsp; 2. അശ്വിൻ (Aswin)</p></div></div>
+<div class="person male indent-4"><div class="name">അബിൻ (Abin)</div><div class="detail">തൊഴിൽ : M.Sc, ദുബായ് (Occupation : MSc Dubai)</div></div>
+<div class="person male indent-4"><div class="name">അശ്വിൻ (Aswin)</div><div class="detail">തൊഴിൽ : MBA, ബാംഗ്ലൂർ (Occupation : MBA Bangalore)</div></div>
+<div class="person male indent-3"><div class="name">എൽദോ (Eldho)</div><div class="detail">തൊഴിൽ : HR Manager (Occupation : HR Manager)<br>ഭാര്യ : സിനി,ഇല്ലിക്കൽ കുടുംബാംഗം, പേപ്പതി. തൊഴിൽ : കൺസ്ട്രക്ഷൻ കോർപ്പറേഷൻ, കൊച്ചി. (Wife : Sini, Illikkal Family, Peppathy, Occupation : Construction Corporation, Kochi ) <p><b>മക്കൾ (Children) : </b> 1. എലിസബത്ത് (Elizabeth) &nbsp; 2. ടോമിൻ (Tomin)</p></div></div>
+<div class="person female indent-4"><div class="name">എലിസബത്ത് (Elizabeth)</div><div class="detail">തൊഴിൽ : എഞ്ചിനീയർ, (Occupation : Engineer)</div></div>
+<div class="person male indent-4"><div class="name">ടോമിൻ (Tomin)</div><div class="detail">B.Tech വിദ്യാർത്ഥി (BTech student)</div></div>
+
+<h2 class="branch-title indent-2">ഉപശാഖ 1.1.5 (Sub-branch 1.1.5) &mdash; ഏലിയാമ്മ കല്ലിടുക്കിൽ പുത്തൻപുര  ശാഖ (Eliyamma) Kallidukkil PuthenpuraLine)</h2>
+<div class="person female indent-2"><div class="name">ഏലിയാമ്മ (Eliyamma) (Late)</div><div class="detail">തൊഴിൽ : കൃഷി. (Occupation : Agriculture)<br>ഭർത്താവ് : വർഗീസ് ,കല്ലിടുക്കിൽ പുത്തൻപുര കുടുംബാംഗം,മണ്ണത്തൂർ, (Husband : Varghese (Late) - Kallidukkil Puthenpura family, Manmathoor).തൊഴിൽ : കൃഷി. (Occupation : Agriculture)<p><b>മക്കൾ (Children) : </b> 1. ജോൺസൺ (Johnson) &nbsp; 2. ജെസ്സി രാജു (Jessy Raju) &nbsp; 3. ജെയ്‌സാ റെജി (Jaisa Reji)</p></div></div>
+<div class="person male indent-3"><div class="name">ജോൺസൺ (Johnson)</div><div class="detail">തൊഴിൽ : കൃഷി, ബിസിനസ്. പ്രസിഡൻ്റ്, തിരുമാറാടി പഞ്ചായത്ത് (Occupation : Agriculture / Business. President, Thirumaradi Panchayath)<br>ഭാര്യ : ബിന്ദു ജോൺസൺ, അതുങ്ങൽ അഴകം (Wife : Bindhu Johnson, Athungal Azhakam) <p><b>മക്കൾ (Children) : </b> 1. ജോബിൻസ് ജോൺസൺ (Jobins Johnson) &nbsp; 2. ജോബിയ ജോൺസൺ (Jobiya Johnson)</p></div></div>
+<div class="person male indent-4"><div class="name">ജോബിൻസ് ജോൺസൺ (Jobins Johnson)(Late)</div><div class="detail">ഭാര്യ : നീന ജോബിൻസ്, മുണ്ടയ്ക്കൽ കുടുംബം, കല്ലറ (Wife : Neena Jobins, Mundakkal Family, Kallara) <p><b>മക്കൾ (Children) : </b> 1. നോവ ജോബിൻസ് (Nova Jobins)</p></div></div>
+<div class="person female indent-5"><div class="name">നോവ ജോബിൻസ് (Nova Jobins)</div></div>
+<div class="person female indent-4"><div class="name">ജോബിയ ജോൺസൺ (Jobiya Johnson)</div><div class="detail">തൊഴിൽ : വിദ്യാർത്ഥിനി (Occupation : Student)</div></div>
+<div class="person female indent-3"><div class="name">ജെസ്സി രാജു (Jessy Raju)</div><div class="detail">ഭർത്താവ് : രാജു ഏബ്രഹാം താത്തോത്ത് കളമ്പൂർ (Husband : Raju Abraham, Thathoth Kalamboor)<p><b>മക്കൾ (Children) : </b> 1. ജെറിൻ രാജു (Jerin Raju) &nbsp; 2. കെവിൻ രാജു (Kevin Raju)</p></div></div>
+<div class="person male indent-4"><div class="name">ജെറിൻ രാജു (Jerin Raju)</div></div>
+<div class="person male indent-4"><div class="name">കെവിൻ രാജു (Kevin Raju)</div></div>
+<div class="person female indent-3"><div class="name">ജെയ്‌സാ റെജി (Jaisa Reji)</div><div class="detail">ഭർത്താവ് : റെജി ടി ഐ തേലപ്പിള്ളിൽ അങ്കമാലി (Husband : Reji T I, Thelappillil Angamali) <p><b>മക്കൾ (Children) : </b> 1. റയാൻ റെജി (Ryan Reji)</p></div></div>
+<div class="person male indent-4"><div class="name">റയാൻ റെജി (Ryan Reji)</div><div class="detail">വിദ്യാർത്ഥി (Student)</div></div>
+
+<h2 class="branch-title indent-2">ഉപശാഖ 1.1.6 (Sub-branch 1.1.6) &mdash; സൈമൺ (കുഞ്ഞ്) കോനാംപുറത്ത്  ശാഖ (Simon (Kunju) Konampurathu Line)</h2>
+<div class="person male indent-2"><div class="name">സൈമൺ (കുഞ്ഞ്) (Simon (Kunju)) (Late)</div><div class="detail">തൊഴിൽ : കൃഷി. (Occupation : Agriculture)<br>ഭാര്യ : ഏലിയാമ്മ,വലിയകരോട്ട് കുടുംബാംഗം, എരപ്പാംകുഴി, (Wife : Eliamma, Valiya Karottu, Erappankuzhi)<p><b>മക്കൾ (Children) : </b> 1. സിബി (Siby) &nbsp; 2. സജി (Saji) &nbsp; 3. സിജി (കുഞ്ഞുമോൾ) (Siji (Kunjumol))</p> </div></div>
+<div class="person female indent-3"><div class="name">സിബി (Siby) (Late)</div><div class="detail">തൊഴിൽ : കൃഷി (Occupation : Agriculture)<br>ഭർത്താവ് : ജോയി, മേക്കാട്ടുകുളം മാന്നമംഗലം തൃശൂർ, തൊഴിൽ : കൃഷി. (Husband : Joy, Mekkattukulam, Mannamagalam, Thrissur, Occupation : Agriculture)<p><b>മക്കൾ (Children) : </b> 1. എൽദോ (Eldho) &nbsp; 2. എബിൻ (Ebin)</p> </div></div>
+<div class="person male indent-4"><div class="name">എൽദോ (Eldho)</div><div class="detail">തൊഴിൽ : ഡ്രൈവർ (Occupation : Driver)</div></div>
+<div class="person male indent-4"><div class="name">എബിൻ (Ebin)</div><div class="detail">തൊഴിൽ : കൃഷി (Occupation : Agriculture)</div></div>
+<div class="person male indent-3"><div class="name">സജി (Saji)</div><div class="detail">തൊഴിൽ : ഡ്രൈവർ (Occupation : Driver)<br>ഭാര്യ : സുനിത കരോട്ടിക്കര കുടുംബം, മേരിഗിരി, പാലക്കാട് (Wife : Sunitha, Karottikkara family, Marygiri, Palakkad) <p><b>മക്കൾ (Children) : </b> 1. അലോണ (Alona) &nbsp; 2. അലക്സ (Alexa)</p> </div></div>
+<div class="person female indent-4"><div class="name">അലോണ (Alona)</div><div class="detail">CA വിദ്യാർത്ഥിനി (CA Student)</div></div>
+<div class="person female indent-4"><div class="name">അലക്സ (Alexa)</div><div class="detail">വിദ്യാർത്ഥിനി (Student)</div></div>
+<div class="person female indent-3"><div class="name">സിജി (കുഞ്ഞുമോൾ) (Siji (Kunjumol))</div><div class="detail">തൊഴിൽ : Retd CRPF<br>ഭർത്താവ് : ഷാജി വള്ളിയാട്ടിൽ, കട്ലപൂവം, തൊഴിൽ : ബാങ്ക് മാനേജർ (Husband : Shaji, Valliyattil Family, Katlapoovam, Occupation : Bank Manager) <p><b>മക്കൾ (Children) : </b> 1. എമിലി (Emily)</p> </div></div>
+<div class="person female indent-4"><div class="name">എമിലി (Emily)</div><div class="detail">വിദ്യാർത്ഥിനി (Student)</div></div>
+
+<h2 class="branch-title indent-2">ഉപശാഖ 1.1.7 (Sub-branch 1.1.7) &mdash; കുര്യാക്കോസ് (ജോയി)  കോനാംപുറത്ത്  ശാഖ (Kuriakose (Joy) Konampurathu Line)</h2>
+<div class="person male indent-2"><div class="name">കുര്യാക്കോസ് (ജോയി) (Kuriakose (Joy))</div><div class="detail">തൊഴിൽ : കൃഷി. (Occupation : Agriculture)</div></div>
+<div class="person female indent-2"><div class="name">ഭാര്യ : ലീല,മേലോത്ത് കുടുംബാംഗം, കാഞ്ഞിരമറ്റം (Wife : Leela (Late), Meloth Family, Kanjiramattom)</div> <div class="detail"> <p><b>മക്കൾ (Children) : </b> 1. ജോബി (Joby) &nbsp; 2. ജോമോൻ (Jomon) &nbsp; 3. ജോമോൾ (Jomol)</p></div></div>
+<div class="person female indent-3"><div class="name">ജോബി (Joby)</div><div class="detail">ഭർത്താവ് : രാജു,മരുതമ്പിള്ളി കുടുംബാംഗം, ഇച്ചിലംപാടി, കർണാടക.,തൊഴിൽ : കൃഷി, (Husband : Raju, Maruthumpillil, Ichilampady, Karnataka], Occupation : Agriculture) <p><b>മക്കൾ (Children) : </b> 1. അഭിജിത്ത് (Abhijith) &nbsp; 2. അജിത്ത് (Ajith) &nbsp; 3. അക്ഷിത്ത് (Akshith)</p> </div></div>
+<div class="person male indent-4"><div class="name">അഭിജിത്ത് (Abhijith)</div><div class="detail">തൊഴിൽ : എഞ്ചിനീയർ, (Occupation : Engineer)<br>ഭാര്യ : വിജി,തൊഴിൽ : നേഴ്സ്, UAE (Wife : Viji,, Occupation : Nurse, UAE) <p><b>മക്കൾ (Children) : </b> 1. ആൾഡിൻ (Aldin)</p> </div></div>
+<div class="person female indent-5"><div class="name">ആൾഡിൻ (Aldin)</div></div>
+<div class="person male indent-4"><div class="name">അജിത്ത് (Ajith)</div><div class="detail">ഭാര്യ : സുഷ്മിത, കൊക്കഡ (Wife : Sushmitha, Kokkada)</div></div>
+<div class="person male indent-4"><div class="name">അക്ഷിത്ത് (Akshith)</div><div class="detail">തൊഴിൽ : ഡിപ്ലോമ എഞ്ചിനീയർ, ബാംഗ്ലൂർ. (Occupation : Engineer In Diploma, Bangalore)</div></div>
+<div class="person male indent-3"><div class="name">ജോമോൻ (Jomon) (Late)</div><div class="detail">ഭാര്യ : ഷീബ, തൃശ്ശൂർ, UAE (Wife : Sheeba, Thrissur, UAE) <p><b>മക്കൾ (Children) : </b> 1. അമൽ (Amal) &nbsp; 2. അഖിൽ (Akhil)</p> </div></div>
+<div class="person male indent-4"><div class="name">അമൽ (Amal)</div><div class="detail">വിദ്യാർത്ഥി (Student)</div></div>
+<div class="person male indent-4"><div class="name">അഖിൽ (Akhil)</div><div class="detail">വിദ്യാർത്ഥി (Student)</div></div>
+<div class="person female indent-3"><div class="name">ജോമോൾ (Jomol)</div><div class="detail">തൊഴിൽ : ടീച്ചർ (Occupation : Teacher)<br>ഭർത്താവ് : സജി,ഇച്ചിലംപാടി,കർണാടക, തൊഴിൽ : കൃഷി (Husband : Saji, Ichilampadi, Karnataka, Occupation : Agriculture) <p><b>മക്കൾ (Children) : </b> 1. ഷൈൻ (Shine) &nbsp; 2. ഷാരോൺ (Sharon)</p> </div></div>
+<div class="person male indent-4"><div class="name">ഷൈൻ (Shine)</div><div class="detail">BCA- വിദ്യാർത്ഥി (BCA student)</div></div>
+<div class="person male indent-4"><div class="name">ഷാരോൺ (Sharon)</div><div class="detail">BBA- വിദ്യാർത്ഥി (BBA student)</div></div>
+<div class="person female indent-2"><div class="name">ഭാര്യ : മോളി,വാളംകോട് കുടുംബാംഗം,ചിറയ്ക്കക്കോട്, തൃശൂർ (Wife : Molly, Valamkodu Family, Chirakkakode, Thrissur)</div> <div class="detail"> <p><b>മക്കൾ (Children) : </b> 1. ജോളി (Jolly) &nbsp; 2. എൽദോ (Eldho)</p></div></div>
+<div class="person female indent-3"><div class="name">ജോളി (Jolly)</div><div class="detail">തൊഴിൽ : ടീച്ചർ (Occupation : Teacher)<br>ഭർത്താവ് : എൽദോ, എൻ ആർ പുര,തൊഴിൽ : കൃഷി, ബിസിനസ്. (Husband : Eldho, N R Pura, Occupation : Agriculture / Business)<p><b>മക്കൾ (Children) : </b> 1. അലൻ (Alan) &nbsp; 2. ആൽവിൻ (Alwin)</p> </div></div>
+<div class="person male indent-4"><div class="name">അലൻ (Alan)</div><div class="detail">വിദ്യാർത്ഥി (Student)</div></div>
+<div class="person male indent-4"><div class="name">ആൽവിൻ (Alwin)</div><div class="detail">വിദ്യാർത്ഥി (Student)</div></div>
+<div class="person male indent-3"><div class="name">എൽദോ (Eldho)</div><div class="detail">തൊഴിൽ : കല്ല്യാൺ ജ്വല്ലറി എക്സിക്യൂട്ടീവ്, (Occupation : Kalyan jewellers Executive)<br>ഭാര്യ : മഞ്ജുഷ, ശിരാടി, (Wife : Manjusha, Shiradi) <p><b>മക്കൾ (Children) : </b> 1. മീഖ (Meekha)</p></div></div>
+<div class="person male indent-4"><div class="name">മീഖ (Meekha)</div></div>
+
+<h2 class="branch-title indent-2">ഉപശാഖ 1.1.8 (Sub-branch 1.1.8) &mdash; ശുശാമ്മ മേപ്പാടത്ത് ശാഖ (Susamma Meppadathu Line)</h2>
+<div class="person female indent-2"><div class="name">ശുശാമ്മ (Susamma) </div><div class="detail">ഭർത്താവ് : വർഗീസ്.പി.പി, മേപ്പാടത്ത് കുടുംബാംഗം, തിരുവാണിയൂർ (Husband : Varghese P P (Late), Meppadathu Family, Thiruvaniyoor) തൊഴിൽ : മുൻ എയർഫോഴ്സ് ഉദ്യോഗസ്ഥൻ (Occupation : Govt Service (Air Force)(Retd))<p><b>മക്കൾ (Children) : </b> 1. ജൂബി (Juby) &nbsp; 2. ജിൻസ് (Jins)</p></div></div>
+<div class="person male indent-3"><div class="name">ജൂബി (Juby)</div><div class="detail">തൊഴിൽ : സിങ്കപ്പൂർ മെട്രോ റെയിൽ (Occupation : Metro Rail, Singapore)<br>ഭാര്യ : ജീന, നമ്മനാരിയിൽ കുടുംബാംഗം, കിഴക്കമ്പലം. തൊഴിൽ : നേഴ്സ്, സിങ്കപ്പൂർ (Wife : Jeena, Nammanriyil Family, Kizhakkambalam, Occupation : Nurse, Singapore) <p><b>മക്കൾ (Children) : </b> 1. ജാൻവി (Janvi) &nbsp; 2. ജുവാന (Juana) &nbsp; 3. ജോയൽ (Joel)</p></div></div>
+<div class="person female indent-4"><div class="name">ജാൻവി (Janvi)</div><div class="detail">വിദ്യാർത്ഥിനി (Student)</div></div>
+<div class="person female indent-4"><div class="name">ജുവാന (Juana)</div><div class="detail">വിദ്യാർത്ഥിനി (Student)</div></div>
+<div class="person male indent-4"><div class="name">ജോയൽ (Joel)</div><div class="detail">വിദ്യാർത്ഥി (Student)</div></div>
+<div class="person male indent-3"><div class="name">ജിൻസ് (Jins)</div><div class="detail">തൊഴിൽ : Tool &amp; Die Maker (Occupation : Tool and Die Maker)<br>ഭാര്യ : സാനി, മൂത്തടത്ത് കുടുംബാംഗം, രാമമംഗലം. തൊഴിൽ : നേഴ്സ് (Wife : Sani, Moothedathu Family, Ramamangalam. Occupation : Nurse) <p><b>മക്കൾ (Children) : </b> 1. ജെസ്‌വിൻ (Jesvin) &nbsp; 2. ആസ്റ്റിൻ (Astin)</p></div></div>
+<div class="person male indent-4"><div class="name">ജെസ്‌വിൻ (Jesvin)</div><div class="detail">വിദ്യാർത്ഥി (Student)</div></div>
+<div class="person male indent-4"><div class="name">ആസ്റ്റിൻ (Astin)</div><div class="detail">വിദ്യാർത്ഥി (Student)</div></div>
+
+<h2 class="branch-title indent-2">ഉപശാഖ 1.1.9 (Sub-branch 1.1.9) &mdash; വർഗീസ് (കുഞ്ഞ് വർക്കി)  കോനാംപുറത്ത് ശാഖ (Varghese (Kunju Varkey) Konampurathu Line)</h2>
+<div class="person male indent-2"><div class="name">വർഗീസ് (കുഞ്ഞ് വർക്കി) (Varghese (Kunju Varkey))</div><div class="detail">തൊഴിൽ : മുൻ BSF ഉദ്യോഗസ്ഥൻ (Retd). (Occupation : Retd. Govt Servant (BSF))<br>ഭാര്യ : ലിസി, എഴുപ്പുറത്ത് കുടുംബാംഗം, കക്കാട്. (Wife : Lissy, Ezhuppurathu Family, Kakkad) <p><b>മക്കൾ (Children) : </b> 1. വിവിൻ (Vivin) &nbsp; 2. വിനി (Vini)</p> </div></div>
+<div class="person male indent-3"><div class="name">വിവിൻ (Vivin)</div><div class="detail">തൊഴിൽ : എഞ്ചിനീയർ (IT) USA (Occupation : Engineer (IT), USA) <br>ഭാര്യ : എമിലി തോമസ്, പുഞ്ചാലായിൽ കുടുംബാംഗം, കാറൂർ. തൊഴിൽ : നേഴ്സ് (USA) (Wife : Emily Thomas, Punchalayil House, Karoor, Occupation : Nurse(USA)) <p><b>മക്കൾ (Children) : </b> 1. റൂബേൻ (Reuben) &nbsp; 2. രേയ (Rheya)</p></div></div>
+<div class="person male indent-4"><div class="name">റൂബേൻ (Reuben)</div><div class="detail">വിദ്യാർത്ഥി (Student)</div></div>
+<div class="person female indent-4"><div class="name">രേയ (Rheya)</div></div>
+<div class="person female indent-3"><div class="name">വിനി (Vini)</div><div class="detail">തൊഴിൽ : എഞ്ചിനീയർ (IT) EKM (Occupation : Engineer (IT), EKM)<br>ഭർത്താവ് : അനീഷ് ജോൺ, വിലങ്ങാട്ടില്‍ കുടുംബാംഗം, തിരുവാൻകുളം തൊഴിൽ : സൂപ്പർവൈസർ, APTIV ആരാക്കുന്നം (Husband : Aneesh John, Vilangattil House, Thiruvankulam, Occupation : Supervisor, APTIV Arakkunnam) <p><b>മക്കൾ (Children) : </b> 1. ജുവാന (Juana) &nbsp; 2. ജിയോണ (Jiyona)</p></div></div>
+<div class="person female indent-4"><div class="name">ജുവാന (Juana)</div><div class="detail">വിദ്യാർത്ഥിനി (Student)</div></div>
+<div class="person female indent-4"><div class="name">ജിയോണ (Jiyona)</div><div class="detail">വിദ്യാർത്ഥിനി (Student)</div></div>
+
+<h2 class="branch-title">ഉപശാഖ 1.2 (Sub-branch 1.2) &mdash; കുരുവിള ചാക്കോ കോനാംപുറത്ത് ശാഖ (Kuruvila Chacko Konampurathu Line)</h2>
+<div class="person male indent-1"><div class="name">കുരുവിള ചാക്കോ (Kuruvila Chacko) (Late) </div><div class="detail">തൊഴിൽ : കൃഷി. (Occupation : Agriculture)<br>ഭാര്യ : സാറാമ്മ വർക്കി, താണുകുന്നേൽ, പാമ്പാക്കുട (വാളനടിയിൽ കുടുംബം, പാലച്ചുവട്) (Wife : Saramma Varkey (Late), Thanukunnel, Pampakkuda(Valnadiyil Family, Palachuvadu)) <p><b>മക്കൾ (Children) : </b> 1. മേരി (Mary) &nbsp; 2. ഏലിയാമ്മ (Eliamma) &nbsp; 3. ബേബി. എം. പി (Baby M. P) &nbsp; 4.ലാസർ. എം. കെ (Lazar M. K) &nbsp; 5. ചിന്നമ്മ (Chinnamma)</p></div></div>
+
+<h2 class="branch-title indent-2">ഉപശാഖ 1.2.1 (Sub-branch 1.2.1) &mdash; മേരി ഇലഞ്ഞിമറ്റത്തിൽ  ശാഖ (Mary Elanjimattathil Line)</h2>
+<div class="person female indent-2"><div class="name">മേരി (Mary) (Late)</div><div class="detail">തൊഴിൽ : കൃഷി. (Occupation : Agriculture)<br>ഭർത്താവ് : തോമസ് ചെറിയാൻ, ഇലഞ്ഞിമറ്റത്തിൽ കുടുംബാംഗം, കക്കാട്. (Husband : Thomas Cherian (Late), Elanjimattathil family, Kakkad)<p><b>മക്കൾ (Children) : </b> 1. ലിസി (Lissy) &nbsp; 2. മനോജ് (Manoj) &nbsp; 2. സാലി (Sali)</p></div></div>
+<div class="person female indent-3"><div class="name">ലിസി (Lissy)</div><div class="detail">തൊഴിൽ : കൃഷി. (Occupation : Agriculture)<br>ഭർത്താവ് : തമ്പി, കണ്ണങ്ങായത്ത് കുടുംബാംഗം, കാഞ്ഞിരമറ്റം. / Husband : Thambi, Kannangayathu Family, Kanjiramattom.) <p><b>മക്കൾ (Children) : </b> 1. ജിൻസി (Jincy)  &nbsp; 2. ശീതൾ (Sheethal)</p></div></div>
+<div class="person female indent-4"><div class="name">ജിൻസി (Jincy)</div><div class="detail">തൊഴിൽ : നേഴ്സ്-(UAE) (Occupation : Nurse(UAE))</div></div>
+<div class="person female indent-4"><div class="name">ശീതൾ (Sheethal)</div><div class="detail">തൊഴിൽ : നേഴ്സ് (Occupation : Nurse)</div></div>
+<div class="person male indent-3"><div class="name">മനോജ് (Manoj)</div><div class="detail">തൊഴിൽ : ബിസിനസ്സ്. (Occupation : Business)<br>ഭാര്യ : ഗ്ലാഡിസ്, കുരിയിൽ കുടുംബാംഗം (Wife : Gladis, Kuriyil family) തൊഴിൽ : അദ്ധ്യാപിക(Retd) (Occupation : Teacher (Retd)) <p><b>മക്കൾ (Children) : </b> 1. അതുൽ (Athul) &nbsp; 2. ജുവൽ (Juwel)</p></div></div>
+<div class="person male indent-4"><div class="name">അതുൽ (Athul)</div><div class="detail">തൊഴിൽ : Doctor (Occupation : Doctor)</div></div>
+<div class="person female indent-4"><div class="name">ജുവൽ (Juwel)</div><div class="detail">തൊഴിൽ : Germany (Occupation : Germany)</div></div>
+<div class="person female indent-3"><div class="name">സാലി (Sali)</div><div class="detail">തൊഴിൽ : കൃഷി. (Occupation : Agriculture)<br>ഭർത്താവ് : ബേബി, ഒഴുകയിൽ കുടുംബാംഗം, കിഴകൊമ്പ് (Husband : Baby, Ozhukayil Family, Kizhakombu) <p><b>മക്കൾ (Children) : </b> 1. ബിബിൻ (Bibin) &nbsp; 2. അനു (Anu)</p></div></div>
+<div class="person male indent-4"><div class="name">ബിബിൻ (Bibin)</div><div class="detail">തൊഴിൽ : Maruti (Thodupuzha) (Occupation : Maruti (Thodupuzha))</div></div>
+<div class="person female indent-4"><div class="name">അനു (Anu)</div><div class="detail">തൊഴിൽ : UK (Occupation : UK)</div></div>
+
+<h2 class="branch-title indent-2">ഉപശാഖ 1.2.2 (Sub-branch 1.2.2) &mdash; ഏലിയാമ്മ നാരേകാട്ട്  ശാഖ (Eliamma Narekattu Line)</h2>
+<div class="person female indent-2"><div class="name">ഏലിയാമ്മ (Eliamma)</div><div class="detail">തൊഴിൽ : കൃഷി. (Occupation : Agriculture)<br>ഭർത്താവ് : വർഗീസ് കുഞ്ഞവത, നാരേകാട്ട് കുടുംബാംഗം, പെരിയപ്പുറം, (വെള്ളികുളങ്ങര) (Husband : Varghese Kunjavatha (Late), Narekattu Family, Periyappuram, Vellikulangara) <p><b>മക്കൾ (Children) : </b> 1. ജോഷി (Joshy) &nbsp; 2. റൈനി (Raini) &nbsp; 3. ഷൈല (Shaila) &nbsp; 4. ജിബി (Jibi) &nbsp; 5. ഷിബു (Shibu) &nbsp; 6. ബിജു (Biju) </p></div></div>
+<div class="person male indent-3"><div class="name">ജോഷി (Joshy)</div><div class="detail">തൊഴിൽ : കൃഷി. (Occupation : Agriculture)<br>ഭാര്യ : ശോബി, നെടുമുല കുടുംബാംഗം, കണ്ണാറ (Wife : Shobi, Nedumala Family, Kannara). <p><b>മക്കൾ (Children) : </b> 1. ജിൻസി (Jincy) &nbsp; 2. എൽദോസ് (Eldhose)</p></div></div>
+<div class="person female indent-4"><div class="name">ജിൻസി (Jincy)</div></div>
+<div class="person male indent-4"><div class="name">എൽദോസ് (Eldhose)</div></div>
+<div class="person female indent-3"><div class="name">റൈനി (Raini)</div><div class="detail">തൊഴിൽ : കൃഷി. (Occupation : Agriculture)<br>ഭർത്താവ് : ചാക്കോ, പൂക്കോട്ട് കുടുംബാംഗം, വെള്ളികുളങ്ങര. (Husband : Chacko, Pookottu Family, Vellikulangara) <p><b>മക്കൾ (Children) : </b> 1. അജുമോൻ (Ajumon) &nbsp; 2. അനു (Anu)</p></div></div>
+<div class="person male indent-4"><div class="name">അജുമോൻ (Ajumon)</div></div>
+<div class="person female indent-4"><div class="name">അനു (Anu)</div></div>
+<div class="person female indent-3"><div class="name">ഷൈല (Shaila)</div><div class="detail">തൊഴിൽ : കൃഷി. (Occupation : Agriculture)<br>ഭർത്താവ് : പൗലോസ്, തൊട്ടിയിൽ കുടുംബാംഗം, വെള്ളികുളങ്ങര. (Husband : Paulose, Thottiyil Family. Vellikulangara) <p><b>മക്കൾ (Children) : </b> 1. നീതു (Neethu) &nbsp; 2. ബേസിൽ (Basil)</p></div></div>
+<div class="person female indent-4"><div class="name">നീതു (Neethu)</div></div>
+<div class="person male indent-4"><div class="name">ബേസിൽ (Basil)</div></div>
+<div class="person female indent-3"><div class="name">ജിബി (Jibi)</div><div class="detail">തൊഴിൽ : ബിസിനസ്. (Occupation : Business)<br>ഭർത്താവ് : ഡെങ്കി, പതിശ്ശേരിൽ കുടുംബാംഗം. കോയമ്പത്തൂർ (Husband : Denki, Pathisseril Family, Coimbatore) <p><b>മക്കൾ (Children) : </b> 1. ഡയാന (Dayana) &nbsp; 2. ഡോണ (Dona)</p></div></div>
+<div class="person female indent-4"><div class="name">ഡയാന (Dayana)</div></div>
+<div class="person female indent-4"><div class="name">ഡോണ (Dona)</div></div>
+<div class="person male indent-3"><div class="name">ഷിബു (Shibu)</div></div>
+<div class="person male indent-3"><div class="name">ബിജു (Biju) (Late)</div></div>
+
+<h2 class="branch-title indent-2">ഉപശാഖ 1.2.3 (Sub-branch 1.2.3) &mdash; ബേബി കോനാംപുറത്ത് ശാഖ (Baby Konampurathu Line)</h2>
+<div class="person male indent-2"><div class="name">ബേബി. എം. പി (Baby M. P.)</div><div class="detail">തൊഴിൽ : മുൻ സൈനീകൻ, മുൻ ഭാരത് പെട്രോളിയം ഉദ്യോഗസ്ഥൻ (Occupation : Retd. Govt Servant, Retd. Staff Bharath Petroleaum) <br>ഭാര്യ : ബിന്ദു എബ്രഹാം, കാരിക്കോട്ടിൽ കുടുംബാംഗം, കോലഞ്ചേരി, (Wife : Bindhu Abraham, Karikkottil Family, Kolenchery)<p><b>മക്കൾ (Children) : </b> 1. ദീപക് (Deepak) &nbsp; 2. ഹർഷ (Harsha)</p></div></div>
+<div class="person male indent-3"><div class="name">ദീപക് (Deepak)</div><div class="detail">തൊഴിൽ : ബിസിനസ് (Occupation : Business) <br>ഭാര്യ : ഡോണിയ, വളയംപ്രായിൽ കുടുംബാംഗം, രാജകുമാരി. തൊഴിൽ : Lecturer, BPC കോളേജ്, പിറവം. (Wife : Doniya, Valayamprayil family, Rajakumari, Occupation : Lecturer, BPC College Piravom) <p><b>മക്കൾ (Children) : </b> 1. ഡാനോൺ (Danon) &nbsp; 2. ഡിയോൺ (Diyon)</p></div></div>
+<div class="person male indent-4"><div class="name">ഡാനോൺ (Danon)</div><div class="detail">വിദ്യാർത്ഥി (Student)</div></div>
+<div class="person male indent-4"><div class="name">ഡിയോൺ (Diyon)</div><div class="detail">വിദ്യാർത്ഥി (Student)</div></div>
+<div class="person female indent-3"><div class="name">ഹർഷ (Harsha)</div><div class="detail">തൊഴിൽ : MBA ബിരുദധാരി (Occupation MBA).<br> ഭർത്താവ് : അനീഷ്, തേയിച്ചാനത്ത് കുടുംബാംഗം, ആലുവ. തൊഴിൽ : ICICI ബാങ്ക് മാനേജർ, കോഴിക്കോട്. (Husband : Aneesh, Theyichanathu Family, Aluva. Occupation : Bank Manager, ICICI, Kozhikkodu).<p><b>മക്കൾ (Children) : </b> 1. ജോഹാൻ (Johan) &nbsp; 2. ജെർമിയ (Jermiah) &nbsp; 3. ജാൽനാ (Jalna)</p></div></div>
+<div class="person male indent-4"><div class="name">ജോഹാൻ (Johan)</div><div class="detail">വിദ്യാർത്ഥി (Student)</div></div>
+<div class="person male indent-4"><div class="name">ജെർമിയ (Jermiah)</div><div class="detail">വിദ്യാർത്ഥി (Student)</div></div>
+<div class="person female indent-4"><div class="name">ജാൽനാ (Jalna)</div><div class="detail">വിദ്യാർത്ഥിനി (Student)</div></div>
+
+<h2 class="branch-title indent-2">ഉപശാഖ 1.2.4 (Sub-branch 1.2.4) &mdash; ലാസർ കോനാംപുറത്ത് ശാഖ (Lazar Konampurathu Line)</h2>
+<div class="person male indent-2"><div class="name">ലാസർ. എം. കെ. (Lazar M. K)</div><div class="detail">തൊഴിൽ : കൃഷി (Occupation : Agriculture)<br>ഭാര്യ : ലീലാമ്മ വർഗീസ്, മുള്ളിൽതറയിൽ, (താലുംമൂട്ടിൽ കുടുംബാംഗം), പേരൂർ, കോട്ടയം, (Wife : Leelamma Varghese, Mulliltharayil (Thalum Mootil Family), Kottayam) <p><b>മക്കൾ (Children) : </b> 1. ഷഗൽ (Shagal) &nbsp; 2. ആശാ (Asha) &nbsp; 3. മേഘല (Mekhala)</p> </div></div>
+<div class="person male indent-3"><div class="name">ഷഗൽ (Shagal)</div><div class="detail">തൊഴിൽ : നേഴ്സ് ഓസ്ട്രേലിയ (Occupation : Nurse Australia)<br>ഭാര്യ : നീതു ഐസക്, വാക്കനാൽ കുടുംബാംഗം, കക്കാട്. തൊഴിൽ : നേഴ്സ് ഓസ്ട്രേലിയ (Wife : Neethu Issac, Vakkanal Family, Kakkad, Occupation : Nurse, Australia) <p><b>മക്കൾ (Children) : </b> 1. നോയൽ (Noel)</p></div></div>
+<div class="person male indent-4"><div class="name">നോയൽ (Noel)</div><div class="detail">വിദ്യാർത്ഥി (Student)</div></div>
+<div class="person female indent-3"><div class="name">ആശാ (Asha)</div><div class="detail">തൊഴിൽ : നേഴ്സ് (Occupation : Nurse)<br>ഭർത്താവ് : സിബി ചെറിയാൻ, പുത്തൻവീട്ടിൽ കുടുംബാംഗം, കോട്ടയം, (ബഹറിൻ). (Husband : Siby Cherianm Puthenveettil Family, Kottayam, (Bahrin)) <p><b>മക്കൾ (Children) : </b> 1. സാന്ദ്ര (Sandra)</p></div></div>
+<div class="person female indent-4"><div class="name">സാന്ദ്ര (Sandra) </div><div class="detail">വിദ്യാർത്ഥിനി (Student)</div></div>
+<div class="person female indent-3"><div class="name">മേഘല (Mekhala)</div><div class="detail">തൊഴിൽ : നേഴ്സ് UAE (Occupation : Nurse UAE). ഭർത്താവ് :  ടോണി തോമസ്, മേടമന കുടുംബാംഗം, മുളക്കുളം. തൊഴിൽ : എഞ്ചിനിയർ, UAE. (Husband : Tony Thomas, Medamana Family Mulakkulam, Occupation : Engineer UAE) <p><b>മക്കൾ (Children) : </b> 1. റയാൻ (Ryan) &nbsp; 2. റിയ (Riya)</p></div></div>
+<div class="person male indent-4"><div class="name">റയാൻ (Ryan)</div><div class="detail">വിദ്യാർത്ഥി (Student)</div></div>
+<div class="person female indent-4"><div class="name">റിയ (Riya)</div><div class="detail">വിദ്യാർത്ഥിനി (Student)</div></div>
+
+<h2 class="branch-title indent-2">ഉപശാഖ 1.2.5 (Sub-branch 1.2.5) &mdash; ചിന്നമ്മ  പള്ളിത്താഴത്ത് ശാഖ (Chinnamma Pallithazhathu Line)</h2>
+<div class="person female indent-2"><div class="name">ചിന്നമ്മ (Chinnamma)</div><div class="detail">ഭർത്താവ് : ബേബി ജേക്കബ്, പള്ളിത്താഴത്ത് കുടുംബാംഗം, പിറവം, (Husband : Bbay Jacob (Late), Pallithazhathu Family, Piravom) തൊഴിൽ : നേവൽ ബേസ് ഉദ്യോഗസ്ഥൻ (Occupation : Retd. Staff (Naval Base))<p><b>മക്കൾ (Children) : </b> 1. സുമി (Sumi) &nbsp; 2. സുമേഷ് (Sumesh)</p></div></div>
+<div class="person female indent-3"><div class="name">സുമി (Sumi)</div><div class="detail">തൊഴിൽ : അഭിഭാഷക (APP). (Occupation : Lawyer)<br>ഭർത്താവ് : ഷിറാസ് അലിയാർ, പനയ്ക്കപറമ്പിൽ കുടുംബാംഗം. തൊഴിൽ : അഭിഭാഷകൻ, ആലുവ (Husband : Shiras Aliyar, Panakkaparambil Family, Occupation : Lawyer, Aluva)<p><b>മക്കൾ (Children) : </b> 1. നദിയാ (Nadiya) &nbsp; 2. നഫിസ (Nafisa)</p></div></div>
+<div class="person female indent-4"><div class="name">നദിയാ (Nadiya)</div><div class="detail">വിദ്യാർത്ഥിനി (Student)</div></div>
+<div class="person female indent-4"><div class="name">നഫിസ (Nafisa)</div><div class="detail">വിദ്യാർത്ഥിനി (Student)</div></div>
+<div class="person male indent-3"><div class="name">സുമേഷ് (Sumesh)</div><div class="detail">തൊഴിൽ : അഭിഭാഷകൻ. (Occupation : Lawyer)<br>ഭാര്യ : അപർണ സുരേദ്രനാഥ്, അഭിഭാഷക. ശ്രീരാഗം കുടുംബാംഗം, പാലക്കാട്. തൊഴിൽ : ലീഗൽ മാനേജർ, സൗത്ത് ഇന്ത്യൻ ബാങ്ക്. (Wife : Aparna Surendranath, Lawyer, Sreeragam Family, Palakkadu. Occupation : Legal Manager, South Indian Bank) <p><b>മക്കൾ (Children) : </b> 1. നേഹൽ (Nehal) &nbsp; 2. നിർമ്മൽ (Nirmal)</p></div></div>
+<div class="person female indent-4"><div class="name">നേഹൽ (Nehal)</div><div class="detail">വിദ്യാർത്ഥിനി (Student)</div></div>
+<div class="person male indent-4"><div class="name">നിർമ്മൽ (Nirmal)</div><div class="detail">വിദ്യാർത്ഥി (Student)</div></div>
+
+<h2 class="branch-title">ശാഖ 2 (Branch 2) &mdash; സഹോദരൻ : പേര് ലഭ്യമല്ല, തണങ്ങാട്ട് കുടുംബം (Brother : Name Unknown, Thanagattu Family Line)</h2>
+<div class="person male indent-1"><div class="name"> സഹോദരൻ : പേര് ലഭ്യമല്ല, തണങ്ങാട്ട് കുടുംബം (Brother : Name Unknown, Thanagattu Family)</div><div class="detail">തണങ്ങാട്ട് കുടുംബം, വെട്ടിക്കൽ, മുളന്തുരുത്തി (ദത്ത്) (Thanagattu Family, Vettikkal, Mulathuruthy).</div></div>
+
+<h2 class="branch-title">ശാഖ 3 (Branch 3) &mdash; മങ്ക, മണപ്പുറം കുടുംബം, മണകുന്നം ശാഖ (Manka, Manappuram Family , Manakunnam Line)</h2>
+<div class="person female indent-1"><div class="name">മങ്കാ (Manka)</div><div class="detail">മണപ്പുറം കുടുംബം, മണകുന്നം (Manappuram Family , Manakunnam) തൊഴിൽ : കൃഷി. (Occupation : Agriculture)<br>ഭർത്താവ് : തൊമ്മൻ, മണപ്പുറം കുടുംബം, മണകുന്നം. തൊഴിൽ : കൃഷി. (Husband : Thommen (Late), Manappuram Family, Manakunnam, Occupation : Agriculture)<p><b>മക്കൾ (Children) : </b> 1. മറിയാമ്മ (Mariyamma) &nbsp; 2.ഏലമ്മ (Elamma) &nbsp; 3. ചാക്കോ (Chacko) &nbsp; 4. അന്നമ്മ (Annamma) &nbsp; 5.മാത്യു (Mathew) &nbsp; 6. സാറാമ്മ (Saramma) &nbsp; 7. ശോശാമ്മ (Sosamma) </p></div></div>
+
+<h2 class="branch-title indent-2">ഉപശാഖ 3.1 (Sub-branch 3.1) &mdash; മറിയാമ്മ കൂനാനിക്കൽ ശാഖ (Mariyamma Koonanickal Line)</h2>
+<div class="person female indent-2"><div class="name">മറിയാമ്മ (Mariyamma)</div><div class="detail">തൊഴിൽ : കൃഷി. (Occupation : Agriculture)<br>ഭർത്താവ് : ഉലഹന്നാൻ കൂനാനിക്കൽ കുടുംബാംഗം, ഓണക്കൂർ. (Husband : Ulahannan (Late), Koonanickal Family, Onakoor, Occupation : Agriculture) <p><b>മക്കൾ (Children) : </b> 1. തോമസ് (Thomas) &nbsp; 2. ഏലിയാമ്മ, (Eliyamma) &nbsp; 3. കുഞ്ഞമ്മ(Kunjamma) &nbsp; 4. മറിയക്കുട്ടി (Mariyakutty) &nbsp; 5. തൊമ്മൻ (Thommen)</p></div></div>
+<div class="person male indent-3"><div class="name">തോമസ്, ചേന്നംമ്പിള്ളിൽ (Thomas Chennampillil)</div></div>
+<div class="person female indent-3"><div class="name">ഏലിയാമ്മ, മഴുപ്പേൽ ( Eliyamma Mazhuppel)</div></div>
+<div class="person female indent-3"><div class="name">കുഞ്ഞമ്മ, കല്ലംപറമ്പിൽ, (Kunjamma, Kallamparambil)</div></div>
+<div class="person female indent-3"><div class="name">മറിയക്കുട്ടി, ചകിരിയിൽ, (Mariyakutty, Chakiriyil)</div></div>
+<div class="person male indent-3"><div class="name">തൊമ്മൻ, കൂനാനിക്കൽ (Thommen Koonanickal)</div></div>
+
+<h2 class="branch-title indent-2">ഉപശാഖ 3.2 (Sub-branch 3.2) &mdash; ഏലമ്മ വേളാമറ്റത്തിൽ ശാഖ (Elamma Velamattathil Line)</h2>
+<div class="person female indent-2"><div class="name">ഏലമ്മ (Elamma)</div><div class="detail">തൊഴിൽ : കൃഷി. (Occupation : Agriculture) വേളാമറ്റത്തിൽ, (വട്ടംകണ്ടത്തിൽ), പെരുവ.തൊഴിൽ : കൃഷി (Velamattathil (Vattamkandathil), Peruva, Occupation : Agriculture) <p><b>മക്കൾ (Children) : </b> 1. ഏലിയാമ്മ (Eliyamma) &nbsp; 2. മേരി (Mary)</p></div></div>
+<div class="person female indent-3"><div class="name">ഏലിയാമ്മ (Eliyamma)</div><div class="detail">പുളിക്കിൽ, മുളക്കുളം (Pulikkil, Mulakkulam)</div></div>
+<div class="person female indent-3"><div class="name">മേരി വേളാമറ്റത്തിൽ (Mary Valamattathil)</div></div>
+
+<h2 class="branch-title indent-2">ഉപശാഖ 3.3 (Sub-branch 3.3) &mdash; ചാക്കോ മണപ്പുറം ശാഖ (Chacko Manappuram Line)</h2>
+<div class="person male indent-2"><div class="name">ചാക്കോ (Chacko) (Late)</div><div class="detail">ഭാര്യ : മറിയാമ്മ, കയ്യാലപ്പറമ്പിൽ കുടുംബാംഗം, കാരീക്കോട്, പെരുവ (Wife : Mariyamma(Late), Kayyalaparambil Family, Karicodu, Peruva)<p><b>മക്കൾ (Children) : </b> 1. തങ്കമ്മ (Thankamma) &nbsp; 2. തോമസ് (Thomas) &nbsp; 3. രാജു (Raju)</p></div></div>
+<div class="person female indent-3"><div class="name">തങ്കമ്മ (Thankamma)</div><div class="detail">കറുകപ്പിള്ളിൽ, കോലഞ്ചേരി (Karukappallil, Kolencheri)</div></div>
+<div class="person male indent-3"><div class="name">തോമസ് (Thomas)</div></div>
+<div class="person male indent-3"><div class="name">രാജു (Raju)</div></div>
+
+<h2 class="branch-title indent-2">ഉപശാഖ 3.4 (Sub-branch 3.4) &mdash; അന്നമ്മ മുള്ളംകുന്നേൽ ശാഖ (Annamma Mullamkunnel Line)</h2>
+<div class="person female indent-2"><div class="name">അന്നമ്മ (Annamma) (Late)</div><div class="detail">തൊഴിൽ : കൃഷി. (Occupation : Agriculture)<br>ഭർത്താവ് : കുരുവിള (കുഞ്ഞ്), മുള്ളംകുന്നേൽ കുടുംബാംഗം, കിഴകൊമ്പ്. (Husabnd : Kuruvila (Kunju) (Late), Mullamkunnel Family. Kizhakombu)<p><b>മക്കൾ (Children) : </b> 1. യോഹന്നാൻ (Yohannan) &nbsp; 2. അമ്മിണി (Ammini) &nbsp; 3. തോമസ് (Thomas) &nbsp; 4. രാജു (Raju)</p></div></div>
+<div class="person male indent-3"><div class="name">യോഹന്നാൻ (Yohannan)</div></div>
+<div class="person female indent-3"><div class="name">അമ്മിണി (Ammini)</div></div>
+<div class="person male indent-3"><div class="name">തോമസ് (Thomas)</div></div>
+<div class="person male indent-3"><div class="name">രാജു (Raju)</div></div>
+
+<h2 class="branch-title indent-2">ഉപശാഖ 3.5 (Sub-branch 3.5) &mdash; മാത്യു മണപ്പുറം ശാഖ (Mathew Manappuram Line)</h2>
+<div class="person male indent-2"><div class="name">മാത്യു (Mathew) (Late)</div><div class="detail">ഭാര്യ : ഏലിയാമ്മ, വെട്ടിക്കുഴി കുടുംബാംഗം, ഏഴക്കർനാട്. (Wife : Eliyamma (Late), Vettikuzhi Family, Ezhakkaranadu)<p><b>മക്കൾ (Children) : </b> 1. ജോയ് (Joy) &nbsp; 2. കുഞ്ഞൂഞ്ഞ് (Kunjuju) &nbsp; 3. ജോർജ് (George) &nbsp; 4. ലിസി (Lissy)</p></div></div>
+<div class="person male indent-3"><div class="name">ജോയ് (Joy)</div></div>
+<div class="person male indent-3"><div class="name">കുഞ്ഞൂഞ്ഞ് (Kunjuju)</div></div>
+<div class="person male indent-3"><div class="name">ജോർജ് (George)</div></div>
+<div class="person female indent-3"><div class="name">ലിസി (Lissy)</div></div>
+
+<h2 class="branch-title indent-2">ഉപശാഖ 3.6 (Sub-branch 3.6) &mdash; സാറാമ്മ വെട്ടിക്കുഴി ശാഖ (Saramma Vettikuzhi Line)</h2>
+<div class="person female indent-2"><div class="name">സാറാമ്മ (Saramma) (Late)</div><div class="detail">തൊഴിൽ : കൃഷി. (Occupation : Agriculture)<br>ഭർത്താവ് : കുഞ്ഞ്, വെട്ടിക്കുഴി കുടുംബാംഗം, ഏഴക്കർനാട്. (Husabnd : Kunju (Late), Vettikuzhi Family, Ezhakkaranadu)<p><b>മക്കൾ (Children) : </b> 1. ഏലിയാമ്മ (Eliyamma) &nbsp; 2. മേരി (Mary) &nbsp; 3. സാറാക്കുട്ടി (Sarakutty) &nbsp; 4. അമ്മിണി (Ammini) &nbsp; 5. സെലിൻ (Celine) &nbsp; 6. ഷീല (Sheela) </p></div></div>
+<div class="person female indent-3"><div class="name">ഏലിയാമ്മ (Eliyamma)</div></div>
+<div class="person female indent-3"><div class="name">മേരി (Mary)</div></div>
+<div class="person female indent-3"><div class="name">സാറാക്കുട്ടി (Sarakutty)</div></div>
+<div class="person female indent-3"><div class="name">അമ്മിണി (Ammini)</div></div>
+<div class="person female indent-3"><div class="name">സെലിൻ (Celine)</div></div>
+<div class="person female indent-3"><div class="name">ഷീല (Sheela)</div></div>
+
+<h2 class="branch-title indent-2">ഉപശാഖ 3.7 (Sub-branch 3.7) &mdash; ശോശാമ്മ അല്ലിക്കുഴിയിൽ ശാഖ (Sosamma Allikuzhiyil Line)</h2>
+<div class="person female indent-2"><div class="name">ശോശാമ്മ (Sosamma) (Late)</div><div class="detail">തൊഴിൽ : കൃഷി. (Occupation : Agriculture)<br>ഭർത്താവ് : കുട്ടപ്പൻ, അല്ലിക്കുഴിയിൽ കുടുംബാംഗം, കൈപ്പട്ടൂർ. (Husabnd : Kuttappan (Late), Allikuzhiyil Family, Kaippattor) <p><b>മക്കൾ (Children) : </b> 1. ചാക്കപ്പൻ (Chakkappan) &nbsp; 2. മേരി (Mary) &nbsp; 3. ലീല (Leela) &nbsp; 4. തോമസ് (Thomas) &nbsp; 5. ലിസി (Lissy)</p> </div></div>
+<div class="person male indent-3"><div class="name">ചാക്കപ്പൻ (Chakkappan)</div></div>
+<div class="person female indent-3"><div class="name">മേരി (Mary)</div></div>
+<div class="person female indent-3"><div class="name">ലീല (Leela)</div></div>
+<div class="person male indent-3"><div class="name">തോമസ് (Thomas)</div></div>
+<div class="person female indent-3"><div class="name">ലിസി (Lissy)</div></div>
+
+<h2 class="branch-title">ശാഖ 4 (Branch 4) &mdash; തൊമ്മൻ, കിഴക്കേക്കര ശാഖ (Thommen, Kizhakekkara Line)</h2>
+<div class="person male indent-2"><div class="name">തൊമ്മൻ (Thommen) (Late)</div><div class="detail">കിഴക്കേക്കര കുടുംബം, കുന്നപ്പള്ളി, പെരുവ. (ദത്ത്). (Kizhakkekara Family, Kunnappilli, Peruva). തൊഴിൽ : കൃഷി. (Occupation : Agriculture)<br>ഭാര്യ : അന്നമ്മ(Late),കിഴക്കേക്കര കുടുംബം,(കുന്നപ്പിള്ളി) പുല്ലുരാംപാറ, തൊഴിൽ : കൃഷി.(Wife : Annamma, Kizhakkekkara Family (Kunnappilli) Pullurampara, Occupation : Agriculture) <p><b>മക്കൾ (Children) : </b> 1. ഏലിയാമ്മ (Eliyamma) &nbsp; 2. മറിയക്കുട്ടി (Mariyakutty) &nbsp; 3. അന്നകൊച്ച് (Annakochu) &nbsp; 4. മാത്യു (Mathew) &nbsp; 5. ഉലഹന്നാൻ (Ulahannan) &nbsp; 6. സാറാമ്മ (Saramma) &nbsp; 7. ലീല (Leela) </p></div></div>
+
+<h2 class="branch-title indent-2">ഉപശാഖ 4.1 (Sub-branch 4.1) &mdash; ഏലിയാമ്മ കളപ്പാട്ട് ശാഖ (Eliyamma  Kalappattu Line)</h2>
+<div class="person female indent-3"><div class="name">ഏലിയാമ്മ (Eliyamma)</div><div class="detail">തൊഴിൽ : കൃഷി. (Occupation : Agriculture)<br>ഭർത്താവ് : വർക്കി, കളപ്പാട്ട് കുടുംബം, പുല്ലുരാംപാറ, തൊഴിൽ : കൃഷി (Husband : Varkey (Late), Kalappattu Family, Pullurampara, Occupation : Agriculture)</div></div>
+
+<h2 class="branch-title indent-2">ഉപശാഖ 4.2 (Sub-branch 4.2) &mdash; മറിയക്കുട്ടി പുറപ്പുഴ ശാഖ (Mariyakutty Purappuzha Line)</h2>
+<div class="person female indent-3"><div class="name">മറിയക്കുട്ടി (Mariyakutty) (Late)</div><div class="detail">തൊഴിൽ : കൃഷി. (Occupation : Agriculture)<br>ഭർത്താവ് : എബ്രഹാം, പുറപ്പുഴ കുടുംബം, പുല്ലുരാംപാറ, തൊഴിൽ : കൃഷി (Husband : Abraham (Late), Purappuzha Family, Pullurampara, Occupation : Agriculture)</div></div>
+
+<h2 class="branch-title indent-2">ഉപശാഖ 4.3 (Sub-branch 4.3) &mdash; അന്നകൊച്ച് പുളിയാനാംകുന്നേൽ ശാഖ (Annakochu Puliyanamkunnel Line)</h2>
+<div class="person female indent-3"><div class="name">അന്നകൊച്ച് (Annakochu) (Late)</div><div class="detail">തൊഴിൽ : കൃഷി. (Occupation : Agriculture)<br>ഭർത്താവ് : വർക്കി, പുളിയാനാംകുന്നേൽ കൂടുംബം, കുന്നപ്പിള്ളി, പെരുവ, തൊഴിൽ : കൃഷി (Husband : Varkey(Late), Puliyanamkunnel Family, Kunnappilli, Peruva, Occupation : Agriculture)<p><b>മക്കൾ (Children) : </b> 1. മോളി (Molly) &nbsp; 2. എലിയാസ് (Elias) &nbsp; 3. പേര് ലഭ്യമല്ല. (Name Unknown)</p> </div></div>
+<div class="person female indent-4"><div class="name">മോളി (Molly)</div></div>
+<div class="person male indent-4"><div class="name">എലിയാസ് (Elias)</div></div>
+<div class="person female indent-4"><div class="name">പേര് ലഭ്യമല്ല. (Name Unknown)</div></div>
+
+<h2 class="branch-title indent-2">ഉപശാഖ 4.4 (Sub-branch 4.4) &mdash; മാത്യു കിഴക്കേക്കര ശാഖ (Mathew Kizhakkekara Line)</h2>
+<div class="person male indent-3"><div class="name">മാത്യു (Mathew) (Late)</div><div class="detail">തൊഴിൽ : കൃഷി. (Occupation : Agriculture)<br>ഭാര്യ : ചിന്നമ്മ, പുല്ലുരാംപാറ. തൊഴിൽ : കൃഷി, (Wife : Chinnamma(Late), Pullurampara, Occupation : Agriculture)<p><b>മക്കൾ (Children) : </b> 1. തങ്കച്ചൻ (Thakachen) &nbsp; 2. സണ്ണി (Sunny) &nbsp; 3. റോയി (Roy) &nbsp; 4. സ്റ്റാലിൻ (Stalin) &nbsp; 5. മോളി (Molly)</p></div></div>
+<div class="person male indent-4"><div class="name">തങ്കച്ചൻ (Thakachen)</div><div class="detail">തൊഴിൽ : കൃഷി. (Occupation : Agriculture)<br>ഭാര്യ : ലീലാമ്മ, പുല്ലുരാംപാറ. തൊഴിൽ : കൃഷി, (Wife : Leelamma, Pullurampara, Occupation : Agriculture) <p><b>മക്കൾ (Children) : </b> 1. ജോമോൻ (Jomon)</p></div></div>
+<div class="person male indent-5"><div class="name">ജോമോൻ (Jomon)</div></div>
+<div class="person male indent-4"><div class="name">സണ്ണി (Sunny)</div><div class="detail">തൊഴിൽ : കൃഷി. (Occupation : Agriculture)<br>ഭാര്യ : സൂസി, പുല്ലുരാംപാറ. തൊഴിൽ : കൃഷി, (Wife : Susy, Pullurampara, Occupation : Agriculture)<p><b>മക്കൾ (Children) : </b> 1. സനിജ (Sanija) &nbsp; 2. ലിജിയ (Lijiya)</p></div></div>
+<div class="person female indent-5"><div class="name">സനിജ (Sanija)</div></div>
+<div class="person female indent-5"><div class="name">ലിജിയ (Lijiya)</div></div>
+<div class="person male indent-4"><div class="name">റോയി (Roy)</div><div class="detail">തൊഴിൽ : കൃഷി. (Occupation : Agriculture)<br>ഭാര്യ : ഷൈനി, പുല്ലുരാംപാറ. തൊഴിൽ : കൃഷി, (Wife : Shiny, Pullurampara, Occupation : Agriculture) <p><b>മക്കൾ (Children) : </b> 1. എൽദോസ് (Eldhose) &nbsp; 2. അനു (Anu)</p></div></div>
+<div class="person male indent-5"><div class="name">എൽദോസ് (Eldhose)</div></div>
+<div class="person female indent-5"><div class="name">അനു (Anu)</div></div>
+<div class="person male indent-4"><div class="name">സ്റ്റാലിൻ (Stalin)</div><div class="detail">തൊഴിൽ : കൃഷി. (Occupation : Agriculture)<br>ഭാര്യ : ഷീബ, പുല്ലുരാംപാറ. തൊഴിൽ : കൃഷി, (Wife : Sheeba, Pullurampara, Occupation : Agriculture) <p><b>മക്കൾ (Children) : </b> 1. ബേസിൽ (Basil) &nbsp; 2. അനീഷ (Aneesha)</p></div></div>
+<div class="person male indent-5"><div class="name">ബേസിൽ (Basil)</div></div>
+<div class="person female indent-5"><div class="name">അനീഷ (Aneesha)</div></div>
+<div class="person female indent-4"><div class="name">മോളി (Molly)</div><div class="detail">തൊഴിൽ : കൃഷി. (Occupation : Agriculture)<br>ഭർത്താവ് : കുര്യാക്കോസ്, കിഴക്കേമഠത്തിൽ കുടുംബം, തൊഴിൽ : കൃഷി, (Husband : Kuriakose, Kizhakkemadathil Family, Occupation : Agriculture) <p><b>മക്കൾ (Children) : </b> 1. ഷൈൻ (Shine) &nbsp; 2. ഷൈന്റോ (Shinto)</p></div></div>
+<div class="person male indent-5"><div class="name">ഷൈൻ (Shine)</div></div>
+<div class="person male indent-5"><div class="name">ഷൈന്റോ (Shinto)</div></div>
+
+<h2 class="branch-title indent-2">ഉപശാഖ 4.5 (Sub-branch 4.5) &mdash; ഉലഹന്നാൻ കിഴക്കേക്കര ശാഖ (Ulahannan Kizhakkekara Line)</h2>
+<div class="person male indent-3"><div class="name">ഉലഹന്നാൻ (Ulahannan) (Late)</div><div class="detail">തൊഴിൽ : കൃഷി. (Occupation : Agriculture)<br>ഭാര്യ : ലീല, പുല്ലുരാംപാറ. തൊഴിൽ : കൃഷി (Wife : Leela(Late), Pullurampara, Occupation : Agriculture)<p><b>മക്കൾ (Children) : </b> 1. സലോമി(Salomy) &nbsp; 2. സോളി (Solly) &nbsp; 3. സാന്റി (Sandy) &nbsp; 4. സിനി (Sini)</p></div></div>
+<div class="person female indent-4"><div class="name">സലോമി(Salomy)</div><div class="detail">ഭർത്താവ് : സണ്ണി (Husband : Sunny)</div></div>
+<div class="person female indent-4"><div class="name">സോളി (Solly)</div><div class="detail">ഭർത്താവ് : തങ്കച്ചൻ (Husband : Thankachen)</div></div>
+<div class="person female indent-4"><div class="name">സാന്റി (Sandy)</div><div class="detail">ഭർത്താവ് : തങ്കച്ചൻ (Husband : Thankachen)</div></div>
+<div class="person female indent-4"><div class="name">സിനി (Sini)</div><div class="detail">ഭർത്താവ് : ബെന്നി. (Husband : Benny)</div></div>
+
+<h2 class="branch-title indent-2">ഉപശാഖ 4.6 (Sub-branch 4.6) &mdash; സാറാമ്മ(Saramma)</h2>
+<div class="person female indent-3"><div class="name">സാറാമ്മ (Saramma)</div></div>
+
+<h2 class="branch-title indent-2">ഉപശാഖ 4.7 (Sub-branch 4.7) &mdash; ലീല (Leela)</h2>
+<div class="person female indent-3"><div class="name">ലീല (Leela)</div></div>
+
+<h2 class="branch-title">ശാഖ 5 (Branch 5) &mdash; പത്രോസ് (Pathrose)</h2>
+<div class="person male indent-2"><div class="name">സഹോദരൻ : പത്രോസ് (Brother : Pathrose)</div><div class="detail">ലഭ്യമല്ല (No Details).</div></div>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
