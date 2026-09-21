@@ -622,7 +622,7 @@ color: white;
 {
   position: fixed;
   right: 20px;
-  bottom: 75px;
+  bottom: 100px;
 
   width: 45px;
   height: 45px;
@@ -684,7 +684,6 @@ color: white;
         padding-bottom: env(safe-area-inset-bottom);
         flex-direction: row;
         flex-wrap: nowrap;
-        
     }
 
     .mobile-toolbar button1 {
@@ -762,30 +761,34 @@ color: white;
       height: auto !important;
       max-height: none !important;
       overflow: visible !important;
+      width: 100% !important;
     }
     .toolbar,
     .peoplecount,
     .hometool,
-    .mobile-toolbar
+    .mobile-toolbar,
+    #upArrow
     {
-      display:none
+      display: none !important;
     } 
    
     body
     {
       background:white;
       margin: 0;
+      overflow: visible !important;
     } 
     header
     {
       box-shadow:none
     }
+    header,
     details,
     .note,
     .person
     {
       break-inside:avoid;
-      page-break-inside:avoid
+      page-break-inside:avoid;
     } 
     main
     {
@@ -795,7 +798,7 @@ color: white;
     {
       box-shadow:none
     }
-   
+  
   }
   
 
