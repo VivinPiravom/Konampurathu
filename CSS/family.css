@@ -677,7 +677,7 @@ color: white;
     height: 65px;
 
   /* iOS frosted glass */
-    background: rgba(30, 30, 30, 0.55);
+    background: var(--soft);
     backdrop-filter: blur(22px) saturate(180%);
     -webkit-backdrop-filter: blur(22px) saturate(180%);
 
