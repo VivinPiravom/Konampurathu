@@ -13,11 +13,10 @@ function collapseAll()
     allDetails().forEach(d => d.open = false);
 }
 
-                
 function loadPage(page, menuItem) 
 {
-        const classname =  menuItem.className;
-        if (classname.substring(0,9) === "menu-item")
+    const classname =  menuItem.className;
+    if (classname.substring(0,9) === "menu-item")
         {
             document.querySelectorAll(".menu-item").forEach(item => { item.classList.remove("active");});
 
@@ -26,18 +25,17 @@ function loadPage(page, menuItem)
                     menuItem.classList.add("active");
                 }
         }
-        else
-            {   
+    else
+        {   
 
-             document.querySelectorAll(".mobile-toolbar button1").forEach(item => {item.classList.remove("active");});
+            document.querySelectorAll(".mobile-toolbar button1").forEach(item => {item.classList.remove("active");});
 
-             if (menuItem) 
+            if (menuItem) 
                 {
                     menuItem.classList.add("active");
                 }
-            }    
+        }    
        
-
     fetch(page)
         .then(response => 
             {
@@ -96,23 +94,23 @@ function getpeopleCount(container=document)
     const femaleDisplay = document.getElementById("femaleCount");
 
     if (maleDisplay) 
-    {
-        maleDisplay.textContent = maleCount;
-    }
+        {
+            maleDisplay.textContent = maleCount;
+        }
 
     if (femaleDisplay) 
-    {
-        femaleDisplay.textContent = femaleCount;
-    }
+        {
+            femaleDisplay.textContent = femaleCount;
+        }
 }
 
 function submitMessage(container=document) 
 {
     const form = container.querySelector("#contactForm");
     if(!form)
-    {
-        return;
-    }
+        {
+            return;
+        }
     const sendbutton = form.querySelector("#sendButton");
     const status = form.querySelector("#formStatus");
     form.addEventListener("submit", async function (event) 
@@ -137,9 +135,9 @@ function submitMessage(container=document)
         const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (!emailPattern.test(email)) 
             {
-            alert("Please enter a valid email address.");
-            status.className = "error";
-            return;
+                alert("Please enter a valid email address.");
+                status.className = "error";
+                return;
             }
         sendbutton.disabled = true;
         sendbutton.textContent = "Sending....";
@@ -159,22 +157,23 @@ function submitMessage(container=document)
                 });
 
             if (response.ok) 
-            {
-                status.textContent = "Thank you! Your message has been sent successfully.";
-                status.className = "success";
-                form.reset();
-            } 
+                {
+                    status.textContent = "Thank you! Your message has been sent successfully.";
+                    status.className = "success";
+                    form.reset();
+                } 
             else 
+                {
+                    status.textContent =  "Sorry, there was a problem sending your message.";
+                    status.className = "error";
+                }
+        } 
+        catch (error) 
             {
-                status.textContent =  "Sorry, there was a problem sending your message.";
+                status.textContent =  "Unable to send the message. Please try again.";
                 status.className = "error";
             }
-        } catch (error) 
-            {
-            status.textContent =  "Unable to send the message. Please try again.";
-            status.className = "error";
-            }
-            finally 
+        finally 
             {
                 sendbutton.disabled = false;
                 sendbutton.textContent = "Send Message";
@@ -321,83 +320,75 @@ function setupGallery(container)
         {
             return;
         } 
-    galleryButtons.forEach(button => {
-        button.addEventListener("click",() =>{
-            const category = button.dataset.category;
-            galleryButtons.forEach(btn => {
-                btn.classList.remove("active");
-
+    galleryButtons.forEach(button => 
+        {
+        button.addEventListener("click",() =>
+            {
+                const category = button.dataset.category;
+                galleryButtons.forEach(btn => 
+                    {
+                        btn.classList.remove("active");
+                    });
+                button.classList.add("active");
+                showphotos(container,category);    
             });
-            button.classList.add("active");
-            showphotos(container,category);    
-        });
-    });    
+        });    
 } 
 function showphotos(container=document , category) 
 {
     const grid = container.querySelector("#photogrid");
 
     if (!grid)
-    {
-        return;
-    }
+        {
+            return;
+        }
+    
     grid.innerHTML = "";
 
-    const filteredPhotos =
-        category === "all"
-        ? photos
-        : photos.filter(photo => photo.category === category);
+    const filteredPhotos = category === "all" ? photos : photos.filter(photo => photo.category === category);
 
     filteredPhotos.forEach(photo => 
         {
-
-        const item = document.createElement("div");
-
-        item.className = "gallery-item slide-in";
-
-        item.innerHTML = `
-            <div class="gallery-image">
-                <img src="${photo.image}"><span class="label">${photo.title}</span>
-            </div>    
-        `;
-        grid.appendChild(item);
-        observer.observe(item);
+            const item = document.createElement("div");
+            item.className = "gallery-item slide-in";
+            item.innerHTML = `
+                <div class="gallery-image">
+                    <img src="${photo.image}"><span class="label">${photo.title}</span>
+                </div>    
+            `;
+            grid.appendChild(item);
+            observer.observe(item);
         });
 }
-
-
 
 function printFamilyTree() 
 {
     document.getElementById("printFamilyTree").addEventListener("click", function ()
-    {
-    
-        const iframe = document.createElement("iframe");
-
-        iframe.style.position = "fixed";
-        iframe.style.width = "0";
-        iframe.style.height = "0";
-        iframe.style.border = "0";
-        iframe.style.visibility = "hidden";
-
-        iframe.src = "family-tree-document.html";
-
-        document.body.appendChild(iframe);
-
-        iframe.onload = function () 
-        
         {
-            setTimeout(function () 
-            {
+    
+            const iframe = document.createElement("iframe");
 
-                iframe.contentWindow.focus();
+            iframe.style.position = "fixed";
+            iframe.style.width = "0";
+            iframe.style.height = "0";
+            iframe.style.border = "0";
+            iframe.style.background = "0";
+            iframe.style.visibility = "hidden";
 
-                // Open browser Print dialog
-                iframe.contentWindow.print();
+            iframe.src = "family-tree-document.html";
 
-            }, 500);
-        };
-    });
+            document.body.appendChild(iframe);
+
+            iframe.onload = function () 
+                {
+                    setTimeout(function () 
+                    {
+                        iframe.contentWindow.focus();
+                        // Open browser Print dialog
+                        iframe.contentWindow.print();
+                    }, 500);
+                };
+        });
 };    
 
 function arrowDisplay()
@@ -407,13 +398,13 @@ function arrowDisplay()
         {
            
             if(window.scrollY > 200)
-            {
-                upArrow.classList.add("show");
-            }
+                {
+                    upArrow.classList.add("show");
+                }
             else
-            {
-                upArrow.classList.remove("show");
-            }
+                {
+                    upArrow.classList.remove("show");
+                }
         });    
 
     upArrow.addEventListener("click", function()
@@ -425,22 +416,23 @@ function arrowDisplay()
                 });
         });
 }
+
 document.addEventListener("DOMContentLoaded", () => 
     {
 
     const firstMenuItem = document.querySelector(".menu-item");
 
     if (firstMenuItem) 
-    {
-        loadPage("home.html", firstMenuItem);
-    }
+        {
+            loadPage("home.html", firstMenuItem);
+        }
 
     const firstMenuItem1 = document.querySelector(".mobile-toolbar button1");
 
     if (firstMenuItem1) 
-    {
-        loadPage("home.html", firstMenuItem1);
-    }
+        {
+            loadPage("home.html", firstMenuItem1);
+        }
 
     // Observe elements already present on the page
     document.querySelectorAll(".slide-in").forEach(item => {observer.observe(item);});
