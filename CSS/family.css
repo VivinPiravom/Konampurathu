@@ -462,10 +462,10 @@
 }
 .gallery-btn.active
 {
-background: #333;
-color: white;
+  color: #ff7b00;
+  text-decoration-color: #ff7b00;
+  font-weight: bold;
 }
-
 /* Contact Pages*/
 
 /* Two-column layout */
@@ -571,7 +571,7 @@ color: white;
 
 #sendButton 
 {
-    width: 75%;
+    width: 100%;
     padding: 13px;
     border: none;
     border-radius: 7px;
@@ -582,10 +582,6 @@ color: white;
     transition: 0.3s;
 }
 
-#sendButton:hover 
-{
-    background: #9d97d1;
-}
 
 #sendButton:disabled {
     opacity: 0.6;
@@ -643,11 +639,6 @@ color: white;
 
 }
 
-#upArrow:hover
-{
-  background: #0f5243;
-}
-
 #upArrow.show
 {
   display: block !important;
@@ -657,7 +648,6 @@ color: white;
   width: 100%;
   min-height: 100vh;
 }
-
 
 /* dark mode glass */
 @media (max-width: 820px) 
