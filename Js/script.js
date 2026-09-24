@@ -75,7 +75,7 @@ function loadPage(page, menuItem)
                 if (page === "gallery.html")
                 {
                     setupGallery(document.getElementById("content"));    
-                    showphotos(document.getElementById("content"), "profile");
+                    showphotos(document.getElementById("content"), "all");
                 }    
             })
         .catch(error => 
