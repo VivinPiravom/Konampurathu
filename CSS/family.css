@@ -462,8 +462,8 @@
 }
 .gallery-btn.active
 {
-  color: #ff7b00;
-  text-decoration-color: #ff7b00;
+  background: gold;
+  text-decoration-color: #000000;
   font-weight: bold;
 }
 /* Contact Pages*/
