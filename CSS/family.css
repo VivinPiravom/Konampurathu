@@ -462,7 +462,7 @@
 }
 .gallery-btn.active
 {
-  background: gold;
+  background: rgb(233, 214, 106);
   text-decoration-color: #000000;
   font-weight: bold;
 }
