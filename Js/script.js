@@ -89,9 +89,11 @@ function getpeopleCount(container=document)
 {
     const maleCount = container.querySelectorAll(".male").length;
     const femaleCount = container.querySelectorAll(".female").length;
+    const departedCount = container.querySelectorAll("late").length;
 
     const maleDisplay = document.getElementById("maleCount");
     const femaleDisplay = document.getElementById("femaleCount");
+    const departedDisplay = document.getElementById("departedCount");
 
     if (maleDisplay) 
         {
@@ -102,6 +104,11 @@ function getpeopleCount(container=document)
         {
             femaleDisplay.textContent = femaleCount;
         }
+        
+    if (departedDisplay) 
+        {
+            departedDisplay.textContent = departedCount;
+        }    
 }
 
 function submitMessage(container=document) 
