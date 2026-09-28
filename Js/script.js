@@ -94,7 +94,7 @@ function getpeopleCount(container=document)
     const femaleDisplay = document.getElementById("femaleCount");
     const departedDisplay = document.getElementById("departedCount");
 
-    const departCount = (container.documentElement.outerHTML.match(/Late/g) || []).length;
+    const departCount = (container.outerHTML.match(/Late/g) || []).length;
 
 
     if (maleDisplay) 
